@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-struct BlurView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct BlurView: NSViewRepresentable {
+    func makeNSView(context: Context) -> NSVisualEffectView {
+        let view = NSVisualEffectView()
+        view.blendingMode = .behindWindow
+        
+        return view
     }
-}
-
-struct BlurView_Previews: PreviewProvider {
-    static var previews: some View {
-        BlurView()
+    
+    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
+        
     }
 }
