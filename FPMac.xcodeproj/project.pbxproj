@@ -45,6 +45,7 @@
 		C669333926FE16FB004F226A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333826FE16FB004F226A /* Card.swift */; };
 		C669333B26FE170F004F226A /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333A26FE170F004F226A /* Deck.swift */; };
 		C669333E26FE34AC004F226A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C669333D26FE34AC004F226A /* CloudKit.framework */; };
+		C669334026FE7607004F226A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333F26FE7607004F226A /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		C669333826FE16FB004F226A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C669333A26FE170F004F226A /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		C669333D26FE34AC004F226A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C669333F26FE7607004F226A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				C669332E26FE163B004F226A /* LikedCardView.swift */,
 				C669333026FE1660004F226A /* InstructionsView.swift */,
 				C669333226FE167A004F226A /* ScoreboardView.swift */,
+				C669333F26FE7607004F226A /* ProfileView.swift */,
 				C669330826FE0EFB004F226A /* Message.swift */,
 				C669330A26FE0EFE004F226A /* RecentMessage.swift */,
 				C66932BF26FE0D87004F226A /* FPMacApp.swift */,
@@ -416,6 +419,7 @@
 				C669333B26FE170F004F226A /* Deck.swift in Sources */,
 				C66932FB26FE0E93004F226A /* Home.swift in Sources */,
 				C669332326FE1504004F226A /* ColorExtention.swift in Sources */,
+				C669334026FE7607004F226A /* ProfileView.swift in Sources */,
 				C66932F126FE0E81004F226A /* BlurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
