@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C66932C026FE0D87004F226A /* FPMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932BF26FE0D87004F226A /* FPMacApp.swift */; };
+		C66932C226FE0D87004F226A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932C126FE0D87004F226A /* ContentView.swift */; };
+		C66932C426FE0D89004F226A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66932C326FE0D89004F226A /* Assets.xcassets */; };
+		C66932C726FE0D89004F226A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66932C626FE0D89004F226A /* Preview Assets.xcassets */; };
+		C66932D226FE0D89004F226A /* FPMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932D126FE0D89004F226A /* FPMacTests.swift */; };
+		C66932DC26FE0D89004F226A /* FPMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932DB26FE0D89004F226A /* FPMacUITests.swift */; };
+		C66932DE26FE0D89004F226A /* FPMacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C66932CE26FE0D89004F226A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C66932B426FE0D87004F226A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C66932BB26FE0D87004F226A;
+			remoteInfo = FPMac;
+		};
+		C66932D826FE0D89004F226A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C66932B426FE0D87004F226A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C66932BB26FE0D87004F226A;
+			remoteInfo = FPMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C66932BC26FE0D87004F226A /* FPMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66932BF26FE0D87004F226A /* FPMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacApp.swift; sourceTree = "<group>"; };
+		C66932C126FE0D87004F226A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C66932C326FE0D89004F226A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C66932C626FE0D89004F226A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C66932C826FE0D89004F226A /* FPMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FPMac.entitlements; sourceTree = "<group>"; };
+		C66932CD26FE0D89004F226A /* FPMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66932D126FE0D89004F226A /* FPMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacTests.swift; sourceTree = "<group>"; };
+		C66932D726FE0D89004F226A /* FPMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66932DB26FE0D89004F226A /* FPMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacUITests.swift; sourceTree = "<group>"; };
+		C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C66932B926FE0D87004F226A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932CA26FE0D89004F226A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932D426FE0D89004F226A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C66932B326FE0D87004F226A = {
+			isa = PBXGroup;
+			children = (
+				C66932BE26FE0D87004F226A /* FPMac */,
+				C66932D026FE0D89004F226A /* FPMacTests */,
+				C66932DA26FE0D89004F226A /* FPMacUITests */,
+				C66932BD26FE0D87004F226A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C66932BD26FE0D87004F226A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C66932BC26FE0D87004F226A /* FPMac.app */,
+				C66932CD26FE0D89004F226A /* FPMacTests.xctest */,
+				C66932D726FE0D89004F226A /* FPMacUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C66932BE26FE0D87004F226A /* FPMac */ = {
+			isa = PBXGroup;
+			children = (
+				C66932BF26FE0D87004F226A /* FPMacApp.swift */,
+				C66932C126FE0D87004F226A /* ContentView.swift */,
+				C66932C326FE0D89004F226A /* Assets.xcassets */,
+				C66932C826FE0D89004F226A /* FPMac.entitlements */,
+				C66932C526FE0D89004F226A /* Preview Content */,
+			);
+			path = FPMac;
+			sourceTree = "<group>";
+		};
+		C66932C526FE0D89004F226A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C66932C626FE0D89004F226A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C66932D026FE0D89004F226A /* FPMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				C66932D126FE0D89004F226A /* FPMacTests.swift */,
+			);
+			path = FPMacTests;
+			sourceTree = "<group>";
+		};
+		C66932DA26FE0D89004F226A /* FPMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C66932DB26FE0D89004F226A /* FPMacUITests.swift */,
+				C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */,
+			);
+			path = FPMacUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C66932BB26FE0D87004F226A /* FPMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66932E126FE0D89004F226A /* Build configuration list for PBXNativeTarget "FPMac" */;
+			buildPhases = (
+				C66932B826FE0D87004F226A /* Sources */,
+				C66932B926FE0D87004F226A /* Frameworks */,
+				C66932BA26FE0D87004F226A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FPMac;
+			productName = FPMac;
+			productReference = C66932BC26FE0D87004F226A /* FPMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C66932CC26FE0D89004F226A /* FPMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66932E426FE0D89004F226A /* Build configuration list for PBXNativeTarget "FPMacTests" */;
+			buildPhases = (
+				C66932C926FE0D89004F226A /* Sources */,
+				C66932CA26FE0D89004F226A /* Frameworks */,
+				C66932CB26FE0D89004F226A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C66932CF26FE0D89004F226A /* PBXTargetDependency */,
+			);
+			name = FPMacTests;
+			productName = FPMacTests;
+			productReference = C66932CD26FE0D89004F226A /* FPMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C66932D626FE0D89004F226A /* FPMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66932E726FE0D89004F226A /* Build configuration list for PBXNativeTarget "FPMacUITests" */;
+			buildPhases = (
+				C66932D326FE0D89004F226A /* Sources */,
+				C66932D426FE0D89004F226A /* Frameworks */,
+				C66932D526FE0D89004F226A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C66932D926FE0D89004F226A /* PBXTargetDependency */,
+			);
+			name = FPMacUITests;
+			productName = FPMacUITests;
+			productReference = C66932D726FE0D89004F226A /* FPMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C66932B426FE0D87004F226A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					C66932BB26FE0D87004F226A = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					C66932CC26FE0D89004F226A = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = C66932BB26FE0D87004F226A;
+					};
+					C66932D626FE0D89004F226A = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = C66932BB26FE0D87004F226A;
+					};
+				};
+			};
+			buildConfigurationList = C66932B726FE0D87004F226A /* Build configuration list for PBXProject "FPMac" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C66932B326FE0D87004F226A;
+			productRefGroup = C66932BD26FE0D87004F226A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C66932BB26FE0D87004F226A /* FPMac */,
+				C66932CC26FE0D89004F226A /* FPMacTests */,
+				C66932D626FE0D89004F226A /* FPMacUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C66932BA26FE0D87004F226A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66932C726FE0D89004F226A /* Preview Assets.xcassets in Resources */,
+				C66932C426FE0D89004F226A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932CB26FE0D89004F226A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932D526FE0D89004F226A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C66932B826FE0D87004F226A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66932C226FE0D87004F226A /* ContentView.swift in Sources */,
+				C66932C026FE0D87004F226A /* FPMacApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932C926FE0D89004F226A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66932D226FE0D89004F226A /* FPMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932D326FE0D89004F226A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66932DE26FE0D89004F226A /* FPMacUITestsLaunchTests.swift in Sources */,
+				C66932DC26FE0D89004F226A /* FPMacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C66932CF26FE0D89004F226A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C66932BB26FE0D87004F226A /* FPMac */;
+			targetProxy = C66932CE26FE0D89004F226A /* PBXContainerItemProxy */;
+		};
+		C66932D926FE0D89004F226A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C66932BB26FE0D87004F226A /* FPMac */;
+			targetProxy = C66932D826FE0D89004F226A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C66932DF26FE0D89004F226A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C66932E026FE0D89004F226A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C66932E226FE0D89004F226A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FPMac/FPMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FPMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C66932E326FE0D89004F226A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FPMac/FPMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FPMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C66932E526FE0D89004F226A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FPMac.app/Contents/MacOS/FPMac";
+			};
+			name = Debug;
+		};
+		C66932E626FE0D89004F226A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FPMac.app/Contents/MacOS/FPMac";
+			};
+			name = Release;
+		};
+		C66932E826FE0D89004F226A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FPMac;
+			};
+			name = Debug;
+		};
+		C66932E926FE0D89004F226A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FPMac;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C66932B726FE0D87004F226A /* Build configuration list for PBXProject "FPMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66932DF26FE0D89004F226A /* Debug */,
+				C66932E026FE0D89004F226A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66932E126FE0D89004F226A /* Build configuration list for PBXNativeTarget "FPMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66932E226FE0D89004F226A /* Debug */,
+				C66932E326FE0D89004F226A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66932E426FE0D89004F226A /* Build configuration list for PBXNativeTarget "FPMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66932E526FE0D89004F226A /* Debug */,
+				C66932E626FE0D89004F226A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66932E726FE0D89004F226A /* Build configuration list for PBXNativeTarget "FPMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66932E826FE0D89004F226A /* Debug */,
+				C66932E926FE0D89004F226A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C66932B426FE0D87004F226A /* Project object */;
+}
