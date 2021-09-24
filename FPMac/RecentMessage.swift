@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-//class RecentMessage: ObservableObject {
-//    @Published var selectedTab = "Home"
-//    @Published var msgs: [RecentMessage] = recentMsgs
-//
-//
-//}
-
 struct RecentMessage:Identifiable {
     var id = UUID().uuidString
     var lastMsg: String
