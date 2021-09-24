@@ -41,42 +41,17 @@ struct EditView: View {
                     
                     Text("Edit Screen")
                         .font(.title)
+                        .foregroundColor(Color.init(hex: "271D76"))
                     Spacer()
 
-//
-//                    NavigationLink(destination:  StudyScreenView(deckCore: deckCore, card: card)) {
-//                        Text("Study")
-//                            .font(.title)
-//                            .foregroundColor(Color.init(hex: "B74278"))
-//                            .padding(.trailing, 1)
-//                            .onTapGesture {
-//                                print("study tapped")
-//                            }
-//                    }
-//                    .buttonStyle(PlainButtonStyle())
-//                    Button(action: {
-//                        print("study tapped")
-//                        print("\(deckCore.cardsArray.count)")
-//                            }, label: {
-//                                Text("Study")
-//                                    .font(.title)
-//                                    .foregroundColor(Color.init(hex: "B74278"))
-//                                    .padding(.trailing, 1)
-//
-//                            })
-//                            .background(
-//                                NavigationLink(
-//                                    destination: StudyScreenView(deckCore: deckCore, card: card),
-//
-//
-//                                    label: { EmptyView() }
-//                                )
-//                            )
-//                            .buttonStyle(PlainButtonStyle())
                     Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
-                        Image(systemName: "sidebar.right")
-                            .font(.title2)
-                            .foregroundColor(homeData.isExpanded ? .blue : .primary)
+                        Text("Study")
+                            .font(.largeTitle)
+                            //.foregroundColor(Color.init(hex: "B74278"))
+                            .frame(width: 90, height: 40)
+                            .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "B74278"), Color.init(hex: "B74278")]),  center: .center, startRadius: 5, endRadius: 120))
+                            .clipShape(Capsule())
+                            .foregroundColor(.white)
                     }
                     .buttonStyle(PlainButtonStyle())
                     

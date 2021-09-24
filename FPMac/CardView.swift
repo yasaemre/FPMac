@@ -49,14 +49,20 @@ struct CardView: View {
             HStack {
                 Text("Study Screen")
                     .font(.title)
+                    .foregroundColor(Color.init(hex: "271D76"))
                 Spacer()
                 Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
-                    Image(systemName: "sidebar.right")
-                        .font(.title2)
-                        .foregroundColor(homeData.isExpanded ? .blue : .primary)
+                    Text("Study")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .frame(width: 90, height: 40)
+                        .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "271D76"), Color.init(hex: "271D76")]),  center: .center, startRadius: 5, endRadius: 120))
+                        .clipShape(Capsule())
+                        //.foregroundColor(homeData.isExpanded ? .blue : .primary)
                 }
                 .buttonStyle(PlainButtonStyle())
             }
+            .padding(.trailing, 20)
             
             HStack(spacing: 15) {
                 
