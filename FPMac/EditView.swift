@@ -29,6 +29,7 @@ struct EditView: View {
     
     @State private var isShowingCheckMark = false
 
+    @EnvironmentObject var homeData: HomeViewModel
 
     
     
@@ -37,6 +38,9 @@ struct EditView: View {
             VStack{
                 
                 HStack {
+                    
+                    Text("Edit Screen")
+                        .font(.title)
                     Spacer()
 
 //
@@ -50,25 +54,32 @@ struct EditView: View {
 //                            }
 //                    }
 //                    .buttonStyle(PlainButtonStyle())
-                    Button(action: {
-                        print("study tapped")
-                        print("\(deckCore.cardsArray.count)")
-                            }, label: {
-                                Text("Study")
-                                    .font(.title)
-                                    .foregroundColor(Color.init(hex: "B74278"))
-                                    .padding(.trailing, 1)
-                                   
-                            })
-                            .background(
-                                NavigationLink(
-                                    destination: StudyScreenView(deckCore: deckCore, card: card),
-                              
-                                   
-                                    label: { EmptyView() }
-                                )
-                            )
-                            .buttonStyle(PlainButtonStyle())
+//                    Button(action: {
+//                        print("study tapped")
+//                        print("\(deckCore.cardsArray.count)")
+//                            }, label: {
+//                                Text("Study")
+//                                    .font(.title)
+//                                    .foregroundColor(Color.init(hex: "B74278"))
+//                                    .padding(.trailing, 1)
+//
+//                            })
+//                            .background(
+//                                NavigationLink(
+//                                    destination: StudyScreenView(deckCore: deckCore, card: card),
+//
+//
+//                                    label: { EmptyView() }
+//                                )
+//                            )
+//                            .buttonStyle(PlainButtonStyle())
+                    Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
+                        Image(systemName: "sidebar.right")
+                            .font(.title2)
+                            .foregroundColor(homeData.isExpanded ? .blue : .primary)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
 
 
                 }
@@ -305,7 +316,10 @@ struct EditView: View {
             }
 
             
-                   
+            StudyScreenView(deckCore: deckCore, card: card)
+                .background(BlurView())
+                .frame(width: homeData.isExpanded ? nil : 0)
+                .opacity(homeData.isExpanded ? 1 : 0)
             
         }
         

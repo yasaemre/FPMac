@@ -66,13 +66,14 @@ struct ScoreboardView: View {
                     .foregroundColor(Color.init(hex: "6C63FF"))
             }
             
+            Spacer()
             
             
             if (decksArrPersistent.count > 0) {
                 Picker("Please choose a deck", selection: $selectedDeck) {
                     ForEach(decksArrPersistent, id: \.self) { (deck:DeckCore) in
                         Text(deck.unwrappedDeckName)
-                            .foregroundColor(Color.init(hex: "6C63FF"))
+                            .foregroundColor(.white)
                     }
                 }
                 //.pickerStyle()
@@ -87,7 +88,7 @@ struct ScoreboardView: View {
                 if (decksArrPersistent.count > 0) {
                 Text("The Highest Correct Rate \nfor \(selectedDeck.unwrappedDeckName):")
                     .font(.title)
-                    .foregroundColor(Color.init(hex: "1F3CD6"))
+                    .foregroundColor(.white)
                 }
                 Text("% \(String(round(selectedDeck.correctRate)))")
                     .fontWeight(.semibold)
