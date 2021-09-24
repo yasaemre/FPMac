@@ -20,18 +20,12 @@ struct IntsructionsView: View {
                 .padding(.top, 1)
             
             VStack {
-//                Text("FLASHPADS")
-//                    .bold()
-//                    .font(.largeTitle)
-//                    .foregroundColor(.gray)
-//                    .multilineTextAlignment(.center)
-                    //.frame(width: UIScreen.main.bounds.width - 40, height: 70)
-                    //.padding(.bottom, 20)
+
                 Spacer()
                 
                     RoundedRectangle(cornerRadius: 10)
                         .fill(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F7F2F2"), Color.init(hex: "c8d4f5")]), startPoint: .topLeading, endPoint: .bottomTrailing))
-                        .frame(width: 300, height:400)
+                        .frame(width: 300, height:700)
                         .shadow(color: Color(NSColor(.black)), radius: 10, x: 5, y: 5)
                         .overlay(
                             
@@ -68,13 +62,13 @@ struct IntsructionsView: View {
                                 .frame(width: 200)
                                 .foregroundColor(.black)
                             
-                             Spacer()
+                            // Spacer()
                             
                         }
                             
                         )
                         .opacity(0.8)
-                        .padding(.top, 10)
+                        .padding(.top, 20)
                
                 
                 

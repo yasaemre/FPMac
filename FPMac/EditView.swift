@@ -277,6 +277,7 @@ struct EditView: View {
                     .buttonStyle(PlainButtonStyle())
 
                 }
+                .padding(.top, 20)
             }
             
             if isShowingCheckMark {

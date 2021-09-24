@@ -23,7 +23,7 @@ struct Home: View {
                 TabButton(image: "house", title: "Home", selectedTab: $homeData.selectedTab)
                 TabButton(image: "textformat.123", title: "Scoreboard", selectedTab: $homeData.selectedTab)
                 TabButton(image: "heart.circle", title: "Liked Cards", selectedTab: $homeData.selectedTab)
-                TabButton(image: "square.text.square", title: "Instructions", selectedTab: $homeData.selectedTab)
+                TabButton(image: "doc.text.magnifyingglass", title: "Instructions", selectedTab: $homeData.selectedTab)
                 Spacer()
                 
                 //TabButton(image: "gear", title: "Settings", selectedTab: $homeData.selectedTab)

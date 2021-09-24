@@ -43,6 +43,8 @@ struct LikedCardView: View {
                     
                     
                 }
+                .buttonStyle(PlainButtonStyle())
+
                 
                 Button {
                     withAnimation {
@@ -57,6 +59,8 @@ struct LikedCardView: View {
                         .clipShape(Capsule())
                         .foregroundColor(.white)
                 }
+                .buttonStyle(PlainButtonStyle())
+
             }
             .padding(.bottom, 5)
             .padding(.top, 5)
@@ -152,6 +156,7 @@ struct LikedCardView: View {
             .frame(height: 400)
             .padding(.horizontal, 25)
             .padding(.top, 1)
+            .buttonStyle(PlainButtonStyle())
             
             
             Text("\(scrolled+1) of \(likedArrPersistent.count)")
