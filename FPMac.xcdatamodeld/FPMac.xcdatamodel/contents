@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CardCore" representedClassName="CardCore" syncable="YES">
+        <attribute name="definition" optional="YES" attributeType="String"/>
+        <attribute name="degree" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="word" optional="YES" attributeType="String"/>
+        <attribute name="x" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="y" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="deck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeckCore" inverseName="cards" inverseEntity="DeckCore"/>
+        <relationship name="liked" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LikedCore" inverseName="liked" inverseEntity="LikedCore"/>
+        <relationship name="likedDeck" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeckCore" inverseName="likedCards" inverseEntity="DeckCore"/>
+    </entity>
+    <entity name="DeckCore" representedClassName="DeckCore" syncable="YES">
+        <attribute name="correctRate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="deckCreatedAt" optional="YES" attributeType="String"/>
+        <attribute name="deckName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="numberOfCardsInDeck" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardCore" inverseName="deck" inverseEntity="CardCore"/>
+        <relationship name="likedCards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardCore" inverseName="likedDeck" inverseEntity="CardCore"/>
+    </entity>
+    <entity name="LikedCore" representedClassName="LikedCore" syncable="YES">
+        <attribute name="definition" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="likedCards" optional="YES" attributeType="Transformable"/>
+        <attribute name="offset" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="word" optional="YES" attributeType="String"/>
+        <relationship name="liked" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CardCore" inverseName="liked" inverseEntity="CardCore"/>
+    </entity>
+    <entity name="ProfileCore" representedClassName="ProfileCore" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="sex" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CardCore" positionX="-63" positionY="-18" width="128" height="164"/>
+        <element name="DeckCore" positionX="-54" positionY="36" width="128" height="134"/>
+        <element name="LikedCore" positionX="-36" positionY="63" width="128" height="134"/>
+        <element name="ProfileCore" positionX="-18" positionY="99" width="128" height="149"/>
+    </elements>
+</model>

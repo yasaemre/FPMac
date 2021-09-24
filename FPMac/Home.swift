@@ -11,6 +11,10 @@ import SwiftUI
 var screen = NSScreen.main!.visibleFrame
 struct Home: View {
     @StateObject var homeData = HomeViewModel()
+    @State private var deckCreatedAt = ""
+    @State private var numOfCardsInDeck = 0
+    @Environment(\.managedObjectContext) private var viewContext
+
     var body: some View {
         HStack(spacing: 0) {
             VStack{
@@ -33,10 +37,10 @@ struct Home: View {
             
             ZStack {
                 switch homeData.selectedTab {
-                case "Home": NavigationView{ HomeView()}
-                case "Scoreboard": Text("Scoreboard")
-                case "Liked Cards": Text("Liked Cards")
-                case "Instructions": Text("Instructions")
+                case "Home": NavigationView{ HomeView(deckCreatedAt: $deckCreatedAt, numOfCardsInDeck: $numOfCardsInDeck)}
+                case "Scoreboard": NavigationView { ScoreboardView(moc: viewContext)}
+                case "Liked Cards": NavigationView { LikedCardView()}
+                case "Instructions": NavigationView {IntsructionsView()}
                 default: Text("")
                 }
             }
