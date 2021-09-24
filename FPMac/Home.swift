@@ -31,9 +31,9 @@ struct Home: View {
                 }
                 HStack(spacing:1) {
                     Text(profileArrPersistent.last?.name ?? "Anonymous")
-                        .foregroundColor(Color.init(hex: "6C63FF"))
+                        .foregroundColor(.gray)
                     Text(profileArrPersistent.last?.lastName ?? "Anonymous")
-                        .foregroundColor(Color.init(hex: "6C63FF"))
+                        .foregroundColor(.gray)
                 }
                 .padding(.top, 5)
                 TabButton(image: "house", title: "Home", selectedTab: $homeData.selectedTab).padding(.top, 30)
@@ -58,7 +58,7 @@ struct Home: View {
                 case "Scoreboard": NavigationView { ScoreboardView(moc: viewContext)}
                 case "Liked Cards": NavigationView { LikedCardView()}
                 case "Instructions": NavigationView {IntsructionsView()}
-                case "Instructions": NavigationView {Text("Profile")}
+                case "Profile": NavigationView {ProfileView()}
                 default: Text("")
                 }
             }
