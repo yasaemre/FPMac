@@ -41,29 +41,22 @@ struct CardView: View {
 
     //To avoid Taps during animation..
     
-    
+    @EnvironmentObject var homeData: HomeViewModel
+
     
     var body: some View {
         VStack(spacing:20) {
-            
             HStack {
-                Button {
-                    self.presentationMode.wrappedValue.dismiss()
-                    print("Back tapped")
-                } label: {
-                    Image(systemName: "arrowshape.turn.up.backward.fill")
-                        .font(.title)
-                        .foregroundColor(Color.init(hex: "6C63FF"))
-                        .contentShape(Rectangle())
-                    
-                }
-                .padding(.leading, 15)
-                .padding(.top, 10)
+                Text("Study Screen")
+                    .font(.title)
                 Spacer()
+                Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
+                    Image(systemName: "sidebar.right")
+                        .font(.title2)
+                        .foregroundColor(homeData.isExpanded ? .blue : .primary)
+                }
+                .buttonStyle(PlainButtonStyle())
             }
-            
-            Spacer()
-            
             
             HStack(spacing: 15) {
                 
@@ -78,9 +71,9 @@ struct CardView: View {
                         .background(!flip ? Color.init(hex: "271D76") : .gray)
                         .clipShape(Capsule())
                         .foregroundColor(.white)
-                    
-                    
                 }
+                .buttonStyle(PlainButtonStyle())
+
                 
                 Button {
                     withAnimation {
@@ -95,7 +88,10 @@ struct CardView: View {
                         .clipShape(Capsule())
                         .foregroundColor(.white)
                 }
+                .buttonStyle(PlainButtonStyle())
+
             }
+            .padding(.top, 20)
             
             ZStack(alignment: .center) {
                 Image(cardCore.unwrappedImage)
@@ -103,6 +99,7 @@ struct CardView: View {
                     .frame(width: 250, height: 350)
                     .clipped()
                     .cornerRadius(12)
+                
                 
                 
                 
@@ -246,8 +243,9 @@ struct CardView: View {
 
             }
             .padding(.top, 10)
+            .buttonStyle(PlainButtonStyle())
         }
-        
+        .frame(width: 600, height: 800)
         
         
     }
