@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RecentCardView: View {
     var recentMsg: RecentMessage
-    //tyjytj ty t
+    //tyjytj ty tbvnvn  gng h
     var body: some View {
         HStack {
             Image(recentMsg.userImage)
