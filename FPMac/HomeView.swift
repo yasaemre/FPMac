@@ -60,7 +60,7 @@ struct HomeView: View {
     @State private var avatarImageData:Data? = Data()
     @State private var avatarImage = Image("profilePhoto")
     @State private var sheetIsShowing = false
-    @State private var dialogResult = "Click the buttons above to test the dialogs."
+    @State private var dialogResult = "Enter a deck name"
     
     var body: some View {
         VStack(spacing: 30) {
