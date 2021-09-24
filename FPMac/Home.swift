@@ -14,16 +14,33 @@ struct Home: View {
     @State private var deckCreatedAt = ""
     @State private var numOfCardsInDeck = 0
     @Environment(\.managedObjectContext) private var viewContext
-
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \ProfileCore.id, ascending: true)],
+           animation: .default)
+       private var profileArrPersistent: FetchedResults<ProfileCore>
     var body: some View {
         HStack(spacing: 0) {
             VStack{
                 //tab button
-                
-                TabButton(image: "house", title: "Home", selectedTab: $homeData.selectedTab)
+                if let data = profileArrPersistent.last?.image {
+                    Image(nsImage: NSImage(data: data)!)
+                        .resizable()
+                        .scaledToFill()
+                        .clipShape(Circle())
+                        .frame(width: 50, height: 50)
+                }
+                HStack(spacing:1) {
+                    Text(profileArrPersistent.last?.name ?? "Anonymous")
+                        .foregroundColor(.gray)
+                    Text(profileArrPersistent.last?.lastName ?? "Anonymous")
+                        .foregroundColor(.gray)
+                }
+                .padding(.top, 5)
+                TabButton(image: "house", title: "Home", selectedTab: $homeData.selectedTab).padding(.top, 30)
                 TabButton(image: "textformat.123", title: "Scoreboard", selectedTab: $homeData.selectedTab)
                 TabButton(image: "heart.circle", title: "Liked Cards", selectedTab: $homeData.selectedTab)
                 TabButton(image: "doc.text.magnifyingglass", title: "Instructions", selectedTab: $homeData.selectedTab)
+                TabButton(image: "person.crop.circle", title: "Profile", selectedTab: $homeData.selectedTab)
                 Spacer()
                 
                 //TabButton(image: "gear", title: "Settings", selectedTab: $homeData.selectedTab)
@@ -41,6 +58,7 @@ struct Home: View {
                 case "Scoreboard": NavigationView { ScoreboardView(moc: viewContext)}
                 case "Liked Cards": NavigationView { LikedCardView()}
                 case "Instructions": NavigationView {IntsructionsView()}
+                case "Profile": NavigationView {ProfileView()}
                 default: Text("")
                 }
             }

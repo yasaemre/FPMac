@@ -10,10 +10,7 @@ import SwiftUI
 import CoreData
 
 struct ScoreboardView: View {
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \ProfileCore.id, ascending: true)],
-           animation: .default)
-       private var profileArrPersistent: FetchedResults<ProfileCore>
+    
     
     @FetchRequest(
            sortDescriptors: [NSSortDescriptor(keyPath: \DeckCore.deckName, ascending: true)],
@@ -46,26 +43,7 @@ struct ScoreboardView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            if let data = profileArrPersistent.last?.image {
-                Image("profilePhoto")
-                    .resizable()
-                    .scaledToFill()
-                    .clipShape(Circle())
-                    .frame(width: 130, height: 130)
-                    .padding(.trailing, 10)
-                    
-            }
-            
-            
-            
-            
-            HStack {
-                Text(profileArrPersistent.last?.name ?? "Anonymous")
-                    .foregroundColor(Color.init(hex: "6C63FF"))
-                Text(profileArrPersistent.last?.lastName ?? "Anonymous")
-                    .foregroundColor(Color.init(hex: "6C63FF"))
-            }
-            
+    
             Spacer()
             
             
@@ -73,7 +51,7 @@ struct ScoreboardView: View {
                 Picker("Please choose a deck", selection: $selectedDeck) {
                     ForEach(decksArrPersistent, id: \.self) { (deck:DeckCore) in
                         Text(deck.unwrappedDeckName)
-                            .foregroundColor(.white)
+                            //.foregroundColor(.white)
                     }
                 }
                 //.pickerStyle()
@@ -88,7 +66,7 @@ struct ScoreboardView: View {
                 if (decksArrPersistent.count > 0) {
                 Text("The Highest Correct Rate \nfor \(selectedDeck.unwrappedDeckName):")
                     .font(.title)
-                    .foregroundColor(.white)
+                    //.foregroundColor(.white)
                 }
                 Text("% \(String(round(selectedDeck.correctRate)))")
                     .fontWeight(.semibold)
