@@ -34,6 +34,16 @@
 		C669331E26FE144E004F226A /* DeckCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331626FE144E004F226A /* DeckCore+CoreDataProperties.swift */; };
 		C669332026FE149C004F226A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331F26FE149C004F226A /* Persistence.swift */; };
 		C669332326FE1504004F226A /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332226FE1504004F226A /* ColorExtention.swift */; };
+		C669332526FE159E004F226A /* EditScrnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332426FE159E004F226A /* EditScrnView.swift */; };
+		C669332726FE15B6004F226A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332626FE15B6004F226A /* EditView.swift */; };
+		C669332926FE15EA004F226A /* StudyScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332826FE15EA004F226A /* StudyScreenView.swift */; };
+		C669332B26FE15FC004F226A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332A26FE15FC004F226A /* CardView.swift */; };
+		C669332D26FE1618004F226A /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332C26FE1618004F226A /* HeartView.swift */; };
+		C669332F26FE163B004F226A /* LikedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332E26FE163B004F226A /* LikedCardView.swift */; };
+		C669333126FE1660004F226A /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333026FE1660004F226A /* InstructionsView.swift */; };
+		C669333326FE167A004F226A /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333226FE167A004F226A /* ScoreboardView.swift */; };
+		C669333926FE16FB004F226A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333826FE16FB004F226A /* Card.swift */; };
+		C669333B26FE170F004F226A /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333A26FE170F004F226A /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +95,16 @@
 		C669331626FE144E004F226A /* DeckCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C669331F26FE149C004F226A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C669332226FE1504004F226A /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
+		C669332426FE159E004F226A /* EditScrnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrnView.swift; sourceTree = "<group>"; };
+		C669332626FE15B6004F226A /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		C669332826FE15EA004F226A /* StudyScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyScreenView.swift; sourceTree = "<group>"; };
+		C669332A26FE15FC004F226A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C669332C26FE1618004F226A /* HeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
+		C669332E26FE163B004F226A /* LikedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedCardView.swift; sourceTree = "<group>"; };
+		C669333026FE1660004F226A /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		C669333226FE167A004F226A /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		C669333826FE16FB004F226A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		C669333A26FE170F004F226A /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +135,8 @@
 		C66932B326FE0D87004F226A = {
 			isa = PBXGroup;
 			children = (
+				C669333726FE16E6004F226A /* Model */,
+				C669333426FE168F004F226A /* ViewModel */,
 				C669332126FE14F2004F226A /* Extention */,
 				C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */,
 				C669331026FE144E004F226A /* LikedCore+CoreDataProperties.swift */,
@@ -150,9 +172,16 @@
 				C66932F626FE0E8C004F226A /* DetailView.swift */,
 				C66932F026FE0E81004F226A /* BlurView.swift */,
 				C669330026FE0EB0004F226A /* HomeView.swift */,
+				C669332426FE159E004F226A /* EditScrnView.swift */,
+				C669332626FE15B6004F226A /* EditView.swift */,
+				C669332826FE15EA004F226A /* StudyScreenView.swift */,
 				C66932FE26FE0EAD004F226A /* TabButton.swift */,
+				C669332A26FE15FC004F226A /* CardView.swift */,
+				C669332C26FE1618004F226A /* HeartView.swift */,
 				C669330226FE0EB4004F226A /* RecentCardView.swift */,
-				C669330626FE0EDF004F226A /* HomeViewModel.swift */,
+				C669332E26FE163B004F226A /* LikedCardView.swift */,
+				C669333026FE1660004F226A /* InstructionsView.swift */,
+				C669333226FE167A004F226A /* ScoreboardView.swift */,
 				C669330826FE0EFB004F226A /* Message.swift */,
 				C669330A26FE0EFE004F226A /* RecentMessage.swift */,
 				C66932BF26FE0D87004F226A /* FPMacApp.swift */,
@@ -195,6 +224,23 @@
 				C669332226FE1504004F226A /* ColorExtention.swift */,
 			);
 			path = Extention;
+			sourceTree = "<group>";
+		};
+		C669333426FE168F004F226A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C669330626FE0EDF004F226A /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C669333726FE16E6004F226A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C669333826FE16FB004F226A /* Card.swift */,
+				C669333A26FE170F004F226A /* Deck.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,23 +375,33 @@
 			files = (
 				C66932C226FE0D87004F226A /* ContentView.swift in Sources */,
 				C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */,
+				C669332726FE15B6004F226A /* EditView.swift in Sources */,
 				C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */,
+				C669333326FE167A004F226A /* ScoreboardView.swift in Sources */,
 				C669332026FE149C004F226A /* Persistence.swift in Sources */,
 				C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */,
 				C669331A26FE144E004F226A /* ProfileCore+CoreDataProperties.swift in Sources */,
+				C669333926FE16FB004F226A /* Card.swift in Sources */,
 				C669331826FE144E004F226A /* LikedCore+CoreDataProperties.swift in Sources */,
+				C669332F26FE163B004F226A /* LikedCardView.swift in Sources */,
 				C669331B26FE144E004F226A /* CardCore+CoreDataClass.swift in Sources */,
 				C66932F726FE0E8C004F226A /* DetailView.swift in Sources */,
 				C66932FF26FE0EAD004F226A /* TabButton.swift in Sources */,
+				C669332926FE15EA004F226A /* StudyScreenView.swift in Sources */,
+				C669332526FE159E004F226A /* EditScrnView.swift in Sources */,
 				C669331E26FE144E004F226A /* DeckCore+CoreDataProperties.swift in Sources */,
 				C669330126FE0EB0004F226A /* HomeView.swift in Sources */,
 				C669331C26FE144E004F226A /* CardCore+CoreDataProperties.swift in Sources */,
+				C669332D26FE1618004F226A /* HeartView.swift in Sources */,
 				C669331926FE144E004F226A /* ProfileCore+CoreDataClass.swift in Sources */,
 				C66932C026FE0D87004F226A /* FPMacApp.swift in Sources */,
 				C669330326FE0EB4004F226A /* RecentCardView.swift in Sources */,
 				C669330926FE0EFB004F226A /* Message.swift in Sources */,
+				C669332B26FE15FC004F226A /* CardView.swift in Sources */,
 				C669331D26FE144E004F226A /* DeckCore+CoreDataClass.swift in Sources */,
 				C669330B26FE0EFE004F226A /* RecentMessage.swift in Sources */,
+				C669333126FE1660004F226A /* InstructionsView.swift in Sources */,
+				C669333B26FE170F004F226A /* Deck.swift in Sources */,
 				C66932FB26FE0E93004F226A /* Home.swift in Sources */,
 				C669332326FE1504004F226A /* ColorExtention.swift in Sources */,
 				C66932F126FE0E81004F226A /* BlurView.swift in Sources */,
