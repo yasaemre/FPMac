@@ -23,6 +23,17 @@
 		C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330626FE0EDF004F226A /* HomeViewModel.swift */; };
 		C669330926FE0EFB004F226A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330826FE0EFB004F226A /* Message.swift */; };
 		C669330B26FE0EFE004F226A /* RecentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330A26FE0EFE004F226A /* RecentMessage.swift */; };
+		C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C669330C26FE1231004F226A /* FPMac.xcdatamodeld */; };
+		C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */; };
+		C669331826FE144E004F226A /* LikedCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331026FE144E004F226A /* LikedCore+CoreDataProperties.swift */; };
+		C669331926FE144E004F226A /* ProfileCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331126FE144E004F226A /* ProfileCore+CoreDataClass.swift */; };
+		C669331A26FE144E004F226A /* ProfileCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331226FE144E004F226A /* ProfileCore+CoreDataProperties.swift */; };
+		C669331B26FE144E004F226A /* CardCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331326FE144E004F226A /* CardCore+CoreDataClass.swift */; };
+		C669331C26FE144E004F226A /* CardCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331426FE144E004F226A /* CardCore+CoreDataProperties.swift */; };
+		C669331D26FE144E004F226A /* DeckCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331526FE144E004F226A /* DeckCore+CoreDataClass.swift */; };
+		C669331E26FE144E004F226A /* DeckCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331626FE144E004F226A /* DeckCore+CoreDataProperties.swift */; };
+		C669332026FE149C004F226A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331F26FE149C004F226A /* Persistence.swift */; };
+		C669332326FE1504004F226A /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332226FE1504004F226A /* ColorExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +74,17 @@
 		C669330626FE0EDF004F226A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		C669330826FE0EFB004F226A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C669330A26FE0EFE004F226A /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
+		C669330D26FE1231004F226A /* FPMac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FPMac.xcdatamodel; sourceTree = "<group>"; };
+		C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C669331026FE144E004F226A /* LikedCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C669331126FE144E004F226A /* ProfileCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C669331226FE144E004F226A /* ProfileCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C669331326FE144E004F226A /* CardCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C669331426FE144E004F226A /* CardCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C669331526FE144E004F226A /* DeckCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C669331626FE144E004F226A /* DeckCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C669331F26FE149C004F226A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C669332226FE1504004F226A /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +115,17 @@
 		C66932B326FE0D87004F226A = {
 			isa = PBXGroup;
 			children = (
+				C669332126FE14F2004F226A /* Extention */,
+				C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */,
+				C669331026FE144E004F226A /* LikedCore+CoreDataProperties.swift */,
+				C669331126FE144E004F226A /* ProfileCore+CoreDataClass.swift */,
+				C669331226FE144E004F226A /* ProfileCore+CoreDataProperties.swift */,
+				C669331326FE144E004F226A /* CardCore+CoreDataClass.swift */,
+				C669331426FE144E004F226A /* CardCore+CoreDataProperties.swift */,
+				C669331526FE144E004F226A /* DeckCore+CoreDataClass.swift */,
+				C669331626FE144E004F226A /* DeckCore+CoreDataProperties.swift */,
+				C669331F26FE149C004F226A /* Persistence.swift */,
+				C669330C26FE1231004F226A /* FPMac.xcdatamodeld */,
 				C66932BE26FE0D87004F226A /* FPMac */,
 				C66932D026FE0D89004F226A /* FPMacTests */,
 				C66932DA26FE0D89004F226A /* FPMacUITests */,
@@ -154,6 +187,14 @@
 				C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */,
 			);
 			path = FPMacUITests;
+			sourceTree = "<group>";
+		};
+		C669332126FE14F2004F226A /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				C669332226FE1504004F226A /* ColorExtention.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,15 +328,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				C66932C226FE0D87004F226A /* ContentView.swift in Sources */,
+				C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */,
+				C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */,
+				C669332026FE149C004F226A /* Persistence.swift in Sources */,
 				C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */,
+				C669331A26FE144E004F226A /* ProfileCore+CoreDataProperties.swift in Sources */,
+				C669331826FE144E004F226A /* LikedCore+CoreDataProperties.swift in Sources */,
+				C669331B26FE144E004F226A /* CardCore+CoreDataClass.swift in Sources */,
 				C66932F726FE0E8C004F226A /* DetailView.swift in Sources */,
 				C66932FF26FE0EAD004F226A /* TabButton.swift in Sources */,
+				C669331E26FE144E004F226A /* DeckCore+CoreDataProperties.swift in Sources */,
 				C669330126FE0EB0004F226A /* HomeView.swift in Sources */,
+				C669331C26FE144E004F226A /* CardCore+CoreDataProperties.swift in Sources */,
+				C669331926FE144E004F226A /* ProfileCore+CoreDataClass.swift in Sources */,
 				C66932C026FE0D87004F226A /* FPMacApp.swift in Sources */,
 				C669330326FE0EB4004F226A /* RecentCardView.swift in Sources */,
 				C669330926FE0EFB004F226A /* Message.swift in Sources */,
+				C669331D26FE144E004F226A /* DeckCore+CoreDataClass.swift in Sources */,
 				C669330B26FE0EFE004F226A /* RecentMessage.swift in Sources */,
 				C66932FB26FE0E93004F226A /* Home.swift in Sources */,
+				C669332326FE1504004F226A /* ColorExtention.swift in Sources */,
 				C66932F126FE0E81004F226A /* BlurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -640,6 +692,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C669330C26FE1231004F226A /* FPMac.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C669330D26FE1231004F226A /* FPMac.xcdatamodel */,
+			);
+			currentVersion = C669330D26FE1231004F226A /* FPMac.xcdatamodel */;
+			path = FPMac.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C66932B426FE0D87004F226A /* Project object */;
 }
