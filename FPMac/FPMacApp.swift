@@ -8,10 +8,18 @@
 import SwiftUI
 
 @main
-struct FPMacApp: App {
+struct FlashPadMacOSApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        .windowStyle(HiddenTitleBarWindowStyle())
+    }
+}
+
+extension NSTextField {
+    open override var focusRingType: NSFocusRingType {
+        get{.none}
+        set { }
     }
 }

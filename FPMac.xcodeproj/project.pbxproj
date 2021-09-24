@@ -14,6 +14,15 @@
 		C66932D226FE0D89004F226A /* FPMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932D126FE0D89004F226A /* FPMacTests.swift */; };
 		C66932DC26FE0D89004F226A /* FPMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932DB26FE0D89004F226A /* FPMacUITests.swift */; };
 		C66932DE26FE0D89004F226A /* FPMacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */; };
+		C66932F126FE0E81004F226A /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932F026FE0E81004F226A /* BlurView.swift */; };
+		C66932F726FE0E8C004F226A /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932F626FE0E8C004F226A /* DetailView.swift */; };
+		C66932FB26FE0E93004F226A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932FA26FE0E93004F226A /* Home.swift */; };
+		C66932FF26FE0EAD004F226A /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932FE26FE0EAD004F226A /* TabButton.swift */; };
+		C669330126FE0EB0004F226A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330026FE0EB0004F226A /* HomeView.swift */; };
+		C669330326FE0EB4004F226A /* RecentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330226FE0EB4004F226A /* RecentCardView.swift */; };
+		C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330626FE0EDF004F226A /* HomeViewModel.swift */; };
+		C669330926FE0EFB004F226A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330826FE0EFB004F226A /* Message.swift */; };
+		C669330B26FE0EFE004F226A /* RecentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330A26FE0EFE004F226A /* RecentMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +54,15 @@
 		C66932D726FE0D89004F226A /* FPMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66932DB26FE0D89004F226A /* FPMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacUITests.swift; sourceTree = "<group>"; };
 		C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C66932F026FE0E81004F226A /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		C66932F626FE0E8C004F226A /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C66932FA26FE0E93004F226A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		C66932FE26FE0EAD004F226A /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		C669330026FE0EB0004F226A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C669330226FE0EB4004F226A /* RecentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCardView.swift; sourceTree = "<group>"; };
+		C669330626FE0EDF004F226A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C669330826FE0EFB004F226A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		C669330A26FE0EFE004F226A /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +113,15 @@
 		C66932BE26FE0D87004F226A /* FPMac */ = {
 			isa = PBXGroup;
 			children = (
+				C66932FA26FE0E93004F226A /* Home.swift */,
+				C66932F626FE0E8C004F226A /* DetailView.swift */,
+				C66932F026FE0E81004F226A /* BlurView.swift */,
+				C669330026FE0EB0004F226A /* HomeView.swift */,
+				C66932FE26FE0EAD004F226A /* TabButton.swift */,
+				C669330226FE0EB4004F226A /* RecentCardView.swift */,
+				C669330626FE0EDF004F226A /* HomeViewModel.swift */,
+				C669330826FE0EFB004F226A /* Message.swift */,
+				C669330A26FE0EFE004F226A /* RecentMessage.swift */,
 				C66932BF26FE0D87004F226A /* FPMacApp.swift */,
 				C66932C126FE0D87004F226A /* ContentView.swift */,
 				C66932C326FE0D89004F226A /* Assets.xcassets */,
@@ -260,7 +287,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C66932C226FE0D87004F226A /* ContentView.swift in Sources */,
+				C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */,
+				C66932F726FE0E8C004F226A /* DetailView.swift in Sources */,
+				C66932FF26FE0EAD004F226A /* TabButton.swift in Sources */,
+				C669330126FE0EB0004F226A /* HomeView.swift in Sources */,
 				C66932C026FE0D87004F226A /* FPMacApp.swift in Sources */,
+				C669330326FE0EB4004F226A /* RecentCardView.swift in Sources */,
+				C669330926FE0EFB004F226A /* Message.swift in Sources */,
+				C669330B26FE0EFE004F226A /* RecentMessage.swift in Sources */,
+				C66932FB26FE0E93004F226A /* Home.swift in Sources */,
+				C66932F126FE0E81004F226A /* BlurView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
