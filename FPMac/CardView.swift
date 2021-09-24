@@ -245,7 +245,7 @@ struct CardView: View {
             .padding(.top, 10)
             .buttonStyle(PlainButtonStyle())
         }
-        .frame(width: 600, height: 800)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         
         
     }

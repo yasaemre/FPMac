@@ -34,7 +34,7 @@ struct PersistenceController {
     }()
 
     init(inMemory: Bool = false) {
-        container = NSPersistentContainer(name: "FPMac") // else UnsafeRawBufferPointer with negative count
+        container = NSPersistentCloudKitContainer(name: "FPMac") // else UnsafeRawBufferPointer with negative count
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
@@ -47,8 +47,8 @@ struct PersistenceController {
             }
         })
         
-//        container.viewContext.automaticallyMergesChangesFromParent = true
-//        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
         
     }
