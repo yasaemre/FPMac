@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Combine
 struct HomeView: View {
     @EnvironmentObject var homeData: HomeViewModel
     
@@ -36,7 +36,7 @@ struct HomeView: View {
            animation: .default)
        private var profileArrPersistent: FetchedResults<ProfileCore>
     @FetchRequest(
-           sortDescriptors: [NSSortDescriptor(keyPath: \DeckCore.deckName, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \DeckCore.id, ascending: false)],
            animation: .default)
        private var decksArrPersistent: FetchedResults<DeckCore>
     @StateObject var likedCore = LikedCore()
@@ -61,11 +61,21 @@ struct HomeView: View {
     @State private var avatarImage = Image("profilePhoto")
     @State private var sheetIsShowing = false
     @State private var dialogResult = "Enter a deck name"
-    
+   // private let objectWillChange = ObservableObjectPublisher()
     var body: some View {
         VStack(spacing: 30) {
             
             HStack {
+                
+                Button {
+                   // homeData.updateView()
+                } label: {
+                    Image(systemName: "icloud.and.arrow.down")
+                        .font(.title2)
+                        
+                }
+                .buttonStyle(PlainButtonStyle())
+                
                 Spacer()
                 
                 
@@ -74,7 +84,7 @@ struct HomeView: View {
                 } label: {
                     Image(systemName: "plus")
                         .font(.title2)
-                        .foregroundColor(.white)
+                        
                 }
                 .buttonStyle(PlainButtonStyle())
             }
@@ -107,6 +117,22 @@ struct HomeView: View {
                                     .onAppear {
                                         decksArrPersistent[index].numberOfCardsInDeck = Int16(decksArrPersistent[index].cardsArray.count)
                                     }
+                                    .contextMenu {
+                                        Button(action: {
+                                            // delete item in items array
+                                            withAnimation {
+                                                //            offsets.map {decksArrPersistent[$0]}.forEach(viewContext.delete)
+                                                
+                                                let deck = decksArrPersistent[index]
+                                                viewContext.delete(deck)
+                                                PersistenceController.shared.saveContext()
+                                                
+                                            }
+                                        }){
+                                            Text("Delete")
+                                        }
+                                    }
+
                                 Text("created on \(decksArrPersistent[index].deckCreatedAt ?? "")")
                                     .font(.system(size: 12.0))
                                     .foregroundColor(.gray)
@@ -117,14 +143,14 @@ struct HomeView: View {
                                     }
                             }
                         }
+                        
                      
                     }
-                    
                 }
-                .onDelete(perform: deleteDeck)
+                .onDelete(perform:deleteDeck)
+                
             }
             .listStyle(SidebarListStyle())
-            
             
           
         }
@@ -133,7 +159,9 @@ struct HomeView: View {
           }
         
     }
-    
+    private func deleteRow(at indexSet: Int) {
+            self.viewContext.delete(decksArrPersistent[indexSet])
+        }
     //Use with tap gesture or delete button
     private func deleteDeck(at offsets: IndexSet) {
         withAnimation {

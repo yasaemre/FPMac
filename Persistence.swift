@@ -29,7 +29,6 @@ struct PersistenceController {
         deckCore.deckName = "Apple"
 
         shared.saveContext()
-        
         return result
     }()
 
@@ -39,16 +38,15 @@ struct PersistenceController {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
         
-//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-//        print(urls[urls.count-1] as URL)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         
-        container.viewContext.automaticallyMergesChangesFromParent = true
-        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+            container.viewContext.automaticallyMergesChangesFromParent = true
+            container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        
 
         
     }
@@ -59,11 +57,13 @@ struct PersistenceController {
 
         if context.hasChanges {
             do {
-                try context.save()
+                    try context.save()
+                
             } catch {
                 fatalError("Error: \(error.localizedDescription)")
             }
         }
+    
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class HomeViewModel: ObservableObject {
     @Published var selectedTab = "Home"
@@ -21,4 +22,9 @@ class HomeViewModel: ObservableObject {
     @Published var isExpanded = false
     
     @Published var pickedTab = "Media"
+    
+    func updateView(){
+           self.objectWillChange.send()
+       }
+    
 }

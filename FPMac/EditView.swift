@@ -34,6 +34,7 @@ struct EditView: View {
     
     
     var body: some View {
+        
         ZStack {
             VStack{
                 
@@ -41,7 +42,6 @@ struct EditView: View {
                     
                     Text("Edit Screen")
                         .font(.title)
-                        .foregroundColor(Color.init(hex: "271D76"))
                     Spacer()
 
                     Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
@@ -139,8 +139,10 @@ struct EditView: View {
                                                     .foregroundColor(Color(.systemGray))
                                                     .offset(x: -123, y: -175)
                                                     .onTapGesture{
-                                            alertViewDeleteCard(at: IndexSet.init(integer: indexCard))
-                                        })
+                                            //alertViewDeleteCard(at: IndexSet.init(integer: indexCard))
+                                            
+                                        }
+                                        )
                                 }
                             } else {
                                 //                                if rightArrowTapped == true {
@@ -356,6 +358,7 @@ struct EditView: View {
         }), secondaryButton: .cancel(Text("Cancel"), action: {
             //same
         }))    }
+    
 }
 
 struct TextFieldClearButton: ViewModifier {
