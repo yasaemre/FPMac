@@ -41,7 +41,6 @@ struct EditView: View {
                     
                     Text("Edit Screen")
                         .font(.title)
-                        .foregroundColor(Color.init(hex: "271D76"))
                     Spacer()
 
                     Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
