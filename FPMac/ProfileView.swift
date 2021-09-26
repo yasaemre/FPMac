@@ -138,6 +138,10 @@ struct ProfileView: View {
                 Spacer()
                 
                 Button {
+                    
+                    withAnimation{
+                        isShowingCheckMark.toggle()
+                    }
                     let profileCore = ProfileCore(context:viewContext)
                     
                     if image.isEmpty {
@@ -184,9 +188,11 @@ struct ProfileView: View {
                         profileCore.location = location
                     }
                     PersistenceController.shared.saveContext()
+                    
                     showCircle = 1
                     rotateCheckMark = 0
                     checkMarkValue = 0
+                    
                     
                 } label: {
                     Text("Save")
@@ -216,16 +222,28 @@ struct ProfileView: View {
                     .transition(.asymmetric(insertion: .opacity, removal: .scale))
 
                     
-
                     
-                Image(systemName: "checkmark")
-                        .foregroundColor(Color.init(hex: "067238"))
-                    .font(.system(size: 60))
-                    .rotationEffect(.degrees(Double(rotateCheckMark)))
-                    .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
-                    .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
-                    .transition(.asymmetric(insertion: .opacity, removal: .scale))
+                    
+                    VStack {
+                        Image(systemName: "checkmark")
+                            .foregroundColor(Color.init(hex: "067238"))
+                            .font(.system(size: 60))
+                            .rotationEffect(.degrees(Double(rotateCheckMark)))
+                            .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
+                            .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
+                            .transition(.asymmetric(insertion: .opacity, removal: .scale))
+                        
+                        Text("Saved")
+                            .font(.title2)
+                            .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
+                            .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
+                            .transition(.asymmetric(insertion: .opacity, removal: .scale))
+                    }
+                    
+                  
+                    
                 }
+                
                 .onAppear(perform: setDismissTimer)
             }
     }
