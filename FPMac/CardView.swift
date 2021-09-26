@@ -21,11 +21,11 @@ struct CardView: View {
     // MARK: - Drawing Constant
     @StateObject var deckCore:DeckCore
    
-    @Binding var indexCard:Int
+    //@Binding var indexCard:Int
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
     @State var correctRate = 0.0
-
+    @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
     @Binding var correctAnswer:Int
     @Binding var falseAnswer:Int
 //    @State var isTapped = false
@@ -95,6 +95,10 @@ struct CardView: View {
                         .foregroundColor(.white)
                 }
                 .buttonStyle(PlainButtonStyle())
+                .onAppear {
+                    print("indexCard in cardView = \(indexCard)")
+                    print("deckCore.cardsArray.count = \(deckCore.cardsArray.count)")
+                }
 
             }
             .padding(.top, 20)

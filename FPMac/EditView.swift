@@ -20,8 +20,9 @@ struct EditView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     //not working on macoss userdefaults
-   // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
-    @AppStorage("indexCard") var indexCard = 0
+    @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
+   // @AppStorage("indexCard") var indexCard = 0
+    //@State var indexCard = 0
 
     @StateObject var likedCore:LikedCore
     // @State var correctAnswer = 0
@@ -139,6 +140,7 @@ struct EditView: View {
                                         .overlay(
                                             
                                         Button {
+                                            print("idx card; \(indexCard)")
                                             deleteCard(at: IndexSet.init(integer: indexCard))
                                         } label: {
                                             Image(systemName: "trash")
@@ -159,6 +161,7 @@ struct EditView: View {
                                     .overlay(
                                         
                                     Button {
+                                        print("idx card; \(indexCard)")
                                         deleteCard(at: IndexSet.init(integer: indexCard))
                                     } label: {
                                         Image(systemName: "trash")
@@ -181,6 +184,7 @@ struct EditView: View {
                                         .overlay(
                                             
                                         Button {
+                                            print("idx card; \(indexCard)")
                                             deleteCard(at: IndexSet.init(integer: index))
                                         } label: {
                                             Image(systemName: "trash")
@@ -203,6 +207,7 @@ struct EditView: View {
                                         .overlay(
                                             
                                         Button {
+                                            print("idx card; \(indexCard)")
                                             deleteCard(at: IndexSet.init(integer: index))
                                         } label: {
                                             Image(systemName: "trash")
@@ -269,6 +274,7 @@ struct EditView: View {
                     
                     Button {
                         //
+                        print("index card in right arrow \(indexCard)")
                         if indexCard
                             != deckCore.cardsArray.count-1, !deckCore.cardsArray.isEmpty {
                             indexCard += 1
@@ -317,6 +323,27 @@ struct EditView: View {
         }
         
     }
+    
+    //Use with tap gesture or delete button
+    private func deleteCard(at offsets: IndexSet) {
+        withAnimation {
+            
+            for index in offsets {
+                let card = deckCore.cardsArray[index]
+                if indexCard == 0 {
+                    viewContext.delete(card)
+                    PersistenceController.shared.saveContext()
+                } else {
+                    indexCard -= 1
+                    viewContext.delete(card)
+                    PersistenceController.shared.saveContext()
+                }
+                
+            }
+
+        }
+    }
+    
     func setDismissTimer() {
       let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
         withAnimation(.easeInOut(duration: 2)) {
@@ -353,27 +380,17 @@ struct EditView: View {
         
     }
     
-    //Use with tap gesture or delete button
-    private func deleteCard(at offsets: IndexSet) {
-        withAnimation {
-            
-            for index in offsets {
-                let card = deckCore.cardsArray[index]
-                viewContext.delete(card)
-                PersistenceController.shared.saveContext()
-            }
-        }
-    }
-    
-    func alertViewDeleteCard(at index: IndexSet) {
-        Alert(title: Text("Delete Card"),
-               message: Text("Do you want to delete this card?"),
-               primaryButton: .default(Text("Delete"), action: {
-                deleteCard(at: index)
 
-        }), secondaryButton: .cancel(Text("Cancel"), action: {
-            //same
-        }))    }
+//
+//    func alertViewDeleteCard(at index: IndexSet) {
+//        Alert(title: Text("Delete Card"),
+//               message: Text("Do you want to delete this card?"),
+//               primaryButton: .default(Text("Delete"), action: {
+//                deleteCard(at: index)
+//
+//        }), secondaryButton: .cancel(Text("Cancel"), action: {
+//            //same
+//        }))    }
 }
 
 struct TextFieldClearButton: ViewModifier {

@@ -18,8 +18,8 @@ struct StudyScreenView: View {
         // MARK: - Drawing Constant
     @StateObject var deckCore:DeckCore
     @State var card:Card
-    @State var indexCard = 0
-    
+   // @State var indexCard = 0
+    @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
     @State var correctAnswer = 0
     
     @State var resetBg = false
@@ -32,10 +32,13 @@ struct StudyScreenView: View {
         
         ZStack(alignment: .top){
             ForEach(deckCore.cardsArray.reversed()) { cardCore in
-                CardView(cardCore: cardCore, card: card, deckCore: deckCore, indexCard: $indexCard, correctAnswer: $correctAnswer,  falseAnswer: $falseAnswer, resetBg: $resetBg)
+                CardView(cardCore: cardCore, card: card, deckCore: deckCore, correctAnswer: $correctAnswer,  falseAnswer: $falseAnswer, resetBg: $resetBg)
                     
             }
             .onAppear {
+                print("indexCard in cardView = \(indexCard)")
+                print("deckCore.cardsArray.count = \(deckCore.cardsArray.count)")
+                
                 indexCard = deckCore.cardsArray.count-1
     
             }
