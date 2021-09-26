@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @State private var image = Data()
     @State private var name = ""
     @State private var lastName = ""
     @State private var age = ""
@@ -138,7 +139,15 @@ struct ProfileView: View {
                 
                 Button {
                     let profileCore = ProfileCore(context:viewContext)
-        
+                    
+                    if image.isEmpty {
+                        if let img = profileArrPersistent.last?.image {
+                            profileCore.image = img
+                        }
+                    } else {
+                        profileCore.image = image
+
+                    }
                     if name.isEmpty {
                         if let name = profileArrPersistent.last?.name {
                             profileCore.name = name
