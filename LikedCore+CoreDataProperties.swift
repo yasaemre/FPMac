@@ -25,7 +25,7 @@ extension LikedCore {
     @NSManaged public var id: Int16
     @NSManaged public var offset: Float
     @NSManaged public var liked: NSSet?
-    
+  
     
     public var unwrappedImage:String {
         imageName ?? "cardBackg"

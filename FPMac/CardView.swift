@@ -51,7 +51,6 @@ struct CardView: View {
                 Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
                     Image(systemName: "arrowshape.turn.up.backward")
                         .font(.largeTitle)
-                        .foregroundColor(Color.init(hex: "271D76"))
                         .frame(width: 90, height: 40)
 //                        .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "271D76"), Color.init(hex: "271D76")]),  center: .center, startRadius: 5, endRadius: 120))
 //                        .clipShape(Capsule())

@@ -60,12 +60,13 @@ struct HomeView: View {
     @State private var avatarImageData:Data? = Data()
     @State private var avatarImage = Image("profilePhoto")
     @State private var sheetIsShowing = false
-    @State private var dialogResult = "Enter a deck name"
-    
+    @State private var dialogResult = ""
+    //@State private var selection = ""
     var body: some View {
         VStack(spacing: 30) {
             
             HStack {
+               
                 Spacer()
                 
                 
@@ -73,8 +74,7 @@ struct HomeView: View {
                     sheetIsShowing.toggle()
                 } label: {
                     Image(systemName: "plus")
-                        .font(.title2)
-                        .foregroundColor(.white)
+                        .font(.title)
                 }
                 .buttonStyle(PlainButtonStyle())
             }
@@ -83,8 +83,11 @@ struct HomeView: View {
                 print("\(decksArrPersistent.count)")
             }
             
-            List(selection: $homeData.selectedRecentMsg) {
+    
+            
+            List(selection:$homeData.selectedRecentMsg) {
                 ForEach(0..<decksArrPersistent.count, id: \.self) { index in
+                
                     NavigationLink(destination: EditScrnView(card: card, deckCore: decksArrPersistent[index], likedCore: likedCore)){
 
                         HStack(spacing: 10) {
@@ -94,6 +97,7 @@ struct HomeView: View {
                                         .frame(width: 40, height: 60)
                                         .clipShape(Rectangle())
                                         .cornerRadius(10)
+                            
 
                             
                             VStack(spacing: 3) {
@@ -101,6 +105,7 @@ struct HomeView: View {
                                 Text(decksArrPersistent[index].unwrappedDeckName)
                                     .font(.title).bold()
                                     .foregroundColor(.black)
+                                
                                 Text("\(decksArrPersistent[index].numberOfCardsInDeck) cards")
                                     .font(.title2)
                                     .foregroundColor(.gray)
@@ -116,14 +121,30 @@ struct HomeView: View {
                                         print("\(decksArrPersistent[index].numberOfCardsInDeck) cards")
                                     }
                             }
+                            
+                            Spacer()
+                            Button {
+                                    deleteDeck(at: IndexSet.init(integer: index))
+                            } label: {
+                                Image(systemName: "trash")
+                                    .font(.title)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+
                         }
                      
                     }
                     
-                }
-                .onDelete(perform: deleteDeck)
+               }
+//                .onDelete(perform: onDelete)
             }
             .listStyle(SidebarListStyle())
+            
+//            .onDeleteCommand {
+//                if let sel = self.selection, let idx = self.decksArrPersistent.firstIndex(where: selection) {
+//                           print("delete item: \(sel)")
+//                           self.viewContext.delete(decksArrPersistent[idx])
+//                       }
             
             
           
@@ -131,8 +152,11 @@ struct HomeView: View {
         .sheet(isPresented: $sheetIsShowing) {
               SheetView(isVisible: self.$sheetIsShowing, enteredText: self.$dialogResult)
           }
+       
         
     }
+
+    
     
     //Use with tap gesture or delete button
     private func deleteDeck(at offsets: IndexSet) {
@@ -140,33 +164,13 @@ struct HomeView: View {
 //            offsets.map {decksArrPersistent[$0]}.forEach(viewContext.delete)
             for index in offsets {
                 let deck = decksArrPersistent[index]
+                
                 viewContext.delete(deck)
                 PersistenceController.shared.saveContext()
             }
         }
     }
 
-    func alertViewDeleteDeck(at index: IndexSet) {
-        Alert(title: Text("Delete Deck"),
-               message: Text("Do you want to delete this deck?"),
-               primaryButton: .default(Text("Delete"), action: {
-                deleteDeck(at: index)
-
-        }), secondaryButton: .cancel(Text("Cancel"), action: {
-            //same
-        }))    }
-    func getColor(image: String) -> Color {
-        switch image {
-        case "home":
-            return Color.yellow
-        case "donate":
-            return Color.black
-        case "liked":
-            return Color.green
-        default:
-            return Color.blue
-        }
-    }
 }
 
 struct CustomShape:Shape {

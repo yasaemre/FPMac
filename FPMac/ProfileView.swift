@@ -24,15 +24,22 @@ struct ProfileView: View {
     
     @StateObject var profileCore = ProfileCore()
     @State private var index = 0
+    
+    @State private var rotateCheckMark = 30
+    @State private var checkMarkValue = -60
+    
+    @State private var showCircle = 0
+    
+    @State private var isShowingCheckMark = false
+
 
     var body: some View {
-
+        ZStack {
         VStack(spacing: 30) {
             Spacer()
             Group {
                 HStack(spacing:10) {
                     Text("Name: ")
-                        .foregroundColor(Color.init(hex: "1130C1"))
                         .font(.title)
                     VStack {
                         if let name =  profileArrPersistent.last?.name {
@@ -52,7 +59,6 @@ struct ProfileView: View {
                 
                 HStack(spacing:10) {
                     Text("Last Name: ")
-                        .foregroundColor(Color.init(hex: "1130C1"))
                         .font(.title)
                     VStack {
                         if let lname =  profileArrPersistent.last?.lastName {
@@ -71,7 +77,6 @@ struct ProfileView: View {
                 
                 HStack(spacing:10){
                     Text("Age: ")
-                        .foregroundColor(Color.init(hex: "1130C1"))
                         .font(.title)
                     VStack {
                         if let age =  profileArrPersistent.last?.age {
@@ -93,7 +98,6 @@ struct ProfileView: View {
 
                 HStack(spacing:10) {
                     Text("Sex: ")
-                        .foregroundColor(Color.init(hex: "1130C1"))
                         .font(.title)
                     VStack {
                         if let sex =  profileArrPersistent.last?.sex {
@@ -111,7 +115,6 @@ struct ProfileView: View {
 
                 HStack(spacing:10) {
                     Text("Location: ")
-                        .foregroundColor(Color.init(hex: "1130C1"))
                         .font(.title)
 
                     VStack {
@@ -172,6 +175,9 @@ struct ProfileView: View {
                         profileCore.location = location
                     }
                     PersistenceController.shared.saveContext()
+                    showCircle = 1
+                    rotateCheckMark = 0
+                    checkMarkValue = 0
                     
                 } label: {
                     Text("Save")
@@ -190,8 +196,42 @@ struct ProfileView: View {
             Spacer()
         
         }
+            if isShowingCheckMark {
+                ZStack {
+                Circle()
+                    .frame(width: 110, height: 110, alignment: .center)
+                    .foregroundColor(.white)
+                    .opacity(0.5)
+                    .scaleEffect(CGFloat(showCircle))
+                    .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.5))
+                    .transition(.asymmetric(insertion: .opacity, removal: .scale))
 
+                    
 
+                    
+                Image(systemName: "checkmark")
+                        .foregroundColor(Color.init(hex: "067238"))
+                    .font(.system(size: 60))
+                    .rotationEffect(.degrees(Double(rotateCheckMark)))
+                    .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
+                    .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
+                    .transition(.asymmetric(insertion: .opacity, removal: .scale))
+                }
+                .onAppear(perform: setDismissTimer)
+            }
+    }
+        
+    }
+    
+    func setDismissTimer() {
+      let timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
+        withAnimation(.easeInOut(duration: 2)) {
+          self.isShowingCheckMark = false
+        }
+        timer.invalidate()
+      }
+      RunLoop.current.add(timer, forMode:RunLoop.Mode.default)
+        
     }
 }
 

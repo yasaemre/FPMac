@@ -19,7 +19,10 @@ struct EditView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @Environment(\.managedObjectContext) private var viewContext
-    @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
+    //not working on macoss userdefaults
+   // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
+    @AppStorage("indexCard") var indexCard = 0
+
     @StateObject var likedCore:LikedCore
     // @State var correctAnswer = 0
     @State private var rotateCheckMark = 30
@@ -133,13 +136,18 @@ struct EditView: View {
                                     Text(deckCore.cardsArray[indexCard].unwrappedWord)
                                         .font(.custom("HelveticaNeue", size: 40))
                                         .foregroundColor(.white)
-                                        .overlay(Image(systemName: "minus.circle.fill")
-                                                    .font(.title)
-                                                    .foregroundColor(Color(.systemGray))
-                                                    .offset(x: -123, y: -175)
-                                                    .onTapGesture{
-                                            alertViewDeleteCard(at: IndexSet.init(integer: indexCard))
-                                        })
+                                        .overlay(
+                                            
+                                        Button {
+                                            deleteCard(at: IndexSet.init(integer: indexCard))
+                                        } label: {
+                                            Image(systemName: "trash")
+                                                .font(.title)
+                                        }
+                                            .buttonStyle(PlainButtonStyle())
+                                            .offset(x: -123, y: -175)
+                                        
+                                        )
                                 }
                             } else {
                                 //                                if rightArrowTapped == true {
@@ -148,15 +156,18 @@ struct EditView: View {
                                 Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
                                     .font(.custom("HelveticaNeue", size: 40))
                                     .foregroundColor(.white)
-                                    .overlay(Image(systemName: "minus.circle.fill")
-                                                .font(.title)
-                                                .foregroundColor(Color(.systemGray))
-                                                .offset(x: -123, y: -175)
-                                                .onTapGesture{
-                                        //deleteDeck(at: IndexSet.init(integer: index))
-                                        alertViewDeleteCard(at: IndexSet.init(integer: indexCard))
-                                    })
-                                //}
+                                    .overlay(
+                                        
+                                    Button {
+                                        deleteCard(at: IndexSet.init(integer: indexCard))
+                                    } label: {
+                                        Image(systemName: "trash")
+                                            .font(.title)
+                                    }
+                                        .buttonStyle(PlainButtonStyle())
+                                        .offset(x: -123, y: -175)
+                                    
+                                    )
                             }
                         } else {
                             ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
@@ -167,14 +178,18 @@ struct EditView: View {
                                     Text(deckCore.cardsArray[index].unwrappedWord)
                                         .font(.custom("HelveticaNeue", size: 40))
                                         .foregroundColor(.white)
-                                        .overlay(Image(systemName: "minus.circle.fill")
-                                                    .font(.title)
-                                                    .foregroundColor(Color(.systemGray))
-                                                    .offset(x: -123, y: -175)
-                                                    .onTapGesture{
-                                            //deleteDeck(at: IndexSet.init(integer: index))
-                                            alertViewDeleteCard(at: IndexSet.init(integer: index))
-                                        })
+                                        .overlay(
+                                            
+                                        Button {
+                                            deleteCard(at: IndexSet.init(integer: index))
+                                        } label: {
+                                            Image(systemName: "trash")
+                                                .font(.title)
+                                        }
+                                            .buttonStyle(PlainButtonStyle())
+                                            .offset(x: -123, y: -175)
+                                        
+                                        )
                                     
                                     
                                     //}
@@ -185,14 +200,18 @@ struct EditView: View {
                                     Text(deckCore.cardsArray[index].unwrappedDefinition)
                                         .font(.custom("HelveticaNeue", size: 40))
                                         .foregroundColor(.white)
-                                        .overlay(Image(systemName: "minus.circle.fill")
-                                                    .font(.title)
-                                                    .foregroundColor(Color(.systemGray))
-                                                    .offset(x: -123, y: -175)
-                                                    .onTapGesture{
-                                            //deleteDeck(at: IndexSet.init(integer: index))
-                                            alertViewDeleteCard(at: IndexSet.init(integer: index))
-                                        })
+                                        .overlay(
+                                            
+                                        Button {
+                                            deleteCard(at: IndexSet.init(integer: index))
+                                        } label: {
+                                            Image(systemName: "trash")
+                                                .font(.title)
+                                        }
+                                            .buttonStyle(PlainButtonStyle())
+                                            .offset(x: -123, y: -175)
+                                        
+                                        )
                                     //}
                                 }
                                 
