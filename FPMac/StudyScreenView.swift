@@ -19,6 +19,7 @@ struct StudyScreenView: View {
     @StateObject var deckCore:DeckCore
     @State var card:Card
     @State var indexCard = 0
+    
     @State var correctAnswer = 0
     
     @State var resetBg = false
@@ -47,6 +48,7 @@ struct StudyScreenView: View {
             print("deckCore.correctRate \(deckCore.correctRate)")
             //correctA = 0
             UserDefaults.standard.set(0.0, forKey: "correctA")
+            
 
         }
         
