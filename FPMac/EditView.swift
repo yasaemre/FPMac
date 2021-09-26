@@ -36,7 +36,7 @@ struct EditView: View {
     @EnvironmentObject var homeData: HomeViewModel
 
     
-    
+    @State var deleteButtonClicked = false
     var body: some View {
         ZStack {
             VStack{
@@ -147,7 +147,7 @@ struct EditView: View {
                                                 .font(.title)
                                         }
                                             .buttonStyle(PlainButtonStyle())
-                                            .offset(x: -123, y: -175)
+                                            .offset(x: -130, y: -183)
                                         
                                         )
                                 }
@@ -168,8 +168,8 @@ struct EditView: View {
                                             .font(.title)
                                     }
                                         .buttonStyle(PlainButtonStyle())
-                                        .offset(x: -123, y: -175)
-                                    
+                                        .offset(x: -130, y: -183)
+
                                     )
                             }
                         } else {
@@ -191,8 +191,8 @@ struct EditView: View {
                                                 .font(.title)
                                         }
                                             .buttonStyle(PlainButtonStyle())
-                                            .offset(x: -123, y: -175)
-                                        
+                                            .offset(x: -130, y: -183)
+
                                         )
                                     
                                     
@@ -214,8 +214,8 @@ struct EditView: View {
                                                 .font(.title)
                                         }
                                             .buttonStyle(PlainButtonStyle())
-                                            .offset(x: -123, y: -175)
-                                        
+                                            .offset(x: -130, y: -183)
+
                                         )
                                     //}
                                 }
@@ -315,7 +315,7 @@ struct EditView: View {
             }
 
             
-            StudyScreenView(deckCore: deckCore, card: card)
+            StudyScreenView(deckCore: deckCore, card: card, deleteButtonClicked: $deleteButtonClicked)
                 .background(BlurView())
                 .frame(width: homeData.isExpanded ? nil : 0)
                 .opacity(homeData.isExpanded ? 1 : 0)
@@ -330,7 +330,9 @@ struct EditView: View {
             
             for index in offsets {
                 let card = deckCore.cardsArray[index]
-                if indexCard == 0 {
+                if deleteButtonClicked {
+                    indexCard = 0
+                } else if indexCard == 0 {
                     viewContext.delete(card)
                     PersistenceController.shared.saveContext()
                 } else {

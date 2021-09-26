@@ -25,7 +25,7 @@ struct StudyScreenView: View {
     @State var resetBg = false
     @State var correctRate = 0.0
     @State var falseAnswer = 0
- 
+    @Binding var deleteButtonClicked:Bool
     @State var correctA = UserDefaults.standard.double(forKey: "correctA")
 
     var body: some View {
@@ -39,8 +39,11 @@ struct StudyScreenView: View {
                 print("indexCard in cardView = \(indexCard)")
                 print("deckCore.cardsArray.count = \(deckCore.cardsArray.count)")
                 
+                if deleteButtonClicked {
+                    indexCard = 0
+                } else {
                 indexCard = deckCore.cardsArray.count-1
-    
+                }
             }
             
             
