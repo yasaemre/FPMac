@@ -25,7 +25,8 @@ struct CardView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
     @State var correctRate = 0.0
-    @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
+        // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
+    @Binding var indexCard:Int
     @Binding var correctAnswer:Int
     @Binding var falseAnswer:Int
 //    @State var isTapped = false
@@ -84,7 +85,6 @@ struct CardView: View {
                 Button {
                     withAnimation {
                         flip = true
-                        //saveContext()
                     }
                 } label: {
                     Text("Meaning")
@@ -109,13 +109,6 @@ struct CardView: View {
                     .frame(width: 250, height: 350)
                     .clipped()
                     .cornerRadius(12)
-                
-                
-                
-                
-                
-                //ForEach(0..<deckCore.cardsArray.count) { index in
-                
                 if deckCore.cardsArray.count > 0 {
                     if flip == false {
                         
@@ -125,9 +118,11 @@ struct CardView: View {
                                 .foregroundColor(.white)
                         }
                         .onAppear {
-                            print("indexCard in cardView : \(indexCard)")
-                            print("deckCore.cardsArray.count in cardView : \(deckCore.cardsArray.count)")
+                            print("flip of word in cardView : \(flip)")
+                            print("indexCard of word in cardView : \(indexCard)")
+                            print("deckCore.cardsArray.count word in cardView : \(deckCore.cardsArray.count)")
                         }
+                        
                         
                         
                         
@@ -137,11 +132,18 @@ struct CardView: View {
                             Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
                                 .font(.custom("HelveticaNeue", size: 40))
                                 .foregroundColor(.white)
+                                .onAppear {
+                                    print("flip of def in cardView : \(flip)")
+                                    print("indexCard def in cardView : \(indexCard)")
+                                    print("deckCore.cardsArray.count def in cardView : \(deckCore.cardsArray.count)")
+                                }
                         }
                         
                         
                     }
+                    
                 }
+
                 HStack {
                     Image("correct")
                         .resizable()
@@ -211,17 +213,11 @@ struct CardView: View {
                         
                     }
                     
-                    
-                    
                 }
-                
-
-                
-            }
+                    }
             )
             
-            
-            
+
             Text("\(indexCard+1) of \(deckCore.cardsArray.count)")
                 .font(.title2)
                 .padding(.top, 10)
