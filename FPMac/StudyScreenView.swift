@@ -19,7 +19,9 @@ struct StudyScreenView: View {
     @StateObject var deckCore:DeckCore
     @State var card:Card
    // @State var indexCard = 0
-    @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
+    //
+   // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
+    @State var indexCard = 0
     @State var correctAnswer = 0
     
     @State var resetBg = false
