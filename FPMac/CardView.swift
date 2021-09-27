@@ -116,13 +116,17 @@ struct CardView: View {
                 
                 //ForEach(0..<deckCore.cardsArray.count) { index in
                 
-                if deckCore.cardsArray.count >= 0 {
+                if deckCore.cardsArray.count > 0 {
                     if flip == false {
                         
                         ZStack {
                             Text(deckCore.cardsArray[indexCard].unwrappedWord)
                                 .font(.custom("HelveticaNeue", size: 40))
                                 .foregroundColor(.white)
+                        }
+                        .onAppear {
+                            print("indexCard in cardView : \(indexCard)")
+                            print("deckCore.cardsArray.count in cardView : \(deckCore.cardsArray.count)")
                         }
                         
                         

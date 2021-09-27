@@ -35,10 +35,11 @@ struct StudyScreenView: View {
                     
             }
             .onAppear {
-                print("indexCard in cardView = \(indexCard)")
-                print("deckCore.cardsArray.count = \(deckCore.cardsArray.count)")
+                print("indexCard in studyScreen = \(indexCard)")
+                print("deckCore.cardsArray.count in studyScreen = \(deckCore.cardsArray.count)")
                 
             
+               
                 indexCard = deckCore.cardsArray.count-1
                 
             }
