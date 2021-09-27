@@ -36,7 +36,6 @@ struct EditView: View {
     @EnvironmentObject var homeData: HomeViewModel
 
     
-    @State var deleteButtonClicked = false
     var body: some View {
         ZStack {
             VStack{
@@ -315,7 +314,7 @@ struct EditView: View {
             }
 
             
-            StudyScreenView(deckCore: deckCore, card: card, deleteButtonClicked: $deleteButtonClicked)
+            StudyScreenView(deckCore: deckCore, card: card)
                 .background(BlurView())
                 .frame(width: homeData.isExpanded ? nil : 0)
                 .opacity(homeData.isExpanded ? 1 : 0)
@@ -330,9 +329,7 @@ struct EditView: View {
             
             for index in offsets {
                 let card = deckCore.cardsArray[index]
-                if deleteButtonClicked {
-                    indexCard = 0
-                } else if indexCard == 0 {
+                 if indexCard == 0 {
                     viewContext.delete(card)
                     PersistenceController.shared.saveContext()
                 } else {

@@ -22,7 +22,6 @@ struct HomeView: View {
     @State var dark = false
     @State var show = false
     //@State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
-    @Binding var deleteButtonClicked:Bool
     @Environment(\.colorScheme) var colorScheme
     @State var deck = Deck()
     @State var card = Card()
@@ -172,7 +171,6 @@ struct HomeView: View {
                 viewContext.delete(deck)
                 PersistenceController.shared.saveContext()
                 //indexCard = 0
-                deleteButtonClicked.toggle()
             }
         }
     }

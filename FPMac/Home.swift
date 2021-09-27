@@ -18,7 +18,6 @@ struct Home: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \ProfileCore.id, ascending: true)],
            animation: .default)
        private var profileArrPersistent: FetchedResults<ProfileCore>
-    @State var deleteButtonClicked = false
 
     var body: some View {
         HStack(spacing: 0) {
@@ -56,7 +55,7 @@ struct Home: View {
             
             ZStack {
                 switch homeData.selectedTab {
-                case "Home": NavigationView{ HomeView(deleteButtonClicked: $deleteButtonClicked, deckCreatedAt: $deckCreatedAt, numOfCardsInDeck: $numOfCardsInDeck)}
+                case "Home": NavigationView{ HomeView(deckCreatedAt: $deckCreatedAt, numOfCardsInDeck: $numOfCardsInDeck)}
                 case "Scoreboard": NavigationView { ScoreboardView(moc: viewContext)}
                 case "Liked Cards": NavigationView { LikedCardView()}
                 case "Instructions": NavigationView {IntsructionsView()}
