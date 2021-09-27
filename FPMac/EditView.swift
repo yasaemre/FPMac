@@ -120,6 +120,11 @@ struct EditView: View {
                         .frame(width: 250, height: 145, alignment: .center)
                         //.textFieldStyle(.roundedBorder)
                         .modifier(TextFieldClearButton(text: $card.definition))
+                        .onAppear {
+                            print("indexCard in editView before roundedRect shows up: \(indexCard)")
+                            print("deckCore.cardsArray.count before roundedRect shows up: \(deckCore.cardsArray.count)")
+                        
+                        }
                 }
                 
                 RoundedRectangle(cornerRadius: 10)
@@ -139,7 +144,7 @@ struct EditView: View {
                                         .overlay(
                                             
                                         Button {
-                                            print("idx card in editView \(indexCard)")
+                                            print("indexCard in editView \(indexCard)")
                                             deleteCard(at: IndexSet.init(integer: indexCard))
                                         } label: {
                                             Image(systemName: "trash")
@@ -149,6 +154,7 @@ struct EditView: View {
                                             .offset(x: -130, y: -183)
                                         
                                         )
+                                    
                                 }
                             } else {
                                 //                                if rightArrowTapped == true {
@@ -157,6 +163,10 @@ struct EditView: View {
                                 Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
                                     .font(.custom("HelveticaNeue", size: 40))
                                     .foregroundColor(.white)
+                                    .onAppear(perform: {
+                                        print("idx card in editView on meaning editView \(indexCard)")
+
+                                    })
                                     .overlay(
                                         
                                     Button {
@@ -172,59 +182,59 @@ struct EditView: View {
                                     )
                             }
                         }
-//                            else {
-//                            ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
-//                                if flip == false {
-//                                    //                                if rightArrowTapped == true {
-//                                    //                                    Text("")
-//                                    //                                } else {
-//                                    Text(deckCore.cardsArray[index].unwrappedWord)
-//                                        .font(.custom("HelveticaNeue", size: 40))
-//                                        .foregroundColor(.white)
-//                                        .overlay(
-//
-//                                        Button {
-//                                            print("idx card; \(indexCard)")
-//                                            deleteCard(at: IndexSet.init(integer: index))
-//                                        } label: {
-//                                            Image(systemName: "trash")
-//                                                .font(.title)
-//                                        }
-//                                            .buttonStyle(PlainButtonStyle())
-//                                            .offset(x: -130, y: -183)
-//
-//                                        )
-//
-//
-//                                    //}
-//                                } else {
-//                                    //                                if rightArrowTapped == true {
-//                                    //                                    Text("")
-//                                    //                                } else {
-//                                    Text(deckCore.cardsArray[index].unwrappedDefinition)
-//                                        .font(.custom("HelveticaNeue", size: 40))
-//                                        .foregroundColor(.white)
-//                                        .overlay(
-//
-//                                        Button {
-//                                            print("idx card; \(indexCard)")
-//                                            deleteCard(at: IndexSet.init(integer: index))
-//                                        } label: {
-//                                            Image(systemName: "trash")
-//                                                .font(.title)
-//                                        }
-//                                            .buttonStyle(PlainButtonStyle())
-//                                            .offset(x: -130, y: -183)
-//
-//                                        )
-//                                    //}
-//                                }
-//
-//
-//
-//
-//                            }
-//                        }
+                            else {
+                            ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
+                                if flip == false {
+                                    //                                if rightArrowTapped == true {
+                                    //                                    Text("")
+                                    //                                } else {
+                                    Text(deckCore.cardsArray[index].unwrappedWord)
+                                        .font(.custom("HelveticaNeue", size: 40))
+                                        .foregroundColor(.white)
+                                        .overlay(
+
+                                        Button {
+                                            print("idx card; \(indexCard)")
+                                            deleteCard(at: IndexSet.init(integer: index))
+                                        } label: {
+                                            Image(systemName: "trash")
+                                                .font(.title)
+                                        }
+                                            .buttonStyle(PlainButtonStyle())
+                                            .offset(x: -130, y: -183)
+
+                                        )
+
+
+                                    //}
+                                } else {
+                                    //                                if rightArrowTapped == true {
+                                    //                                    Text("")
+                                    //                                } else {
+                                    Text(deckCore.cardsArray[index].unwrappedDefinition)
+                                        .font(.custom("HelveticaNeue", size: 40))
+                                        .foregroundColor(.white)
+                                        .overlay(
+
+                                        Button {
+                                            print("idx card; \(indexCard)")
+                                            deleteCard(at: IndexSet.init(integer: index))
+                                        } label: {
+                                            Image(systemName: "trash")
+                                                .font(.title)
+                                        }
+                                            .buttonStyle(PlainButtonStyle())
+                                            .offset(x: -130, y: -183)
+
+                                        )
+                                    //}
+                                }
+
+
+
+
+                            }
+                        }
                         
                         
                     }
@@ -232,6 +242,7 @@ struct EditView: View {
                     )
                     .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
                     .padding(.top, 5)
+                    
                 
                 
                 Text("\(indexCard+1) of \(deckCore.cardsArray.count)")
@@ -331,7 +342,6 @@ struct EditView: View {
             for index in offsets {
                 let card = deckCore.cardsArray[index]
                  if indexCard == 0 {
-                     indexCard -= 1
                     viewContext.delete(card)
                     PersistenceController.shared.saveContext()
                 } else {
