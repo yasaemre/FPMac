@@ -14,28 +14,34 @@ struct EditScrnView: View {
     @StateObject var deckCore = DeckCore()
     //@State var cardCore: CardCore
     //@State var cardCore: CardCore
-    @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \DeckCore.deckName, ascending: true)],
-        animation: .default)
-    private var decksArrPersistent: FetchedResults<DeckCore>
+   // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
+    @AppStorage("indexCard") var indexCard = 0
+
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \DeckCore.deckCreatedAt, ascending: false)],
+//        animation: .default)
+//    private var decksArrPersistent: FetchedResults<DeckCore>
     @StateObject var likedCore:LikedCore
 
     var body: some View {
         ZStack(){
             EditView(card: card, deckCore: deckCore, likedCore: likedCore)
-                //.navigationBarHidden(true)
-            //navigationBarHidden work on real device iPhone x, but not in simulator for now keep it in active.
-
+                .onAppear(perform: {
+                
+                     if deckCore.cardsArray.isEmpty {
+                        indexCard = deckCore.cardsArray.count
+                     }
+                    else if indexCard == 0 {
+                        indexCard = 0
+                    }
+                    else {
+                        indexCard = deckCore.cardsArray.count-1
+                    }
+                    print("Index in EditScrnView: \(indexCard)")
+                })
         }
-        .onAppear(perform: {
-            if deckCore.cardsArray.isEmpty {
-                indexCard = deckCore.cardsArray.count
-            } else {
-                indexCard = deckCore.cardsArray.count-1
-            }
-            print("Index in EditScrnView: \(indexCard)")
-        })
+      
+     
         .zIndex(1.0)
         
         

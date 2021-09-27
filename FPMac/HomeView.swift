@@ -36,7 +36,7 @@ struct HomeView: View {
            animation: .default)
        private var profileArrPersistent: FetchedResults<ProfileCore>
     @FetchRequest(
-           sortDescriptors: [NSSortDescriptor(keyPath: \DeckCore.deckName, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \DeckCore.deckCreatedAt, ascending: false)],
            animation: .default)
        private var decksArrPersistent: FetchedResults<DeckCore>
     @StateObject var likedCore = LikedCore()
