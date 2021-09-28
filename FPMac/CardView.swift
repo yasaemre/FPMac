@@ -13,10 +13,11 @@ import Foundation
 struct CardView: View {
     @State var cardCore: CardCore
     @State var card: Card
-    @State var flipped = false
-    @State var flip = false
+//    @State var flipped = false
+//    @State var flip = false
     @State var rightArrowTapped = false
-    
+    @Binding var flipped:Bool
+    @Binding var flip: Bool
     // @State var card: Card
     // MARK: - Drawing Constant
     @StateObject var deckCore:DeckCore
@@ -103,12 +104,13 @@ struct CardView: View {
             }
             .padding(.top, 20)
             
-            ZStack(alignment: .center) {
+            ZStack(alignment:.center) {
                 Image("cardBackg")
                     .resizable()
                     .frame(width: 250, height: 350)
                     .clipped()
                     .cornerRadius(12)
+
                 if deckCore.cardsArray.count > 0 {
                     if flip == false {
 
@@ -186,7 +188,7 @@ struct CardView: View {
                         //self.animationActivated = false
 
                     case let x where x > 100:
-                        card.x = 1000; card.degree = 999
+                        card.x = 1000; card.degree = 12
                         correctAnswer += 1
                         correctA += 1
                         if  indexCard > 0 {
@@ -198,7 +200,7 @@ struct CardView: View {
                     case (-100)...(-1):
                         card.x = 0; card.degree = 0; card.y = 0
                     case let x where x < -100:
-                        card.x  = -1000; card.degree = -99
+                        card.x  = -1000; card.degree = -12
                         falseAnswer += 1
                         if  indexCard > 0 {
                             indexCard -= 1

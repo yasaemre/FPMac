@@ -17,11 +17,6 @@ struct EditScrnView: View {
    // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
     //@AppStorage("indexCard") var indexCard = 0
     @State var indexCard = 0
-
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \DeckCore.deckCreatedAt, ascending: false)],
-//        animation: .default)
-//    private var decksArrPersistent: FetchedResults<DeckCore>
     @StateObject var likedCore:LikedCore
 
     var body: some View {
@@ -39,6 +34,7 @@ struct EditScrnView: View {
                     print("Index in EditScrnView: \(indexCard)")
                 })
         }
+        
       
      
         .zIndex(1.0)

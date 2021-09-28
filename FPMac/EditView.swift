@@ -35,6 +35,7 @@ struct EditView: View {
 
     @EnvironmentObject var homeData: HomeViewModel
     @Binding var indexCard:Int
+    
 
     
     var body: some View {
@@ -58,6 +59,14 @@ struct EditView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                     
+//                    NavigationLink(destination: StudyScreenView(deckCore: deckCore, card: card, indexCard: $indexCard)
+                   //                                    .background(BlurView())
+                   //                                    .frame(width: homeData.isExpanded ? nil : 0)
+                   //                                    .opacity(homeData.isExpanded ? 1 : 0)) {
+                   //                        Text("Study")
+                   //                    }
+                   //                    .buttonStyle(PlainButtonStyle())
+
 
 
                 }
@@ -155,6 +164,9 @@ struct EditView: View {
                                             .offset(x: -130, y: -183)
                                         
                                         )
+                                        .onAppear {
+                                            print("")
+                                        }
                                     
                                 }
                             } else {
@@ -331,6 +343,7 @@ struct EditView: View {
                 .background(BlurView())
                 .frame(width: homeData.isExpanded ? nil : 0)
                 .opacity(homeData.isExpanded ? 1 : 0)
+
             
         }
         
