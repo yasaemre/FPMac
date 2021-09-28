@@ -13,8 +13,7 @@ import Foundation
 struct CardView: View {
     @State var cardCore: CardCore
     @State var card: Card
-//    @State var flipped = false
-//    @State var flip = false
+
     @State var rightArrowTapped = false
     @Binding var flipped:Bool
     @Binding var flip: Bool
@@ -22,7 +21,6 @@ struct CardView: View {
     // MARK: - Drawing Constant
     @StateObject var deckCore:DeckCore
    
-    //@Binding var indexCard:Int
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
     @State var correctRate = 0.0
@@ -30,14 +28,8 @@ struct CardView: View {
     @Binding var indexCard:Int
     @Binding var correctAnswer:Int
     @Binding var falseAnswer:Int
-//    @State var isTapped = false
-//    @State var startAnimation = false
-//    @State var bgAnimaton = false
+
    @Binding var resetBg:Bool
-    //@StateObject var likedCore: LikedCore
-    //@State var fireworkAnimation = false
-    //@Binding var isTapped:Bool
-    //@State var correctA = 0
     @Binding var correctA:Double
 
 
@@ -151,7 +143,7 @@ struct CardView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width:75,height: 75)
-                        .offset(x: 60, y: -140)
+                        .offset(x: 140, y: -140)
                         .opacity(Double(card.x/10 - 1))
 
                     Spacer()
@@ -159,7 +151,7 @@ struct CardView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width:75,height: 75)
-                        .offset(x: -60, y: -140)
+                        .offset(x: -140, y: -140)
                         .opacity(Double(card.x/10 * -1 - 1))
                 }
 
