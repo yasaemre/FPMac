@@ -30,7 +30,7 @@ struct EditScrnView: View {
                 .onAppear(perform: {
                 
                     
-                    if indexCard == 0 {
+                    if deckCore.cardsArray.isEmpty {
                         indexCard = 0
                     }
                     else {

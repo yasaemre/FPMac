@@ -186,7 +186,7 @@ struct CardView: View {
                         //self.animationActivated = false
                         
                     case let x where x > 100:
-                        card.x = 500; card.degree = 12
+                        card.x = 800; card.degree = 12
                         correctAnswer += 1
                         correctA += 1
                         if  indexCard > 0 {
@@ -198,7 +198,7 @@ struct CardView: View {
                     case (-100)...(-1):
                         card.x = 0; card.degree = 0; card.y = 0
                     case let x where x < -100:
-                        card.x  = -500; card.degree = -12
+                        card.x  = -800; card.degree = -12
                         falseAnswer += 1
                         if  indexCard > 0 {
                             indexCard -= 1

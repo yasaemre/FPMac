@@ -35,11 +35,8 @@ struct StudyScreenView: View {
             ForEach(deckCore.cardsArray) { cardCore in
                 CardView(cardCore: cardCore, card: card, deckCore: deckCore, indexCard: $indexCard, correctAnswer: $correctAnswer,  falseAnswer: $falseAnswer, resetBg: $resetBg)
                     .onAppear(perform: {
-                    
-//                         if deckCore.cardsArray.isEmpty {
-//                            indexCard = deckCore.cardsArray.count
-//                         }
-                         if indexCard == 0 {
+
+                        if deckCore.cardsArray.isEmpty {
                             indexCard = 0
                         }
                         else {
