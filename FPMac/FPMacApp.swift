@@ -24,6 +24,7 @@ struct FPMacApp: App {
         .onChange(of: scenePhase) { _ in
             persistenceController.saveContext()
         }
+
     }
 }
 

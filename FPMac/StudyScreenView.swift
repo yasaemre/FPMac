@@ -21,9 +21,10 @@ struct StudyScreenView: View {
    // @State var indexCard = 0
     //
    // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
-    @State var indexCard = 0
+    //@State var indexCard = 0
+    @Binding var indexCard:Int
+
     @State var correctAnswer = 0
-    
     @State var resetBg = false
     @State var correctRate = 0.0
     @State var falseAnswer = 0
@@ -34,16 +35,16 @@ struct StudyScreenView: View {
         ZStack(alignment: .top){
             ForEach(deckCore.cardsArray) { cardCore in
                 CardView(cardCore: cardCore, card: card, deckCore: deckCore, indexCard: $indexCard, correctAnswer: $correctAnswer,  falseAnswer: $falseAnswer, resetBg: $resetBg)
-                    .onAppear(perform: {
-
-                        if deckCore.cardsArray.isEmpty {
-                            indexCard = 0
-                        }
-                        else {
-                            indexCard = deckCore.cardsArray.count-1
-                        }
-                        print("Index in EditScrnView: \(indexCard)")
-                    })
+//                    .onAppear(perform: {
+//
+//                        if deckCore.cardsArray.isEmpty {
+//                            indexCard = 0
+//                        }
+//                        else {
+//                            indexCard = deckCore.cardsArray.count-1
+//                        }
+//                        print("Index in EditScrnView: \(indexCard)")
+//                    })
                     
             }
             

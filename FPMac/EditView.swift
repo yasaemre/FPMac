@@ -327,7 +327,7 @@ struct EditView: View {
             }
 
             
-            StudyScreenView(deckCore: deckCore, card: card)
+            StudyScreenView(deckCore: deckCore, card: card, indexCard: $indexCard)
                 .background(BlurView())
                 .frame(width: homeData.isExpanded ? nil : 0)
                 .opacity(homeData.isExpanded ? 1 : 0)
@@ -383,11 +383,11 @@ struct EditView: View {
             
         //UserDefaults.standard.set(self.indexOfCard, forKey: "indexOfCard")
         //print("\(Int(newCard.numOfCard))")
-                for card in deckCore.cardsArray {
-                    print(card.word)
-                    print(card.definition)
-                }
-        
+//                for card in deckCore.cardsArray {
+//                    print(card.word)
+//                    print(card.definition)
+//                }
+//
         
         
     }

@@ -62,7 +62,7 @@ struct LikedCardView: View {
                 .buttonStyle(PlainButtonStyle())
 
             }
-            .padding(.bottom, 5)
+            .padding(.bottom, 20)
             .padding(.top, 5)
             
             
@@ -173,7 +173,7 @@ struct LikedCardView: View {
     }
     
     func calculateWidth() -> CGFloat {
-        let screen =  350.0
+        let screen =  330.0
         
         let width = screen - (2*30)
         
