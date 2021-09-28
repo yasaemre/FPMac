@@ -37,7 +37,7 @@ struct CardView: View {
     //@State var fireworkAnimation = false
     //@Binding var isTapped:Bool
     //@State var correctA = 0
-    @AppStorage("correctA") var correctA = 0.0
+    @Binding var correctA:Double
 
 
     //To avoid Taps during animation..
@@ -104,14 +104,14 @@ struct CardView: View {
             .padding(.top, 20)
             
             ZStack(alignment: .center) {
-                Image(cardCore.unwrappedImage)
+                Image("cardBackg")
                     .resizable()
                     .frame(width: 250, height: 350)
                     .clipped()
                     .cornerRadius(12)
                 if deckCore.cardsArray.count > 0 {
                     if flip == false {
-                        
+
                         ZStack {
                             Text(deckCore.cardsArray[indexCard].unwrappedWord)
                                 .font(.custom("HelveticaNeue", size: 40))
@@ -122,13 +122,13 @@ struct CardView: View {
                             print("indexCard of word in cardView : \(indexCard)")
                             print("deckCore.cardsArray.count word in cardView : \(deckCore.cardsArray.count)")
                         }
-                        
-                        
-                        
-                        
+
+
+
+
                     } else {
                         ZStack {
-                            
+
                             Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
                                 .font(.custom("HelveticaNeue", size: 40))
                                 .foregroundColor(.white)
@@ -138,10 +138,10 @@ struct CardView: View {
                                     print("deckCore.cardsArray.count def in cardView : \(deckCore.cardsArray.count)")
                                 }
                         }
-                        
-                        
+
+
                     }
-                    
+
                 }
 
                 HStack {
@@ -151,7 +151,7 @@ struct CardView: View {
                         .frame(width:75,height: 75)
                         .offset(x: 60, y: -140)
                         .opacity(Double(card.x/10 - 1))
-                    
+
                     Spacer()
                     Image("false")
                         .resizable()
@@ -160,7 +160,7 @@ struct CardView: View {
                         .offset(x: -60, y: -140)
                         .opacity(Double(card.x/10 * -1 - 1))
                 }
-                
+
             }
             .padding(.top, 10)
             .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
@@ -175,7 +175,7 @@ struct CardView: View {
                     // MARK: - BUG 5
                     card.y = value.translation.height
                     card.degree = 7 * (value.translation.width > 0 ? 1 : -1)
-                    
+
                 }
             }
                     .onEnded { (value) in
@@ -184,9 +184,9 @@ struct CardView: View {
                     case 0...100:
                         card.x = 0; card.degree = 0; card.y = 0
                         //self.animationActivated = false
-                        
+
                     case let x where x > 100:
-                        card.x = 1000; card.degree = 12
+                        card.x = 1000; card.degree = 999
                         correctAnswer += 1
                         correctA += 1
                         if  indexCard > 0 {
@@ -194,30 +194,164 @@ struct CardView: View {
                         }
                        // self.isTapped = true
                         self.resetBg = false
-                        
+
                     case (-100)...(-1):
                         card.x = 0; card.degree = 0; card.y = 0
                     case let x where x < -100:
-                        card.x  = -1000; card.degree = -12
+                        card.x  = -1000; card.degree = -99
                         falseAnswer += 1
                         if  indexCard > 0 {
                             indexCard -= 1
-                            
+
                         }
                        // self.isTapped = true
                         self.resetBg = false
 
-                        
+
                     default:
                         card.x = 0; card.y = 0
-                        
+
                     }
-                    
+
                 }
                     }
             )
             
-
+//
+//            ZStack {
+//                Image(cardCore.unwrappedImage)
+//                    .resizable()
+//                    .frame(width: 250, height: 350)
+//                    .clipped()
+//                    .cornerRadius(12)
+//               // VStack( spacing: 5) {
+//                    if deckCore.cardsArray.count > 0 {
+//                        if flip == false {
+//                            if rightArrowTapped == true {
+//                                Text("")
+//                            } else {
+//                                Text(deckCore.cardsArray[indexCard].unwrappedWord)
+//                                    .font(.custom("HelveticaNeue", size: 40))
+//                                    .foregroundColor(.white)
+//
+//
+//                            }
+//                        } else {
+//                            //                                if rightArrowTapped == true {
+//                            //                                    Text("")
+//                            //                                } else {
+//                            Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
+//                                .font(.custom("HelveticaNeue", size: 40))
+//                                .foregroundColor(.white)
+//                                .onAppear(perform: {
+//                                    print("idx card in editView on meaning editView \(indexCard)")
+//
+//                                })
+//
+//                        }
+//                    }
+//                    else {
+//                        ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
+//                            if flip == false {
+//                                //                                if rightArrowTapped == true {
+//                                //                                    Text("")
+//                                //                                } else {
+//                                Text(deckCore.cardsArray[index].unwrappedWord)
+//                                    .font(.custom("HelveticaNeue", size: 40))
+//                                    .foregroundColor(.white)
+//
+//
+//                                //}
+//                            } else {
+//                                //                                if rightArrowTapped == true {
+//                                //                                    Text("")
+//                                //                                } else {
+//                                Text(deckCore.cardsArray[index].unwrappedDefinition)
+//                                    .font(.custom("HelveticaNeue", size: 40))
+//                                    .foregroundColor(.white)
+//                                //}
+//                            }
+//
+//
+//
+//
+//                        }
+//                    }
+//
+//
+//               // }
+//                HStack {
+//                    Image("correct")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width:75,height: 75)
+//                        .offset(x: 60, y: -140)
+//                        .opacity(Double(card.x/10 - 1))
+//
+//                    Spacer()
+//                    Image("false")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width:75,height: 75)
+//                        .offset(x: -60, y: -140)
+//                        .opacity(Double(card.x/10 * -1 - 1))
+//                }
+//            }
+//            .padding(.top, 10)
+//            .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
+//            .cornerRadius(8)
+//            .offset(x: card.x, y: card.y)
+//            .rotationEffect(.init(degrees: card.degree))
+//            .gesture (
+//                DragGesture()
+//                    .onChanged { value in
+//                withAnimation(.default) {
+//                    card.x = value.translation.width
+//                    // MARK: - BUG 5
+//                    card.y = value.translation.height
+//                    card.degree = 7 * (value.translation.width > 0 ? 1 : -1)
+//
+//                }
+//            }
+//                    .onEnded { (value) in
+//                withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 50, damping: 8, initialVelocity: 0)) {
+//                    switch value.translation.width {
+//                    case 0...100:
+//                        card.x = 0; card.degree = 0; card.y = 0
+//                        //self.animationActivated = false
+//
+//                    case let x where x > 100:
+//                        card.x = 1000; card.degree = 12
+//                        correctAnswer += 1
+//                        correctA += 1
+//                        if  indexCard > 0 {
+//                            indexCard -= 1
+//                        }
+//                       // self.isTapped = true
+//                        self.resetBg = false
+//
+//                    case (-100)...(-1):
+//                        card.x = 0; card.degree = 0; card.y = 0
+//                    case let x where x < -100:
+//                        card.x  = -1000; card.degree = -12
+//                        falseAnswer += 1
+//                        if  indexCard > 0 {
+//                            indexCard -= 1
+//
+//                        }
+//                       // self.isTapped = true
+//                        self.resetBg = false
+//
+//
+//                    default:
+//                        card.x = 0; card.y = 0
+//
+//                    }
+//
+//                }
+//                    }
+//            )
+            
             Text("\(indexCard+1) of \(deckCore.cardsArray.count)")
                 .font(.title2)
                 .padding(.top, 10)

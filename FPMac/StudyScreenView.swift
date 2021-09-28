@@ -28,13 +28,15 @@ struct StudyScreenView: View {
     @State var resetBg = false
     @State var correctRate = 0.0
     @State var falseAnswer = 0
-    @State var correctA = UserDefaults.standard.double(forKey: "correctA")
+    //@State var correctA = UserDefaults.standard.double(forKey: "correctA")
+    //@AppStorage("correctA") var correctA = 0.0
+    @State var correctA = 0.0
 
     var body: some View {
         
         ZStack(alignment: .top){
             ForEach(deckCore.cardsArray) { cardCore in
-                CardView(cardCore: cardCore, card: card, deckCore: deckCore, indexCard: $indexCard, correctAnswer: $correctAnswer,  falseAnswer: $falseAnswer, resetBg: $resetBg)
+                CardView(cardCore: cardCore, card: card, deckCore: deckCore, indexCard: $indexCard, correctAnswer: $correctAnswer,  falseAnswer: $falseAnswer, resetBg: $resetBg, correctA: $correctA)
 //                    .onAppear(perform: {
 //
 //                        if deckCore.cardsArray.isEmpty {
@@ -52,12 +54,11 @@ struct StudyScreenView: View {
             
             
         }.onDisappear{
-            deckCore.correctRate = (correctA / Double(deckCore.cardsArray.count)) * 100
+            deckCore.correctRate = (correctA / Double(deckCore.cardsArray.count)) * 100.0
             print("correctA \(correctA)")
             print("deckCore.cardsArray.count \(deckCore.cardsArray.count)")
             print("deckCore.correctRate \(deckCore.correctRate)")
-            //correctA = 0
-            UserDefaults.standard.set(0.0, forKey: "correctA")
+            //UserDefaults.standard.set(0.0, forKey: "correctA")
             
 
         }

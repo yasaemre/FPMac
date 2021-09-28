@@ -24,7 +24,7 @@ extension DeckCore {
     @NSManaged public var numberOfCardsInDeck: Int16
     @NSManaged public var cards: NSSet?
     @NSManaged public var likedCards: NSSet?
-    
+
     
     public var unwrappedCorrectRate: Double {
         correctRate
