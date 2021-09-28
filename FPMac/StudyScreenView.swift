@@ -32,20 +32,24 @@ struct StudyScreenView: View {
     var body: some View {
         
         ZStack(alignment: .top){
-            ForEach(deckCore.cardsArray.reversed()) { cardCore in
+            ForEach(deckCore.cardsArray) { cardCore in
                 CardView(cardCore: cardCore, card: card, deckCore: deckCore, indexCard: $indexCard, correctAnswer: $correctAnswer,  falseAnswer: $falseAnswer, resetBg: $resetBg)
+                    .onAppear(perform: {
                     
+//                         if deckCore.cardsArray.isEmpty {
+//                            indexCard = deckCore.cardsArray.count
+//                         }
+                         if indexCard == 0 {
+                            indexCard = 0
+                        }
+                        else {
+                            indexCard = deckCore.cardsArray.count-1
+                        }
+                        print("Index in EditScrnView: \(indexCard)")
+                    })
                     
             }
-            .onAppear {
-                print("indexCard in studyScreen = \(indexCard)")
-                print("deckCore.cardsArray.count in studyScreen = \(deckCore.cardsArray.count)")
-                
             
-               
-                indexCard = deckCore.cardsArray.count-1
-                
-            }
             
             
             

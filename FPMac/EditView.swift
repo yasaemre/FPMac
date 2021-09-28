@@ -20,7 +20,7 @@ struct EditView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     //not working on macoss userdefaults
-    @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
+   // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
    // @AppStorage("indexCard") var indexCard = 0
     //@State var indexCard = 0
 
@@ -34,6 +34,7 @@ struct EditView: View {
     @State private var isShowingCheckMark = false
 
     @EnvironmentObject var homeData: HomeViewModel
+    @Binding var indexCard:Int
 
     
     var body: some View {
