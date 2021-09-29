@@ -21,6 +21,7 @@ struct LikedCardView: View {
     @State var correctAnswer = 0
     @State var falseAnswer = 0
 
+    @Environment(\.managedObjectContext) private var viewContext
 
     var body: some View {
         
@@ -66,11 +67,11 @@ struct LikedCardView: View {
             .padding(.top, 5)
             
             
-            ZStack {
+            ZStack(alignment: .center){
                 ForEach((0..<likedArrPersistent.count).reversed(), id: \.self) { index in
                     
                     HStack {
-                        ZStack {
+                        ZStack (alignment: .center){
                             Image("cardBackg")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -105,8 +106,8 @@ struct LikedCardView: View {
                                 }
                         }
                         .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
-                        
-                        Spacer(minLength: 0)
+                        .padding()
+                        //Spacer(minLength: 0)
                     }
                     .onAppear(perform: {
                         scrolled = 0
@@ -149,7 +150,16 @@ struct LikedCardView: View {
                         }
                     }))
                     
-                    
+                  
+                    Button {
+                            deleteCard(at: IndexSet.init(integer: index))
+                    } label: {
+                        Image(systemName: "trash")
+                            .font(.title)
+                            .foregroundColor(.white)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .offset(x:-110,y:-175)
                     
                 }
             }
@@ -163,6 +173,8 @@ struct LikedCardView: View {
                 .font(.title2)
                 .padding(.top, 5)
             
+        
+
             Spacer()
         }
         //.padding(.top, 1)
@@ -171,7 +183,19 @@ struct LikedCardView: View {
         
        
     }
-    
+    //Use with tap gesture or delete button
+    private func deleteCard(at offsets: IndexSet) {
+        withAnimation {
+//            offsets.map {decksArrPersistent[$0]}.forEach(viewContext.delete)
+            for index in offsets {
+                let deck = likedArrPersistent[index]
+                
+                viewContext.delete(deck)
+                PersistenceController.shared.saveContext()
+                //indexCard = 0
+            }
+        }
+    }
     func calculateWidth() -> CGFloat {
         let screen =  330.0
         

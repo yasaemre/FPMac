@@ -124,7 +124,7 @@ struct HomeView: View {
                             
                             Spacer()
                             Button {
-                                    deleteDeck(at: IndexSet.init(integer: index))
+                                    //deleteDeck(at: IndexSet.init(integer: index))
                             } label: {
                                 Image(systemName: "trash")
                                     .font(.title)

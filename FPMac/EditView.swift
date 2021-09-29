@@ -128,7 +128,6 @@ struct EditView: View {
                     //                        .padding(.leading, 40)
                     //                        .padding(.trailing, 40)
                         .frame(width: 250, height: 145, alignment: .center)
-                        //.textFieldStyle(.roundedBorder)
                         .modifier(TextFieldClearButton(text: $card.definition))
                         .onAppear {
                             print("indexCard in editView before roundedRect shows up: \(indexCard)")
