@@ -13,39 +13,11 @@ struct PersistenceController {
     let container: NSPersistentContainer
 
     static let shared = PersistenceController()
-
-
-//    private lazy var privateManagedObjectContext: NSManagedObjectContext = {
-//        // Initialize Managed Object Context
-//        var managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-//
-//        // Configure Managed Object Context
-//        managedObjectContext.persistentStoreCoordinator = self.container.viewContext.persistentStoreCoordinator
-//
-//        return managedObjectContext
-//    }()
-//    private(set) lazy var viewContext: NSManagedObjectContext = {
-//        let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-//
-//        managedObjectContext.parent = self.privateManagedObjectContext
-//
-//        return managedObjectContext
-//    }()
      //Convenience
     var viewContext: NSManagedObjectContext {
 
         return container.viewContext
     }
-
-  
-    //Edit
-//    let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-//    privateContext.persistentStoreCoordinator = container.viewContext.persistentStoreCoordinator
-//    privateContext.perform {
-//        // Code in here is now running "in the background" and can safely
-//        // do anything in privateContext.
-//        // This is where you will create your entities and save them.
-//    }
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
@@ -79,7 +51,6 @@ struct PersistenceController {
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-
         if Thread.isMainThread {
             print("on main thread")
         } else {

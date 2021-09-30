@@ -21,14 +21,12 @@ struct HomeView: View {
     
     @State var dark = false
     @State var show = false
-    //@State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
     @Environment(\.colorScheme) var colorScheme
     @State var deck = Deck()
     @State var card = Card()
     let columns = Array(repeating: GridItem(.flexible(), spacing:25), count: 2)
     
     @State private var navBarHidden = false
-   // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
    @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -40,9 +38,7 @@ struct HomeView: View {
            animation: .default)
        private var decksArrPersistent: FetchedResults<DeckCore>
     @StateObject var likedCore = LikedCore()
-   // @State var imageHasChanged = false
-    //@State var indexCard = 0
-    //@Binding var indexCard:Int
+  
     @State private var deckName = ""
     @Binding  var deckCreatedAt:String
     @Binding  var numOfCardsInDeck:Int
@@ -84,7 +80,6 @@ struct HomeView: View {
             }
             
     
-            
             List(selection:$homeData.selectedRecentMsg) {
                 ForEach(0..<decksArrPersistent.count, id: \.self) { index in
                 
@@ -104,7 +99,7 @@ struct HomeView: View {
                               
                                 Text(decksArrPersistent[index].unwrappedDeckName)
                                     .font(.title).bold()
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.primary)
                                 
                                 Text("\(decksArrPersistent[index].numberOfCardsInDeck) cards")
                                     .font(.title2)
@@ -124,7 +119,7 @@ struct HomeView: View {
                             
                             Spacer()
                             Button {
-                                    //deleteDeck(at: IndexSet.init(integer: index))
+                                    deleteDeck(at: IndexSet.init(integer: index))
                             } label: {
                                 Image(systemName: "trash")
                                     .font(.title)
@@ -135,10 +130,12 @@ struct HomeView: View {
                      
                     }
                     
+                    
                }
-//                .onDelete(perform: onDelete)
+                
             }
             .listStyle(SidebarListStyle())
+            
             
 //            .onDeleteCommand {
 //                if let sel = self.selection, let idx = self.decksArrPersistent.firstIndex(where: selection) {
@@ -164,7 +161,6 @@ struct HomeView: View {
     //Use with tap gesture or delete button
     private func deleteDeck(at offsets: IndexSet) {
         withAnimation {
-//            offsets.map {decksArrPersistent[$0]}.forEach(viewContext.delete)
             for index in offsets {
                 let deck = decksArrPersistent[index]
                 
@@ -174,7 +170,6 @@ struct HomeView: View {
             }
         }
     }
-
 }
 
 struct CustomShape:Shape {
@@ -265,6 +260,7 @@ struct SheetView: View {
         newDeck.deckName = deckName
         newDeck.numberOfCardsInDeck = Int16(numOfCardsInDeck)
         newDeck.deckCreatedAt = deckCreatedAt
+        newDeck.id = UUID()
         
         PersistenceController.shared.saveContext()
 
