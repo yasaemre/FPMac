@@ -24,7 +24,6 @@ struct HomeView: View {
     @Environment(\.colorScheme) var colorScheme
     @State var deck = Deck()
     @State var card = Card()
-    let columns = Array(repeating: GridItem(.flexible(), spacing:25), count: 2)
     
     @State private var navBarHidden = false
    @Environment(\.managedObjectContext) private var viewContext
@@ -58,102 +57,105 @@ struct HomeView: View {
     @State private var sheetIsShowing = false
     @State private var dialogResult = ""
     //@State private var selection = ""
-    var body: some View {
-        VStack(spacing: 30) {
-            
-            HStack {
-               
-                Spacer()
-                
-                
-                Button {
-                    sheetIsShowing.toggle()
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.title)
-                }
-                .buttonStyle(PlainButtonStyle())
-            }
-            .padding(.horizontal)
-            .onAppear {
-                print("\(decksArrPersistent.count)")
-            }
-            
     
-            List(selection:$homeData.selectedRecentMsg) {
-                ForEach(0..<decksArrPersistent.count, id: \.self) { index in
-                
-                    NavigationLink(destination: EditScrnView(card: card, deckCore: decksArrPersistent[index], likedCore: likedCore)){
+    let columns = Array(repeating: GridItem(.flexible(), spacing:15), count: 2)
 
-                        HStack(spacing: 10) {
+    var body: some View {
+       //NavigationView {
+        //ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
+            VStack(spacing: 30) {
+                
+                HStack {
+                    
+                    Spacer()
+                    
+                    
+                    Button {
+                        sheetIsShowing.toggle()
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.title)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+                .padding(.horizontal)
+                .onAppear {
+                    print("\(decksArrPersistent.count)")
+                }
+                
+                //ScrollView {
+                
+                    LazyVGrid(columns: columns, spacing: 10, content: {
+                        ForEach(0..<decksArrPersistent.count, id: \.self) { index in
+                            NavigationLink(destination: EditScrnView(card: card, deckCore: decksArrPersistent[index], likedCore: likedCore)){
+                                
+                                ZStack {
+                                    
                                     Image("cardBackg")
                                         .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 40, height: 60)
-                                        .clipShape(Rectangle())
-                                        .cornerRadius(10)
-                            
-
-                            
-                            VStack(spacing: 3) {
-                              
-                                Text(decksArrPersistent[index].unwrappedDeckName)
-                                    .font(.title).bold()
-                                    .foregroundColor(.primary)
+                                        .frame(width:120, height: 180)
+                                        .cornerRadius(16)
+                                        .overlay(Image(systemName: "minus.circle.fill")
+                                                    .font(.title)
+                                                    .foregroundColor(Color(.systemGray))
+                                                    .offset(x: -50, y: -75)
+                                                    .onTapGesture{
+                                            //deleteDeck(at: IndexSet.init(integer: index))
+                                            deleteDeck(at: IndexSet.init(integer: index))
+                                        })
+                                    
+                                    
+                                    
+                                    
+                                    VStack(spacing: 10) {
+                                        Text(decksArrPersistent[index].unwrappedDeckName)
+                                            .font(.title).bold()
+                                            .foregroundColor(.white)
+                                        
+                                        Text("\(decksArrPersistent[index].numberOfCardsInDeck) cards")
+                                            .font(.title2)
+                                            .foregroundColor(.white)
+                                            .onAppear {
+                                                decksArrPersistent[index].numberOfCardsInDeck = Int16(decksArrPersistent[index].cardsArray.count)
+                                            }
+                                        Text("created on \n\(decksArrPersistent[index].deckCreatedAt ?? "")")
+                                            .font(.system(size: 12.0))
+                                            .foregroundColor(.white)
+                                    }
+                                    .frame(width:120, height: 180)
+                                    
+                                }
                                 
-                                Text("\(decksArrPersistent[index].numberOfCardsInDeck) cards")
-                                    .font(.title2)
-                                    .foregroundColor(.gray)
-                                    .onAppear {
-                                        decksArrPersistent[index].numberOfCardsInDeck = Int16(decksArrPersistent[index].cardsArray.count)
-                                    }
-                                Text("created on \(decksArrPersistent[index].deckCreatedAt ?? "")")
-                                    .font(.system(size: 12.0))
-                                    .foregroundColor(.gray)
-                                Spacer()
-                                    .onAppear {
-                                        print("\(String(describing: decksArrPersistent[index].deckCreatedAt))")
-                                        print("\(decksArrPersistent[index].numberOfCardsInDeck) cards")
-                                    }
+                                
+                                
                             }
-                            
-                            Spacer()
-                            Button {
-                                    deleteDeck(at: IndexSet.init(integer: index))
-                            } label: {
-                                Image(systemName: "trash")
-                                    .font(.title)
-                            }
+                            .frame(width: 100, height: 200)
                             .buttonStyle(PlainButtonStyle())
-
+                            
+                            
                         }
-                     
-                    }
-                    
-                    
-               }
+                    })
+               // }
+                }
                 
+                
+                //            .onDeleteCommand {
+                //                if let sel = self.selection, let idx = self.decksArrPersistent.firstIndex(where: selection) {
+                //                           print("delete item: \(sel)")
+                //                           self.viewContext.delete(decksArrPersistent[idx])
+                //                       }
+                
+                
+                
+            //}
+            .sheet(isPresented: $sheetIsShowing) {
+                SheetView(isVisible: self.$sheetIsShowing, enteredText: self.$dialogResult)
             }
-            .listStyle(SidebarListStyle())
-            
-            
-//            .onDeleteCommand {
-//                if let sel = self.selection, let idx = self.decksArrPersistent.firstIndex(where: selection) {
-//                           print("delete item: \(sel)")
-//                           self.viewContext.delete(decksArrPersistent[idx])
-//                       }
-            
-            
-          
-        }
-        .sheet(isPresented: $sheetIsShowing) {
-              SheetView(isVisible: self.$sheetIsShowing, enteredText: self.$dialogResult)
-          }
-        .onAppear {
-            print("index car homeview \(indexOfCard)")
-        }
-       
-        
+            .onAppear {
+                print("index car homeview \(indexOfCard)")
+            }
+        //}
+   // }
     }
 
     
