@@ -68,7 +68,7 @@ struct Home: View {
         }
 
         .ignoresSafeArea(.all, edges: .all)
-        .frame(width: screen.width / 1.7, height: screen.height-150)
+        .frame(width: screen.width / 1.6, height: screen.height-150)
         .environmentObject(homeData)
     }
 }

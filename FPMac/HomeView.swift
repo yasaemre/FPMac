@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var homeData: HomeViewModel
     
-    
+
     @State var selectedTab = "home"
     @State var xAxis:CGFloat = 0
     @Namespace var animation
@@ -59,121 +59,183 @@ struct HomeView: View {
     //@State private var selection = ""
     
     let columns = Array(repeating: GridItem(.flexible(), spacing:15), count: 2)
-
+    
+    @EnvironmentObject var deckList: DeckList
+    @State private var selectedDeck: DeckCore? = nil
+    @State private var showAddSheet = false
+    @State private var showDeleteAlert = false
+    
+    @State private var addButtonClicked = false
+    
     var body: some View {
-       //NavigationView {
-        //ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-            VStack(spacing: 30) {
-                
-                HStack {
-                    
-                    Spacer()
-                    
-                    
-                    Button {
-                        sheetIsShowing.toggle()
-                    } label: {
-                        Image(systemName: "plus")
-                            .font(.title)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }
-                .padding(.horizontal)
-                .onAppear {
-                    print("\(decksArrPersistent.count)")
-                }
-                
-                //ScrollView {
-                
-                    LazyVGrid(columns: columns, spacing: 10, content: {
-                        ForEach(0..<decksArrPersistent.count, id: \.self) { index in
-                            NavigationLink(destination: EditScrnView(card: card, deckCore: decksArrPersistent[index], likedCore: likedCore)){
-                                
-                                ZStack {
+        //NavigationView {
+        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
+                    VStack(spacing: 30) {
+        
+                        HStack {
+        
+                            Spacer()
+        
+        
+                            Button {
+                                sheetIsShowing.toggle()
+                                addButtonClicked.toggle()
+                            } label: {
+                                Image(systemName: "plus")
+                                    .font(.title)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                        .padding(.horizontal)
+                        .onAppear {
+                            print("\(decksArrPersistent.count)")
+                            //DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                                for deck in self.decksArrPersistent {
+                                    self.deckList.decks.append(deck)
+                                }
+                           // }
+
+
+                        }
+        
+                        if addButtonClicked {
+                            List(0..<decksArrPersistent.count, id: \.self) { index in
+                                           //ForEach(0..<decksArrPersistent.count, id: \.self) { index in
+            
+                                NavigationLink(destination: EditScrnView(card: card, deckCore: decksArrPersistent[index], likedCore: likedCore), tag: decksArrPersistent[index], selection: $selectedDeck){
                                     
-                                    Image("cardBackg")
-                                        .resizable()
-                                        .frame(width:120, height: 180)
-                                        .cornerRadius(16)
-                                        .overlay(Image(systemName: "minus.circle.fill")
-                                                    .font(.title)
-                                                    .foregroundColor(Color(.systemGray))
-                                                    .offset(x: -50, y: -75)
-                                                    .onTapGesture{
-                                            //deleteDeck(at: IndexSet.init(integer: index))
-                                            deleteDeck(at: IndexSet.init(integer: index))
-                                        })
-                                    
-                                    
-                                    
-                                    
-                                    VStack(spacing: 10) {
-                                        Text(decksArrPersistent[index].unwrappedDeckName)
-                                            .font(.title).bold()
-                                            .foregroundColor(.white)
-                                        
-                                        Text("\(decksArrPersistent[index].numberOfCardsInDeck) cards")
-                                            .font(.title2)
-                                            .foregroundColor(.white)
-                                            .onAppear {
-                                                decksArrPersistent[index].numberOfCardsInDeck = Int16(decksArrPersistent[index].cardsArray.count)
-                                            }
-                                        Text("created on \n\(decksArrPersistent[index].deckCreatedAt ?? "")")
-                                            .font(.system(size: 12.0))
-                                            .foregroundColor(.white)
-                                    }
-                                    .frame(width:120, height: 180)
-                                    
+                                    DeckListRow(deck: decksArrPersistent[index])
+                                    Spacer()
+                                    Button(action: {deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeck!.unwrappedDeckName) },
+                                           label: {
+                                        Label("Delete", systemImage: "trash")
+                                            .foregroundColor(.red)
+                                    })
+                                        .buttonStyle(PlainButtonStyle())
                                 }
                                 
                                 
+                                //}
                                 
                             }
-                            .frame(width: 100, height: 200)
-                            .buttonStyle(PlainButtonStyle())
-                            
-                            
+                            .listStyle(SidebarListStyle())
+                        } else {
+                            List(0..<deckList.decks.count, id: \.self) { index in
+                                           //ForEach(0..<decksArrPersistent.count, id: \.self) { index in
+            
+                                NavigationLink(destination: EditScrnView(card: card, deckCore: deckList.decks[index], likedCore: likedCore), tag: deckList.decks[index], selection: $selectedDeck){
+                                    
+                                    DeckListRow(deck: deckList.decks[index])
+                                    Spacer()
+                                    Button(action: {deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeck!.unwrappedDeckName) },
+                                           label: {
+                                        Label("Delete", systemImage: "trash")
+                                            .foregroundColor(.red)
+                                    })
+                                        .buttonStyle(PlainButtonStyle())
+                                }
+                                
+                                
+                                //}
+                                
+                            }
+                            .listStyle(SidebarListStyle())
                         }
-                    })
-               // }
-                }
-                
-                
-                //            .onDeleteCommand {
-                //                if let sel = self.selection, let idx = self.decksArrPersistent.firstIndex(where: selection) {
-                //                           print("delete item: \(sel)")
-                //                           self.viewContext.delete(decksArrPersistent[idx])
-                //                       }
-                
-                
-                
+                        
+                        
+                    }
+//                    .alert(isPresented: $showDeleteAlert) {
+//                        deleteAlert(at: in)
+//                    }
+            
             //}
-            .sheet(isPresented: $sheetIsShowing) {
-                SheetView(isVisible: self.$sheetIsShowing, enteredText: self.$dialogResult)
-            }
-            .onAppear {
-                print("index car homeview \(indexOfCard)")
-            }
-        //}
-   // }
+                    .sheet(isPresented: $sheetIsShowing) {
+                        SheetView(isVisible: self.$sheetIsShowing, enteredText: self.$dialogResult, addButtonClicked: $addButtonClicked)
+                    }
+                    .onAppear {
+                        print("index car homeview \(indexOfCard)")
+                    }
+                    .onDisappear {
+                        deckList.decks = []
+                    }
+        }
+         //}
     }
-
+    
+    
+//    func deleteAlert(at offsets: IndexSet) -> Alert {
+//        if let deleteDeckName = selectedDeck?.deckName {
+//            return Alert(title: Text("Delete"),
+//                         message: Text("Really delete the \(deleteDeckName) deck?"),
+//                         primaryButton: .default(Text("Delete"), action: {
+//                deckList.remove(deleteDeckName: deleteDeckName, at: offsets)
+//                         }),
+//                         secondaryButton: .cancel({}))
+//        } else {
+//            return Alert(title: Text("Delete Deck"),
+//                         message: Text("Select a deck before clicking Delete."),
+//                         dismissButton: .default(Text("OK")))
+//        }
+//    }
     
     
     //Use with tap gesture or delete button
-    private func deleteDeck(at offsets: IndexSet) {
+    private func deleteDeck(at offsets: IndexSet, deleteDeckName: String) {
+        
+        //if let deleteDeckName = selectedDeck?.deckName {
+
+        guard let deleteDeckName = selectedDeck?.deckName, let deckIndex = deckList.decks.firstIndex(where: { deck in
+            deck.unwrappedDeckName == deleteDeckName
+        }) else {
+            return
+        }
+        
         withAnimation {
-            for index in offsets {
-                let deck = decksArrPersistent[index]
-                
+            //for index in offsets {
+                let deck = decksArrPersistent[deckIndex]
+                deckList.decks.remove(at: deckIndex)
                 viewContext.delete(deck)
                 PersistenceController.shared.saveContext()
                 //indexCard = 0
-            }
+           // }
         }
+        
     }
 }
 
+class DeckList: ObservableObject {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \DeckCore.deckCreatedAt, ascending: false)],
+           animation: .default)
+       private var decksArrPersistent: FetchedResults<DeckCore>
+    @Published var decks: [DeckCore] = []
+   
+    
+    
+    func remove(deleteDeckName: String, at offsets: IndexSet) {
+        guard let deckIndex = decks.firstIndex(where: { deck in
+            deck.unwrappedDeckName == deleteDeckName
+        }) else {
+            return
+        }
+
+        decks.remove(at: deckIndex)
+
+        
+        for index in offsets {
+            if deckIndex == index {
+            let deck = decksArrPersistent[index]
+            
+            viewContext.delete(deck)
+            PersistenceController.shared.saveContext()
+            //indexCard = 0
+            }
+        }
+            //indexCard = 0
+        //}
+    }
+}
 struct CustomShape:Shape {
     var xAxis: CGFloat
     
@@ -217,6 +279,9 @@ struct SheetView: View {
     @State  var deckCreatedAt = ""
     @State  var numOfCardsInDeck = 0
     @State private var indexOfCard = UserDefaults.standard.integer(forKey: "indexOfCard")
+  
+    @Binding var addButtonClicked:Bool
+    
     var body: some View {
         VStack {
             Text("Create FlashPad Deck")
@@ -261,19 +326,20 @@ struct SheetView: View {
         
         newDeck.deckName = deckName
         newDeck.numberOfCardsInDeck = Int16(numOfCardsInDeck)
-        newDeck.deckCreatedAt = deckCreatedAt
-        newDeck.id = UUID()
-        
-        PersistenceController.shared.saveContext()
-
-    }
-
-
+         newDeck.deckCreatedAt = deckCreatedAt
+         newDeck.id = UUID()
+         
+         PersistenceController.shared.saveContext()
+         addButtonClicked = true
+     }
+    
+    
 }
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
+    
+    struct HomeView_Previews: PreviewProvider {
+        static var previews: some View {
+            Home()
+        }
     }
-}
+    
 

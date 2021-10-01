@@ -386,35 +386,17 @@ struct EditView: View {
         newCard.word = card.word
         newCard.definition = card.definition
         newCard.imageName = "cardBackg"
-
+        
         deckCore.addToCards(newCard)
         PersistenceController.shared.saveContext()
         showCircle = 1
         rotateCheckMark = 0
         checkMarkValue = 0
-            
-        //UserDefaults.standard.set(self.indexOfCard, forKey: "indexOfCard")
-        //print("\(Int(newCard.numOfCard))")
-//                for card in deckCore.cardsArray {
-//                    print(card.word)
-//                    print(card.definition)
-//                }
-//
-        
+
         
     }
     
 
-//
-//    func alertViewDeleteCard(at index: IndexSet) {
-//        Alert(title: Text("Delete Card"),
-//               message: Text("Do you want to delete this card?"),
-//               primaryButton: .default(Text("Delete"), action: {
-//                deleteCard(at: index)
-//
-//        }), secondaryButton: .cancel(Text("Cancel"), action: {
-//            //same
-//        }))    }
 }
 
 struct TextFieldClearButton: ViewModifier {
