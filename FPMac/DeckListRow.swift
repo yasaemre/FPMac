@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DeckListRow: View {
     var deck:DeckCore
-    
+    @State var deckList = DeckList()
     var body: some View {
         HStack(spacing: 10) {
             Image("cardBackg")
@@ -28,6 +28,11 @@ struct DeckListRow: View {
                 Text("\(deck.numberOfCardsInDeck) cards")
                     .font(.title2)
                     .foregroundColor(.gray)
+                    .onAppear {
+                        if deckList.decks.count != deck.numberOfCardsInDeck {
+                            deck.numberOfCardsInDeck = Int16(deckList.decks.count)
+                        }
+                    }
                     
 //                                            .onAppear {
 //                                                deckList.decks[index].numberOfCardsInDeck = Int16(deckList.decks[index].cardsArray.count)

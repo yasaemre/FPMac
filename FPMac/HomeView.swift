@@ -67,6 +67,9 @@ struct HomeView: View {
     
     @State private var addButtonClicked = false
     
+    @State private var showAlertForNotSelectedDeck = false
+    @State private var dialogResultForSelection = ""
+    
     var body: some View {
         //NavigationView {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
@@ -106,12 +109,19 @@ struct HomeView: View {
                                     
                                     DeckListRow(deck: decksArrPersistent[index])
                                     Spacer()
-                                    Button(action: {deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeck!.unwrappedDeckName) },
-                                           label: {
-                                        Label("Delete", systemImage: "trash")
-                                            .foregroundColor(.red)
-                                    })
-                                        .buttonStyle(PlainButtonStyle())
+                                    Button {
+                                        if let selectedDeckName = selectedDeck?.unwrappedDeckName{
+                                            deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeckName)
+                                            showAlertForNotSelectedDeck = false
+                                        } else  {
+                                            showAlertForNotSelectedDeck = true
+                                        }
+                                       
+                                    } label: {
+                                        Image(systemName: "trash")
+                                            .font(.title)
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
                                 }
                                 
                                 
@@ -127,12 +137,20 @@ struct HomeView: View {
                                     
                                     DeckListRow(deck: deckList.decks[index])
                                     Spacer()
-                                    Button(action: {deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeck!.unwrappedDeckName) },
-                                           label: {
-                                        Label("Delete", systemImage: "trash")
-                                            .foregroundColor(.red)
-                                    })
-                                        .buttonStyle(PlainButtonStyle())
+
+                                    Button {
+                                        if let selectedDeckName = selectedDeck?.unwrappedDeckName{
+                                            deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeckName)
+                                            showAlertForNotSelectedDeck = false
+                                        } else  {
+                                            showAlertForNotSelectedDeck = true
+                                        }
+                                       
+                                    } label: {
+                                        Image(systemName: "trash")
+                                            .font(.title)
+                                    }
+                                    .buttonStyle(PlainButtonStyle())
                                 }
                                 
                                 
@@ -152,8 +170,8 @@ struct HomeView: View {
                     .sheet(isPresented: $sheetIsShowing) {
                         SheetView(isVisible: self.$sheetIsShowing, enteredText: self.$dialogResult, addButtonClicked: $addButtonClicked)
                     }
-                    .onAppear {
-                        print("index car homeview \(indexOfCard)")
+                    .alert(isPresented: $showAlertForNotSelectedDeck) {
+                        notSelectedRowAlert()
                     }
                     .onDisappear {
                         deckList.decks = []
@@ -161,23 +179,12 @@ struct HomeView: View {
         }
          //}
     }
-    
-    
-//    func deleteAlert(at offsets: IndexSet) -> Alert {
-//        if let deleteDeckName = selectedDeck?.deckName {
-//            return Alert(title: Text("Delete"),
-//                         message: Text("Really delete the \(deleteDeckName) deck?"),
-//                         primaryButton: .default(Text("Delete"), action: {
-//                deckList.remove(deleteDeckName: deleteDeckName, at: offsets)
-//                         }),
-//                         secondaryButton: .cancel({}))
-//        } else {
-//            return Alert(title: Text("Delete Deck"),
-//                         message: Text("Select a deck before clicking Delete."),
-//                         dismissButton: .default(Text("OK")))
-//        }
-//    }
-    
+
+    func notSelectedRowAlert() -> Alert {
+        Alert(title: Text("Delete Deck"),
+                     message: Text("Select a deck row before clicking Delete."),
+                     dismissButton: .default(Text("OK")))
+    }
     
     //Use with tap gesture or delete button
     private func deleteDeck(at offsets: IndexSet, deleteDeckName: String) {

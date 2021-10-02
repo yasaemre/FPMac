@@ -392,7 +392,7 @@ struct EditView: View {
         showCircle = 1
         rotateCheckMark = 0
         checkMarkValue = 0
-
+        
         
     }
     

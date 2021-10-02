@@ -33,6 +33,7 @@ struct EditScrnView: View {
                     }
                     print("Index in EditScrnView: \(indexCard)")
                 })
+            
         }
         
       
