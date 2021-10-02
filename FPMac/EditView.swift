@@ -46,6 +46,7 @@ struct EditView: View {
                     
                     Text("Edit Screen")
                         .font(.title)
+                        .padding()
                     Spacer()
 
                     Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
@@ -58,16 +59,6 @@ struct EditView: View {
                             .foregroundColor(.white)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    
-//                    NavigationLink(destination: StudyScreenView(deckCore: deckCore, card: card, indexCard: $indexCard)
-                   //                                    .background(BlurView())
-                   //                                    .frame(width: homeData.isExpanded ? nil : 0)
-                   //                                    .opacity(homeData.isExpanded ? 1 : 0)) {
-                   //                        Text("Study")
-                   //                    }
-                   //                    .buttonStyle(PlainButtonStyle())
-
-
 
                 }
                 .padding(.trailing, 20)
@@ -96,7 +87,6 @@ struct EditView: View {
                     Button {
                         withAnimation {
                             flip = true
-                            //saveContext()
                         }
                     } label: {
                         Text("Meaning")
@@ -169,9 +159,7 @@ struct EditView: View {
                                     
                                 }
                             } else {
-                                //                                if rightArrowTapped == true {
-                                //                                    Text("")
-                                //                                } else {
+                          
                                 Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
                                     .font(.custom("HelveticaNeue", size: 40))
                                     .foregroundColor(.white)
@@ -220,9 +208,7 @@ struct EditView: View {
 
                                     //}
                                 } else {
-                                    //                                if rightArrowTapped == true {
-                                    //                                    Text("")
-                                    //                                } else {
+                               
                                     Text(deckCore.cardsArray[index].unwrappedDefinition)
                                         .font(.custom("HelveticaNeue", size: 40))
                                         .foregroundColor(.white)
@@ -345,6 +331,7 @@ struct EditView: View {
 
             
         }
+       
         
     }
     
@@ -393,6 +380,7 @@ struct EditView: View {
         rotateCheckMark = 0
         checkMarkValue = 0
         
+   
         
     }
     

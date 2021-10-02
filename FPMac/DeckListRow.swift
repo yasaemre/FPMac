@@ -33,22 +33,12 @@ struct DeckListRow: View {
                             deck.numberOfCardsInDeck = Int16(deckList.decks.count)
                         }
                     }
-                    
-//                                            .onAppear {
-//                                                deckList.decks[index].numberOfCardsInDeck = Int16(deckList.decks[index].cardsArray.count)
-//                                            }
                 Text("created on \(deck.deckCreatedAt ?? "")")
                     .font(.system(size: 12.0))
                     .foregroundColor(.gray)
                 Spacer()
-                    .onAppear {
-//                                                print("\(String(describing: deck.deckCreatedAt))")
-//                                                print("\(deckList.decks[index].numberOfCardsInDeck) cards")
-                    }
+
             }
-            
-  
-            
         }
         .onAppear {
             deck.numberOfCardsInDeck = Int16(deck.cardsArray.count)
