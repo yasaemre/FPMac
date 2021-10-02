@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 
 extension DeckCore {
@@ -49,8 +50,20 @@ extension DeckCore {
             $0.unwrappedWord < $1.unwrappedWord
         }
     }
-
-
+    enum CodingKeys: String, CodingKey {
+        case deckName
+        case deckCreatedAt
+    }
+    
+//    static func ==(lhs: DeckCore, rhs: DeckCore) -> Bool {
+//        return lhs.deckName == rhs.deckName
+//    }
+    
+    static func == (lhs: DeckCore, rhs: DeckCore) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    
 }
 
 // MARK: Generated accessors for cards
@@ -90,3 +103,24 @@ extension DeckCore {
 extension DeckCore : Identifiable {
 
 }
+
+//extension DeckCore: Codable {
+//
+//    enum CodingKeys: String, CodingKey {
+//        case feedTitle
+//        case feedDescription
+//        case feedUrl
+//        case feedDate
+//        case feedArticles
+//    }
+//}
+
+//extension DeckCore: Equatable {
+//    static func ==(lhs: DeckCore, rhs: DeckCore) -> Bool {
+//        return lhs.deckName == rhs.deckName
+//    }
+//
+////    public override var hash: Int {
+////        hasher.combine(deckName)
+////    }
+//}

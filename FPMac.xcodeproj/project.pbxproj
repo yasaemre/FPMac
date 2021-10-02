@@ -46,6 +46,7 @@
 		C669333B26FE170F004F226A /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333A26FE170F004F226A /* Deck.swift */; };
 		C669333E26FE34AC004F226A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C669333D26FE34AC004F226A /* CloudKit.framework */; };
 		C669334026FE7607004F226A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333F26FE7607004F226A /* ProfileView.swift */; };
+		C695C553270789F4004B8D84 /* DeckListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C695C552270789F4004B8D84 /* DeckListRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		C669333A26FE170F004F226A /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		C669333D26FE34AC004F226A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C669333F26FE7607004F226A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C695C552270789F4004B8D84 /* DeckListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				C66932F026FE0E81004F226A /* BlurView.swift */,
 				C669332426FE159E004F226A /* EditScrnView.swift */,
 				C669332626FE15B6004F226A /* EditView.swift */,
+				C695C552270789F4004B8D84 /* DeckListRow.swift */,
 				C669332826FE15EA004F226A /* StudyScreenView.swift */,
 				C66932FE26FE0EAD004F226A /* TabButton.swift */,
 				C669332A26FE15FC004F226A /* CardView.swift */,
@@ -391,6 +394,7 @@
 				C66932C226FE0D87004F226A /* ContentView.swift in Sources */,
 				C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */,
 				C669332726FE15B6004F226A /* EditView.swift in Sources */,
+				C695C553270789F4004B8D84 /* DeckListRow.swift in Sources */,
 				C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */,
 				C669333326FE167A004F226A /* ScoreboardView.swift in Sources */,
 				C669332026FE149C004F226A /* Persistence.swift in Sources */,

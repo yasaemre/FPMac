@@ -12,12 +12,15 @@ struct FPMacApp: App {
 
     let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase
+    @StateObject var deckList = DeckList()
 
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(deckList)
+
                 
 
         }
@@ -25,6 +28,11 @@ struct FPMacApp: App {
         .onChange(of: scenePhase) { _ in
             persistenceController.saveContext()
         }
+        
+//        Settings {
+//            SettingsView()
+//                .environmentObject(feedList)
+//        }
 
     }
 }
