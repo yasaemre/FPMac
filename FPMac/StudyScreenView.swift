@@ -38,6 +38,10 @@ struct StudyScreenView: View {
         ZStack(alignment: .top){
             ForEach(deckCore.cardsArray.reversed()) { cardCore in
                 CardView(cardCore: cardCore, card: card, flipped: $flipped, flip: $flip, deckCore: deckCore, indexCard: $indexCard, correctAnswer: $correctAnswer,  falseAnswer: $falseAnswer, resetBg: $resetBg, correctA: $correctA)
+                    .onAppear {
+                        indexCard = deckCore.cardsArray.count-1
+            
+                    }
 //                    .onAppear(perform: {
 //
 //                        if deckCore.cardsArray.isEmpty {

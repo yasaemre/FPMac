@@ -375,7 +375,7 @@ struct EditView: View {
         let newCard = CardCore(context: viewContext)
         newCard.word = card.word
         newCard.definition = card.definition
-        newCard.imageName = "cardBackg"
+        newCard.imageName = "bbS"
         
         deckCore.addToCards(newCard)
         PersistenceController.shared.saveContext()

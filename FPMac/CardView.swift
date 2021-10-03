@@ -217,7 +217,7 @@ struct CardView: View {
                 
                 Text("Correct: \(correctAnswer)")
                     .font(.custom("Chalkduster", size: 22))
-                    .frame(width: 130, height: 40)
+                    .frame(width: 150, height: 40)
                     .background(Color.init(hex: "164430"))
                     .clipShape(Capsule())
                     .foregroundColor(.white)
@@ -226,7 +226,7 @@ struct CardView: View {
                 
                 Text("False: \(falseAnswer)")
                     .font(.custom("Chalkduster", size: 22))
-                    .frame(width: 130, height: 40)
+                    .frame(width: 150, height: 40)
                     .foregroundColor(Color.init(hex: "164430"))
                     .background(Color(.lightGray))
                     .clipShape(Capsule())

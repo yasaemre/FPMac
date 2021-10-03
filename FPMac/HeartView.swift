@@ -101,7 +101,7 @@ struct HeartView: View {
                 //likedCard.id = Int16(indexCard)
                 likedCard.word = deckCore.cardsArray[indexCard].unwrappedWord
                 likedCard.definition = deckCore.cardsArray[indexCard].unwrappedDefinition
-                likedCard.imageName = "cardBackg"
+                likedCard.imageName = "bbS"
                 PersistenceController.shared.saveContext()
 //                for likedWord in likedCore.likedArray {
 //                    print("likedWord is \(likedWord)")

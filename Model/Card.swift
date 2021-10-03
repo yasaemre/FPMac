@@ -21,6 +21,6 @@ struct Card: Identifiable{
     var offset: CGFloat = 0.0
         /// Card rotation angle
      var degree: Double = 0.0
-    var imageName = "cardBackg"
+    var imageName = "bbS"
 
 }

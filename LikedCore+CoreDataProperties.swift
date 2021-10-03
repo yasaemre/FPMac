@@ -28,7 +28,7 @@ extension LikedCore {
   
     
     public var unwrappedImage:String {
-        imageName ?? "cardBackg"
+        imageName ?? "bbS"
     }
     
     public var unwrappedWord:String {
