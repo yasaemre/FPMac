@@ -44,7 +44,7 @@ struct EditView: View {
                 
                 HStack {
                     
-                    Text("Edit Screen")
+                    Text("Edit")
                         .font(.title)
                         .padding()
                     Spacer()
@@ -73,9 +73,9 @@ struct EditView: View {
                         }
                     } label: {
                         Text("Word")
-                            .font(.title)
+                            .font(.custom("Chalkduster", size: 24))
                             .frame(width: 130, height: 40)
-                            .background(!flip ? Color.init(hex: "1130C1") : .gray)
+                            .background(!flip ? Color.init(hex: "164430") : .gray)
                             .clipShape(Capsule())
                             .foregroundColor(.white)
                         
@@ -90,9 +90,9 @@ struct EditView: View {
                         }
                     } label: {
                         Text("Meaning")
-                            .font(.title)
+                            .font(.custom("Chalkduster", size: 24))
                             .frame(width: 130, height: 40)
-                            .background(flip ? Color.init(hex: "1130C1") : .gray)
+                            .background(flip ? Color.init(hex: "164430") : .gray)
                             .clipShape(Capsule())
                             .foregroundColor(.white)
                     }
@@ -126,8 +126,10 @@ struct EditView: View {
                         }
                 }
                 
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "1130C1"), Color.init(hex: "c8d4f5")]), startPoint: .topLeading, endPoint: .bottomTrailing))
+                Image("bbS")
+                    .resizable()
+                    .clipped()
+                    .cornerRadius(12)
                     .frame(width: 250, height: 350)
                     .shadow(color: Color(NSColor(.black)), radius: 10, x: 5, y: 5)
                     .overlay(
@@ -138,7 +140,8 @@ struct EditView: View {
                                     Text("")
                                 } else {
                                     Text(deckCore.cardsArray[indexCard].unwrappedWord)
-                                        .font(.custom("HelveticaNeue", size: 40))
+                                        .font(.custom("Chalkduster", size: 40))
+
                                         .foregroundColor(.white)
                                         .overlay(
                                             
@@ -161,7 +164,7 @@ struct EditView: View {
                             } else {
                           
                                 Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
-                                    .font(.custom("HelveticaNeue", size: 40))
+                                    .font(.custom("Chalkduster", size: 40))
                                     .foregroundColor(.white)
                                     .onAppear(perform: {
                                         print("idx card in editView on meaning editView \(indexCard)")
@@ -189,7 +192,7 @@ struct EditView: View {
                                     //                                    Text("")
                                     //                                } else {
                                     Text(deckCore.cardsArray[index].unwrappedWord)
-                                        .font(.custom("HelveticaNeue", size: 40))
+                                        .font(.custom("Chalkduster", size: 40))
                                         .foregroundColor(.white)
                                         .overlay(
 
@@ -210,7 +213,7 @@ struct EditView: View {
                                 } else {
                                
                                     Text(deckCore.cardsArray[index].unwrappedDefinition)
-                                        .font(.custom("HelveticaNeue", size: 40))
+                                        .font(.custom("Chalkduster", size: 40))
                                         .foregroundColor(.white)
                                         .overlay(
 
@@ -253,9 +256,9 @@ struct EditView: View {
                             indexCard -= 1
                         }
                     } label: {
-                        Image(systemName: "arrowshape.turn.up.backward")
-                            .font(.largeTitle)
-                            .foregroundColor(Color.init(hex: "B74278"))
+                        Image(systemName: "arrowshape.turn.up.left.fill")
+                            .font(.custom("Chalkduster", size: 40))
+                            .foregroundColor(Color.init(hex: "164430"))
                     }
                     .buttonStyle(PlainButtonStyle())
 
@@ -270,12 +273,12 @@ struct EditView: View {
                         
                     } label: {
                         Text("Add Card")
-                            .font(.title)
+                            .font(.custom("Chalkduster", size: 24))
                             .frame(width: 150, height: 60)
-                            .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "1130C1"), Color.init(hex: "B74278")]),  center: .center, startRadius: 5, endRadius: 120))
+                            .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "164430")]),  center: .center, startRadius: 5, endRadius: 120))
                             .clipShape(Capsule())
                             .foregroundColor(.white)
-                            .overlay(Capsule().stroke(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.pink]), startPoint: .leading, endPoint: .trailing), lineWidth: 5))
+                            .overlay(Capsule().stroke(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "B74278")]), startPoint: .leading, endPoint: .trailing), lineWidth: 5))
                     }
                     .buttonStyle(PlainButtonStyle())
 
@@ -289,9 +292,9 @@ struct EditView: View {
                             indexCard += 1
                         }
                     } label: {
-                        Image(systemName: "arrowshape.turn.up.right")
-                            .font(.largeTitle)
-                            .foregroundColor(Color.init(hex: "B74278"))
+                        Image(systemName: "arrowshape.turn.up.right.fill")
+                            .font(.custom("Chalkduster", size: 40))
+                            .foregroundColor(Color.init(hex: "164430"))
                     }
                     .buttonStyle(PlainButtonStyle())
 

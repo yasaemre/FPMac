@@ -36,9 +36,9 @@ struct LikedCardView: View {
                     }
                 } label: {
                     Text("Word")
-                        .font(.title)
+                        .font(.custom("Chalkduster", size: 22))
                         .frame(width: 130, height: 40)
-                        .background(!flip ? Color.init(hex: "271D76") : .gray)
+                        .background(!flip ? Color.init(hex: "164430") : .gray)
                         .clipShape(Capsule())
                         .foregroundColor(.white)
                     
@@ -54,9 +54,10 @@ struct LikedCardView: View {
                     }
                 } label: {
                     Text("Meaning")
-                        .font(.title)
+                        .font(.custom("Chalkduster", size: 22))
                         .frame(width: 130, height: 40)
-                        .background(flip ? Color.init(hex: "271D76") : .gray)
+                        .background(flip ? Color.init(hex: "164430") : .gray)
+
                         .clipShape(Capsule())
                         .foregroundColor(.white)
                 }
@@ -72,7 +73,7 @@ struct LikedCardView: View {
                     
                     HStack {
                         ZStack (alignment: .center){
-                            Image("cardBackg")
+                            Image("bbS")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: calculateWidth(), height: 400 - CGFloat(index-scrolled)*50)
@@ -85,7 +86,8 @@ struct LikedCardView: View {
                                     ZStack {
                                         
                                         Text(likedArrPersistent[index].unwrappedWord)
-                                            .font(.custom("HelveticaNeue", size: 40))
+                                            .font(.custom("Chalkduster", size: 40))
+
                                             .foregroundColor(.white)
                                     }
 
@@ -96,7 +98,8 @@ struct LikedCardView: View {
                                     ZStack {
                                         
                                         Text(likedArrPersistent[index].unwrappedDefinition)
-                                            .font(.custom("HelveticaNeue", size: 40))
+                                            .font(.custom("Chalkduster", size: 40))
+
                                             .foregroundColor(.white)
                                     }
 

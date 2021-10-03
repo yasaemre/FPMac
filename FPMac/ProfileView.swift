@@ -198,10 +198,10 @@ struct ProfileView: View {
                     Text("Save")
                         .font(.title)
                         .frame(width: 130, height: 50)
-                        .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "1130C1"), Color.init(hex: "c8d4f5")]),  center: .center, startRadius: 5, endRadius: 120))
+                        .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "164430")]),  center: .center, startRadius: 5, endRadius: 120))
                         .clipShape(Capsule())
                         .foregroundColor(.white)
-                        .overlay(Capsule().stroke(LinearGradient(gradient: Gradient(colors: [Color.blue, Color.pink]), startPoint: .leading, endPoint: .trailing), lineWidth: 5))
+                        .overlay(Capsule().stroke(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing), lineWidth: 5))
                 }
                 .padding(.trailing, 20)
                 .buttonStyle(PlainButtonStyle())

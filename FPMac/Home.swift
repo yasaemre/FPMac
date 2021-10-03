@@ -78,3 +78,7 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
+class GameSettings: ObservableObject {
+    @Published var totalCardInDeck = 0
+ 
+}

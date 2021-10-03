@@ -41,20 +41,18 @@ struct CardView: View {
     var body: some View {
         VStack(spacing:20) {
             HStack {
-                
                 Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
                     Image(systemName: "arrowshape.turn.up.backward")
                         .font(.largeTitle)
                         .frame(width: 90, height: 40)
-//                        .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "271D76"), Color.init(hex: "271D76")]),  center: .center, startRadius: 5, endRadius: 120))
-//                        .clipShape(Capsule())
-                        //.foregroundColor(homeData.isExpanded ? .blue : .primary)
                 }
                 .buttonStyle(PlainButtonStyle())
                
                 Spacer()
-//                Text("Study Screen")
-//                    .font(.title)
+
+                Text("Study")
+                    .font(.title)
+                    .padding()
             }
             .padding(.trailing, 20)
             
@@ -66,9 +64,9 @@ struct CardView: View {
                     }
                 } label: {
                     Text("Word")
-                        .font(.title)
+                        .font(.custom("Chalkduster", size: 24))
                         .frame(width: 130, height: 40)
-                        .background(!flip ? Color.init(hex: "271D76") : .gray)
+                        .background(!flip ? Color.init(hex: "164430") : .gray)
                         .clipShape(Capsule())
                         .foregroundColor(.white)
                 }
@@ -81,9 +79,9 @@ struct CardView: View {
                     }
                 } label: {
                     Text("Meaning")
-                        .font(.title)
+                        .font(.custom("Chalkduster", size: 24))
                         .frame(width: 130, height: 40)
-                        .background(flip ? Color.init(hex: "271D76") : .gray)
+                        .background(flip ? Color.init(hex: "164430") : .gray)
                         .clipShape(Capsule())
                         .foregroundColor(.white)
                 }
@@ -97,7 +95,7 @@ struct CardView: View {
             .padding(.top, 20)
             
             ZStack(alignment:.center) {
-                Image("cardBackg")
+                Image("bbS")
                     .resizable()
                     .frame(width: 250, height: 350)
                     .clipped()
@@ -108,7 +106,7 @@ struct CardView: View {
 
                         ZStack {
                             Text(deckCore.cardsArray[indexCard].unwrappedWord)
-                                .font(.custom("HelveticaNeue", size: 40))
+                                .font(.custom("Chalkduster", size: 40))
                                 .foregroundColor(.white)
                         }
                         .onAppear {
@@ -124,7 +122,7 @@ struct CardView: View {
                         ZStack {
 
                             Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
-                                .font(.custom("HelveticaNeue", size: 40))
+                                .font(.custom("Chalkduster", size: 40))
                                 .foregroundColor(.white)
                                 .onAppear {
                                     print("flip of def in cardView : \(flip)")
@@ -211,141 +209,6 @@ struct CardView: View {
                     }
             )
             
-//
-//            ZStack {
-//                Image(cardCore.unwrappedImage)
-//                    .resizable()
-//                    .frame(width: 250, height: 350)
-//                    .clipped()
-//                    .cornerRadius(12)
-//               // VStack( spacing: 5) {
-//                    if deckCore.cardsArray.count > 0 {
-//                        if flip == false {
-//                            if rightArrowTapped == true {
-//                                Text("")
-//                            } else {
-//                                Text(deckCore.cardsArray[indexCard].unwrappedWord)
-//                                    .font(.custom("HelveticaNeue", size: 40))
-//                                    .foregroundColor(.white)
-//
-//
-//                            }
-//                        } else {
-//                            //                                if rightArrowTapped == true {
-//                            //                                    Text("")
-//                            //                                } else {
-//                            Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
-//                                .font(.custom("HelveticaNeue", size: 40))
-//                                .foregroundColor(.white)
-//                                .onAppear(perform: {
-//                                    print("idx card in editView on meaning editView \(indexCard)")
-//
-//                                })
-//
-//                        }
-//                    }
-//                    else {
-//                        ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
-//                            if flip == false {
-//                                //                                if rightArrowTapped == true {
-//                                //                                    Text("")
-//                                //                                } else {
-//                                Text(deckCore.cardsArray[index].unwrappedWord)
-//                                    .font(.custom("HelveticaNeue", size: 40))
-//                                    .foregroundColor(.white)
-//
-//
-//                                //}
-//                            } else {
-//                                //                                if rightArrowTapped == true {
-//                                //                                    Text("")
-//                                //                                } else {
-//                                Text(deckCore.cardsArray[index].unwrappedDefinition)
-//                                    .font(.custom("HelveticaNeue", size: 40))
-//                                    .foregroundColor(.white)
-//                                //}
-//                            }
-//
-//
-//
-//
-//                        }
-//                    }
-//
-//
-//               // }
-//                HStack {
-//                    Image("correct")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width:75,height: 75)
-//                        .offset(x: 60, y: -140)
-//                        .opacity(Double(card.x/10 - 1))
-//
-//                    Spacer()
-//                    Image("false")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width:75,height: 75)
-//                        .offset(x: -60, y: -140)
-//                        .opacity(Double(card.x/10 * -1 - 1))
-//                }
-//            }
-//            .padding(.top, 10)
-//            .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
-//            .cornerRadius(8)
-//            .offset(x: card.x, y: card.y)
-//            .rotationEffect(.init(degrees: card.degree))
-//            .gesture (
-//                DragGesture()
-//                    .onChanged { value in
-//                withAnimation(.default) {
-//                    card.x = value.translation.width
-//                    // MARK: - BUG 5
-//                    card.y = value.translation.height
-//                    card.degree = 7 * (value.translation.width > 0 ? 1 : -1)
-//
-//                }
-//            }
-//                    .onEnded { (value) in
-//                withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 50, damping: 8, initialVelocity: 0)) {
-//                    switch value.translation.width {
-//                    case 0...100:
-//                        card.x = 0; card.degree = 0; card.y = 0
-//                        //self.animationActivated = false
-//
-//                    case let x where x > 100:
-//                        card.x = 1000; card.degree = 12
-//                        correctAnswer += 1
-//                        correctA += 1
-//                        if  indexCard > 0 {
-//                            indexCard -= 1
-//                        }
-//                       // self.isTapped = true
-//                        self.resetBg = false
-//
-//                    case (-100)...(-1):
-//                        card.x = 0; card.degree = 0; card.y = 0
-//                    case let x where x < -100:
-//                        card.x  = -1000; card.degree = -12
-//                        falseAnswer += 1
-//                        if  indexCard > 0 {
-//                            indexCard -= 1
-//
-//                        }
-//                       // self.isTapped = true
-//                        self.resetBg = false
-//
-//
-//                    default:
-//                        card.x = 0; card.y = 0
-//
-//                    }
-//
-//                }
-//                    }
-//            )
-            
             Text("\(indexCard+1) of \(deckCore.cardsArray.count)")
                 .font(.title2)
                 .padding(.top, 10)
@@ -353,18 +216,19 @@ struct CardView: View {
             HStack(spacing: 40){
                 
                 Text("Correct: \(correctAnswer)")
-                    .font(.title)
+                    .font(.custom("Chalkduster", size: 22))
                     .frame(width: 130, height: 40)
-                    .background(Color.init(hex: "271D76"))
+                    .background(Color.init(hex: "164430"))
                     .clipShape(Capsule())
                     .foregroundColor(.white)
                 
                 
                 
                 Text("False: \(falseAnswer)")
-                    .font(.title)
+                    .font(.custom("Chalkduster", size: 22))
                     .frame(width: 130, height: 40)
-                    .background(Color.init(hex: "B74278"))
+                    .foregroundColor(Color.init(hex: "164430"))
+                    .background(Color(.lightGray))
                     .clipShape(Capsule())
                     .foregroundColor(.white)
             }

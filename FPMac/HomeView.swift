@@ -176,6 +176,7 @@ struct HomeView: View {
                     .onDisappear {
                         deckList.decks = []
                     }
+            
         }
          //}
     }
@@ -288,7 +289,7 @@ struct SheetView: View {
     @State private var indexOfCard = UserDefaults.standard.integer(forKey: "indexOfCard")
   
     @Binding var addButtonClicked:Bool
-    
+
     var body: some View {
         VStack {
             Text("Create FlashPad Deck")

@@ -10,9 +10,10 @@ import SwiftUI
 struct DeckListRow: View {
     var deck:DeckCore
     @State var deckList = DeckList()
+    
     var body: some View {
         HStack(spacing: 10) {
-            Image("cardBackg")
+            Image("blackboardM")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 40, height: 60)
@@ -28,11 +29,7 @@ struct DeckListRow: View {
                 Text("\(deck.numberOfCardsInDeck) cards")
                     .font(.title2)
                     .foregroundColor(.gray)
-                    .onAppear {
-                        if deckList.decks.count != deck.numberOfCardsInDeck {
-                            deck.numberOfCardsInDeck = Int16(deckList.decks.count)
-                        }
-                    }
+            
                 Text("created on \(deck.deckCreatedAt ?? "")")
                     .font(.system(size: 12.0))
                     .foregroundColor(.gray)
