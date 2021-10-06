@@ -35,7 +35,8 @@ struct EditView: View {
 
     @EnvironmentObject var homeData: HomeViewModel
     @Binding var indexCard:Int
-    
+    @Environment(\.colorScheme) var colorScheme
+
 
     
     var body: some View {
@@ -256,9 +257,9 @@ struct EditView: View {
                             indexCard -= 1
                         }
                     } label: {
-                        Image(systemName: "arrowshape.turn.up.left.fill")
+                        Image(systemName: "arrowshape.turn.up.left")
                             .font(.custom("Chalkduster", size: 40))
-                            .foregroundColor(Color.init(hex: "164430"))
+                            .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
                     }
                     .buttonStyle(PlainButtonStyle())
 
@@ -292,9 +293,9 @@ struct EditView: View {
                             indexCard += 1
                         }
                     } label: {
-                        Image(systemName: "arrowshape.turn.up.right.fill")
+                        Image(systemName: "arrowshape.turn.up.right")
                             .font(.custom("Chalkduster", size: 40))
-                            .foregroundColor(Color.init(hex: "164430"))
+                            .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
                     }
                     .buttonStyle(PlainButtonStyle())
 
@@ -378,6 +379,7 @@ struct EditView: View {
         newCard.imageName = "bbS"
         
         deckCore.addToCards(newCard)
+        deckCore.numberOfCardsInDeck = Int16(deckCore.cardsArray.count)
         PersistenceController.shared.saveContext()
         showCircle = 1
         rotateCheckMark = 0
