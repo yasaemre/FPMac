@@ -17,7 +17,6 @@ struct CardView: View {
     @State var rightArrowTapped = false
     @Binding var flipped:Bool
     @Binding var flip: Bool
-    // @State var card: Card
     // MARK: - Drawing Constant
     @StateObject var deckCore:DeckCore
    
@@ -95,7 +94,7 @@ struct CardView: View {
             .padding(.top, 20)
             
             ZStack(alignment:.center) {
-                Image("bbS")
+                Image("bbs1")
                     .resizable()
                     .frame(width: 250, height: 350)
                     .clipped()
@@ -114,10 +113,6 @@ struct CardView: View {
                             print("indexCard of word in cardView : \(indexCard)")
                             print("deckCore.cardsArray.count word in cardView : \(deckCore.cardsArray.count)")
                         }
-
-
-
-
                     } else {
                         ZStack {
 
@@ -130,8 +125,6 @@ struct CardView: View {
                                     print("deckCore.cardsArray.count def in cardView : \(deckCore.cardsArray.count)")
                                 }
                         }
-
-
                     }
 
                 }
@@ -175,7 +168,6 @@ struct CardView: View {
                     switch value.translation.width {
                     case 0...100:
                         card.x = 0; card.degree = 0; card.y = 0
-                        //self.animationActivated = false
 
                     case let x where x > 100:
                         card.x = 1000; card.degree = 12
@@ -184,7 +176,6 @@ struct CardView: View {
                         if  indexCard > 0 {
                             indexCard -= 1
                         }
-                       // self.isTapped = true
                         self.resetBg = false
 
                     case (-100)...(-1):
@@ -196,7 +187,6 @@ struct CardView: View {
                             indexCard -= 1
 
                         }
-                       // self.isTapped = true
                         self.resetBg = false
 
 
@@ -236,9 +226,6 @@ struct CardView: View {
             
             Button {
                 //some code
-              //  let newLikedCard = PersonCore(context: viewContext)
-               
-                print("Like button tapped")
             } label: {
                 
                 HeartView(resetBg: $resetBg, deckCore:deckCore, indexCard: $indexCard)
@@ -252,33 +239,3 @@ struct CardView: View {
         
     }
 }
-
-//Custom shape for resetting center
-//struct CustomShapeLike: Shape {
-//    var radius: CGFloat
-//
-//    var animatableData: CGFloat {
-//        get { return radius}
-//        set { radius = newValue }
-//    }
-//
-//    func path(in rect: CGRect) -> Path {
-//        return Path { path in
-//            path.move(to: CGPoint(x: 0, y: 0))
-//            path.addLine(to: CGPoint(x: 0, y: rect.height))
-//            path.addLine(to: CGPoint(x: rect.width, y: rect.height))
-//            path.addLine(to: CGPoint(x: rect.width, y: 0))
-//
-//            //adding center to circle
-//            let center = CGPoint(x: rect.width / 2, y: rect.height / 2)
-//            path.move(to: center)
-//            path.addArc(center: center, radius: radius, startAngle: .zero, endAngle: .init(degrees: 360), clockwise: false)
-//        }
-//    }
-
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardView(card: DeckCore.cardsArray[0])
-//                    .previewLayout(.sizeThatFits)
-//    }
-//}

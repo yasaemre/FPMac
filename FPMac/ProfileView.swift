@@ -39,6 +39,8 @@ struct ProfileView: View {
         VStack(spacing: 30) {
             Spacer()
             Group {
+                Text("Profile")
+                    .font(.title)
                 HStack(spacing:10) {
                     Text("Name: ")
                         .font(.title)
@@ -50,14 +52,9 @@ struct ProfileView: View {
                             TextField("Name", text: $name)
                                 .font(Font.system(size: 25, design: .default))
                         }
-                        
-                        
                     }
                 }
-                
-                
-                
-                
+
                 HStack(spacing:10) {
                     Text("Last Name: ")
                         .font(.title)
@@ -69,12 +66,8 @@ struct ProfileView: View {
                             TextField("Last Name", text: $lastName)
                                 .font(Font.system(size: 25, design: .default))
                         }
-                        
-                        
                     }
-
                 }
-                
                 
                 HStack(spacing:10){
                     Text("Age: ")
@@ -90,8 +83,6 @@ struct ProfileView: View {
                                 .font(Font.system(size: 25, design: .default))
                                 .textContentType(.oneTimeCode)
                         }
-                      
-                        
                     }
 
                 }
@@ -108,12 +99,8 @@ struct ProfileView: View {
                             TextField("Sex", text: $sex)
                                 .font(Font.system(size: 25, design: .default))
                         }
-                       
-                        
                     }
                 }
-                
-
                 HStack(spacing:10) {
                     Text("Location: ")
                         .font(.title)
@@ -126,8 +113,6 @@ struct ProfileView: View {
                             TextField("Location", text: $location)
                                 .font(Font.system(size: 25, design: .default))
                         }
-                       
-                        
                     }
                 }
             }
@@ -261,15 +246,3 @@ struct ProfileView: View {
         
     }
 }
-
-//struct ProfileView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProfileView()
-//    }
-//}
-
-
-//extension UIImage {
-//    var jpeg: Data? { jpegData(compressionQuality: 1) }  // QUALITY min = 0 / max = 1
-//    var png: Data? { pngData() }
-//}

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C66932C026FE0D87004F226A /* FPMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932BF26FE0D87004F226A /* FPMacApp.swift */; };
 		C66932C226FE0D87004F226A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932C126FE0D87004F226A /* ContentView.swift */; };
-		C66932C426FE0D89004F226A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66932C326FE0D89004F226A /* Assets.xcassets */; };
 		C66932C726FE0D89004F226A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66932C626FE0D89004F226A /* Preview Assets.xcassets */; };
 		C66932D226FE0D89004F226A /* FPMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932D126FE0D89004F226A /* FPMacTests.swift */; };
 		C66932DC26FE0D89004F226A /* FPMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932DB26FE0D89004F226A /* FPMacUITests.swift */; };
@@ -21,7 +20,6 @@
 		C669330126FE0EB0004F226A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330026FE0EB0004F226A /* HomeView.swift */; };
 		C669330326FE0EB4004F226A /* RecentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330226FE0EB4004F226A /* RecentCardView.swift */; };
 		C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330626FE0EDF004F226A /* HomeViewModel.swift */; };
-		C669330926FE0EFB004F226A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330826FE0EFB004F226A /* Message.swift */; };
 		C669330B26FE0EFE004F226A /* RecentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330A26FE0EFE004F226A /* RecentMessage.swift */; };
 		C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C669330C26FE1231004F226A /* FPMac.xcdatamodeld */; };
 		C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */; };
@@ -46,6 +44,8 @@
 		C669333B26FE170F004F226A /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333A26FE170F004F226A /* Deck.swift */; };
 		C669333E26FE34AC004F226A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C669333D26FE34AC004F226A /* CloudKit.framework */; };
 		C669334026FE7607004F226A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333F26FE7607004F226A /* ProfileView.swift */; };
+		C66C0B112717605D00FE8965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66932C326FE0D89004F226A /* Assets.xcassets */; };
+		C66C0B132717669800FE8965 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66C0B122717669800FE8965 /* Message.swift */; };
 		C695C553270789F4004B8D84 /* DeckListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C695C552270789F4004B8D84 /* DeckListRow.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,7 +70,7 @@
 		C66932BC26FE0D87004F226A /* FPMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FPMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66932BF26FE0D87004F226A /* FPMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacApp.swift; sourceTree = "<group>"; };
 		C66932C126FE0D87004F226A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C66932C326FE0D89004F226A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C66932C326FE0D89004F226A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FPMac/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		C66932C626FE0D89004F226A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C66932C826FE0D89004F226A /* FPMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FPMac.entitlements; sourceTree = "<group>"; };
 		C66932CD26FE0D89004F226A /* FPMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +85,6 @@
 		C669330026FE0EB0004F226A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C669330226FE0EB4004F226A /* RecentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCardView.swift; sourceTree = "<group>"; };
 		C669330626FE0EDF004F226A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		C669330826FE0EFB004F226A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C669330A26FE0EFE004F226A /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
 		C669330D26FE1231004F226A /* FPMac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FPMac.xcdatamodel; sourceTree = "<group>"; };
 		C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedCore+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		C669333A26FE170F004F226A /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		C669333D26FE34AC004F226A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C669333F26FE7607004F226A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C66C0B122717669800FE8965 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		C695C552270789F4004B8D84 /* DeckListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,7 +194,7 @@
 				C669333026FE1660004F226A /* InstructionsView.swift */,
 				C669333226FE167A004F226A /* ScoreboardView.swift */,
 				C669333F26FE7607004F226A /* ProfileView.swift */,
-				C669330826FE0EFB004F226A /* Message.swift */,
+				C66C0B122717669800FE8965 /* Message.swift */,
 				C669330A26FE0EFE004F226A /* RecentMessage.swift */,
 				C66932C326FE0D89004F226A /* Assets.xcassets */,
 				C66932C826FE0D89004F226A /* FPMac.entitlements */,
@@ -365,8 +365,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C66C0B112717605D00FE8965 /* Assets.xcassets in Resources */,
 				C66932C726FE0D89004F226A /* Preview Assets.xcassets in Resources */,
-				C66932C426FE0D89004F226A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +394,7 @@
 				C66932C226FE0D87004F226A /* ContentView.swift in Sources */,
 				C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */,
 				C669332726FE15B6004F226A /* EditView.swift in Sources */,
+				C66C0B132717669800FE8965 /* Message.swift in Sources */,
 				C695C553270789F4004B8D84 /* DeckListRow.swift in Sources */,
 				C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */,
 				C669333326FE167A004F226A /* ScoreboardView.swift in Sources */,
@@ -415,7 +416,6 @@
 				C669331926FE144E004F226A /* ProfileCore+CoreDataClass.swift in Sources */,
 				C66932C026FE0D87004F226A /* FPMacApp.swift in Sources */,
 				C669330326FE0EB4004F226A /* RecentCardView.swift in Sources */,
-				C669330926FE0EFB004F226A /* Message.swift in Sources */,
 				C669332B26FE15FC004F226A /* CardView.swift in Sources */,
 				C669331D26FE144E004F226A /* DeckCore+CoreDataClass.swift in Sources */,
 				C669330B26FE0EFE004F226A /* RecentMessage.swift in Sources */,

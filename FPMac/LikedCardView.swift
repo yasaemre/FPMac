@@ -73,7 +73,7 @@ struct LikedCardView: View {
                     
                     HStack {
                         ZStack (alignment: .center){
-                            Image("bbS")
+                            Image("bbs1")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: calculateWidth(), height: 400 - CGFloat(index-scrolled)*50)
@@ -81,19 +81,12 @@ struct LikedCardView: View {
                             //based on scrolled changing view size..
                                 .offset(x: index - scrolled <= 2 ? CGFloat(index - scrolled) * 30 : 60)
                             if flip == false {
-                                //indexCard = deckCore.cardsArray.count
-                                
                                     ZStack {
-                                        
                                         Text(likedArrPersistent[index].unwrappedWord)
                                             .font(.custom("Chalkduster", size: 40))
 
                                             .foregroundColor(.white)
                                     }
-
-                                    
-                                    
-                                    
                                 } else {
                                     ZStack {
                                         
@@ -102,15 +95,10 @@ struct LikedCardView: View {
 
                                             .foregroundColor(.white)
                                     }
-
-                                    
-                                    
-                                    
                                 }
                         }
                         .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
                         .padding()
-                        //Spacer(minLength: 0)
                     }
                     .onAppear(perform: {
                         scrolled = 0
@@ -185,7 +173,6 @@ struct LikedCardView: View {
 
             Spacer()
         }
-        //.padding(.top, 1)
         .ignoresSafeArea(.all, edges: .all)
 
         

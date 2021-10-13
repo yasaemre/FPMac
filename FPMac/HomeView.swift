@@ -17,7 +17,6 @@ struct HomeView: View {
     
     @State var customAlert = false
     @State var HUD = false
-    //@State var nameOfDeck = ""
     
     @State var dark = false
     @State var show = false
@@ -56,7 +55,6 @@ struct HomeView: View {
     @State private var avatarImage = Image("profilePhoto")
     @State private var sheetIsShowing = false
     @State private var dialogResult = ""
-    //@State private var selection = ""
     
     let columns = Array(repeating: GridItem(.flexible(), spacing:15), count: 2)
     
@@ -71,7 +69,6 @@ struct HomeView: View {
     @State private var dialogResultForSelection = ""
     
     var body: some View {
-        //NavigationView {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
                     VStack(spacing: 30) {
         
@@ -91,19 +88,13 @@ struct HomeView: View {
                         }
                         .padding(.horizontal)
                         .onAppear {
-                            print("\(decksArrPersistent.count)")
-                            //DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                                 for deck in self.decksArrPersistent {
                                     self.deckList.decks.append(deck)
                                 }
-                           // }
-
-
                         }
         
                         if addButtonClicked {
                             List(0..<decksArrPersistent.count, id: \.self) { index in
-                                           //ForEach(0..<decksArrPersistent.count, id: \.self) { index in
             
                                 NavigationLink(destination: EditScrnView(card: card, deckCore: decksArrPersistent[index], likedCore: likedCore), tag: decksArrPersistent[index], selection: $selectedDeck){
                                     
@@ -123,15 +114,12 @@ struct HomeView: View {
                                     }
                                     .buttonStyle(PlainButtonStyle())
                                 }
-                                
-                                
-                                //}
+
                                 
                             }
                             .listStyle(SidebarListStyle())
                         } else {
                             List(0..<deckList.decks.count, id: \.self) { index in
-                                           //ForEach(0..<decksArrPersistent.count, id: \.self) { index in
             
                                 NavigationLink(destination: EditScrnView(card: card, deckCore: deckList.decks[index], likedCore: likedCore), tag: deckList.decks[index], selection: $selectedDeck){
                                     
@@ -152,21 +140,14 @@ struct HomeView: View {
                                     }
                                     .buttonStyle(PlainButtonStyle())
                                 }
-                                
-                                
-                                //}
-                                
+
                             }
                             .listStyle(SidebarListStyle())
                         }
                         
                         
                     }
-//                    .alert(isPresented: $showDeleteAlert) {
-//                        deleteAlert(at: in)
-//                    }
-            
-            //}
+
                     .sheet(isPresented: $sheetIsShowing) {
                         SheetView(isVisible: self.$sheetIsShowing, enteredText: self.$dialogResult, addButtonClicked: $addButtonClicked)
                     }
@@ -178,7 +159,7 @@ struct HomeView: View {
                     }
             
         }
-         //}
+
     }
 
     func notSelectedRowAlert() -> Alert {
@@ -190,7 +171,6 @@ struct HomeView: View {
     //Use with tap gesture or delete button
     private func deleteDeck(at offsets: IndexSet, deleteDeckName: String) {
         
-        //if let deleteDeckName = selectedDeck?.deckName {
 
         guard let deleteDeckName = selectedDeck?.deckName, let deckIndex = deckList.decks.firstIndex(where: { deck in
             deck.unwrappedDeckName == deleteDeckName
@@ -199,13 +179,10 @@ struct HomeView: View {
         }
         
         withAnimation {
-            //for index in offsets {
                 let deck = decksArrPersistent[deckIndex]
                 deckList.decks.remove(at: deckIndex)
                 viewContext.delete(deck)
                 PersistenceController.shared.saveContext()
-                //indexCard = 0
-           // }
         }
         
     }
@@ -237,11 +214,8 @@ class DeckList: ObservableObject {
             
             viewContext.delete(deck)
             PersistenceController.shared.saveContext()
-            //indexCard = 0
             }
         }
-            //indexCard = 0
-        //}
     }
 }
 struct CustomShape:Shape {

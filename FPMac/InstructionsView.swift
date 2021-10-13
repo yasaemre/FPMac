@@ -32,7 +32,7 @@ struct IntsructionsView: View {
                             ScrollView{
                                 Group {
                                     VStack {
-                                        Text("How to use Flashpads")
+                                        Text("How to use Flashpad")
                                             .bold()
                                             .font(.system(size: 28))
                                             .padding()
@@ -43,27 +43,25 @@ struct IntsructionsView: View {
                                         Text("Create Deck")
                                             .bold()
                                             .font(.system(size: 24))
-                                        Text("On the home screen, click the plus button to create new deck. To populate the deck with flash cards tap the deck and navigate the edit screen. ")
+                                        Text("On the home screen, click the plus button to create a new deck. To populate the deck with flash cards, tap the deck and navigate the edit screen. ")
                                         Text("Edit Deck")
                                             .bold()
                                             .font(.system(size: 24))
-                                        Text("On the edit screen, while word button is clicked, tap to text field to enter the word and then tap the meaning button to type the meaning of the word and finally click the add card button. The word is succesfully added to the deck. Clear the text field tapping the clear button next to text field. ")
+                                        Text("On the edit screen, while word button is clicked, tap to text field to enter the word and then tap the meaning button to type the meaning of the word and finally click the add card button. The word will be succesfully added to the deck. Clear the text field tapping the clear button next to text field.")
                                         Text("Study Deck")
                                             .bold()
                                             .font(.system(size: 24))
-                                        Text("Swipe card to the right if you know the meaning of the word, swipe left if you don't know. Depending on the your self-check you cand find your correction rate of related deck on scroboard screen.")
+                                        Text("Swipe card to the right if you know the meaning of the word, swipe left if you don't. Depending on the your self-assessment you cand find your correction rate of related deck on scroboard screen.")
                                         Text("Liked Cards")
                                             .bold()
                                             .font(.system(size: 24))
-                                        Text("While studying the card clicked the like button to all the cards you liked on on liked screen. Click like button on tab bar to move liked cards screen on home screen.")
+                                        Text("While studying a deck, pick the card you like by clicking heart button. The card you liked on each deck will show up on liked screen all togather. Liked screen is the one having heart icon on tab bar on home screen.")
                                     }
                                   
                                 }
                                 .frame(width: 200)
                                 .foregroundColor(.black)
-                            
-                            // Spacer()
-                            
+                                                        
                         }
                             
                         )

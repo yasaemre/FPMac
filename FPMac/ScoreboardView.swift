@@ -43,25 +43,19 @@ struct ScoreboardView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-    
             Spacer()
-            
+            Text("Scoreboard")
+                .font(.title)
+            Spacer()
             
             if (decksArrPersistent.count > 0) {
                 Picker("Please choose a deck", selection: $selectedDeck) {
                     ForEach(decksArrPersistent, id: \.self) { (deck:DeckCore) in
                         Text(deck.unwrappedDeckName)
-                            //.foregroundColor(.white)
                     }
                 }
-                //.pickerStyle()
-                //CustomPicker()
+
             }
-            
-            
-            
-            
-            
             Group {
                 if (decksArrPersistent.count > 0) {
                 Text("The Highest Correct Rate \nfor \(selectedDeck.unwrappedDeckName):")
@@ -78,20 +72,5 @@ struct ScoreboardView: View {
         }
 
     }
-    
-//    public func shareButton() {
-//         isShareSheetShowing.toggle()
-//
-//        //https://apps.apple.com/us/app/vintage-house/id1549251393
-//         let score = selectedDeck.correctRate
-//        let activityView = UIActivityViewController(activityItems:[score], applicationActivities: nil)
-//
-//         UIApplication.shared.windows.first?.rootViewController?.present(activityView, animated: true, completion: nil)
-//     }
 }
 
-//struct ScoreboardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ScoreboardView()
-//    }
-//}

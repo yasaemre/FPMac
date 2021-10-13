@@ -19,19 +19,12 @@ struct HeartView: View {
 
     //To avoid Taps during animation..
     @State var tapCompleted = false
-    //@State var resetBg = false
-   // @Binding var cardSwiped: Bool
+
     @StateObject var deckCore:DeckCore
     @Binding var indexCard:Int
 
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) private var viewContext
-    
-//    @FetchRequest(
-//        entity: LikedCore.entity(),
-//        sortDescriptors: []
-//    ) var likedArrPersistent: FetchedResults<LikedCore>
-   // @StateObject var likedCore:LikedCore
 
     var body: some View {
         
@@ -78,36 +71,13 @@ struct HeartView: View {
             .frame(maxWidth: 50, maxHeight: 50, alignment: .center)
             .contentShape(Rectangle())
             .onTapGesture {
-                
-//                if tapCompleted {
-//                    //Resetting back
-//                    startAnimation = false
-//                    bgAnimaton = false
-//                    resetBg = false
-//                    fireworkAnimation = false
-//                    animationEnded = false
-//                    tapCompleted = false
-//                    //isTapped = false
-//                    return
-//                }
-//                if startAnimation {
-////                    Image(systemName:"suit.heart")
-////                        .font(.system(size: 45))
-////                        .foregroundColor( .gray)
-//                    return
-//
-//                }
                 let likedCard = LikedCore(context: viewContext)
-                //likedCard.id = Int16(indexCard)
                 likedCard.word = deckCore.cardsArray[indexCard].unwrappedWord
                 likedCard.definition = deckCore.cardsArray[indexCard].unwrappedDefinition
                 likedCard.imageName = "bbS"
                 PersistenceController.shared.saveContext()
-//                for likedWord in likedCore.likedArray {
-//                    print("likedWord is \(likedWord)")
-//                }
+
                 
-                //isTapped = true
                 withAnimation(.interactiveSpring(response: 0.5, dampingFraction: 0.6, blendDuration: 0.6)) {
                     startAnimation = true
                 }
@@ -171,9 +141,3 @@ struct CustomShapeLike: Shape {
         }
     }
 }
-
-//struct HeartView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HeartView()
-//    }
-//}

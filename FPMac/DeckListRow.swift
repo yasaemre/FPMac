@@ -29,19 +29,11 @@ struct DeckListRow: View {
                 Text("\(deck.numberOfCardsInDeck) cards")
                     .font(.title2)
                     .foregroundColor(.gray)
-//                    .onAppear {
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-//
-//                        deck.numberOfCardsInDeck = Int16(deck.cardsArray.count)
-//
-//                        }
-//                    }
             
                 Text("created on \(deck.deckCreatedAt ?? "")")
                     .font(.system(size: 12.0))
                     .foregroundColor(.gray)
                 Spacer()
-
             }
         }
         .onAppear {
@@ -49,9 +41,3 @@ struct DeckListRow: View {
         }
     }
 }
-
-//struct DeckListRow_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DeckListRow()
-//    }
-//}

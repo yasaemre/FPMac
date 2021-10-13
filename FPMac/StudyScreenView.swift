@@ -42,22 +42,7 @@ struct StudyScreenView: View {
                         indexCard = deckCore.cardsArray.count-1
             
                     }
-//                    .onAppear(perform: {
-//
-//                        if deckCore.cardsArray.isEmpty {
-//                            indexCard = 0
-//                        }
-//                        else {
-//                            indexCard = deckCore.cardsArray.count-1
-//                        }
-//                        print("Index in EditScrnView: \(indexCard)")
-//                    })
-                    
             }
-            
-            
-            
-            
         }
         .onDisappear{
             if prevCorrectA != correctA {
@@ -68,22 +53,9 @@ struct StudyScreenView: View {
                 
             }
             prevCorrectA = correctA
-
-           // UserDefaults.standard.set(0.0, forKey: "correctA")
-            //correctA = 0.0
-
         }
         
        
         .zIndex(1.0)
     }
 }
-    
-
-
-
-//struct StudyScreenView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        StudyScreenView(card: Card(), deckCore: DeckCore())
-//    }
-//}

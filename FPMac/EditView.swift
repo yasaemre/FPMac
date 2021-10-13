@@ -12,20 +12,14 @@ struct EditView: View {
     @State var flipped = false
     @State var flip = false
     @State var rightArrowTapped = false
-    //@State var cardCore: CardCore
     @State var card: Card
     @StateObject var deckCore:DeckCore
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @Environment(\.managedObjectContext) private var viewContext
-    //not working on macoss userdefaults
-   // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
-   // @AppStorage("indexCard") var indexCard = 0
-    //@State var indexCard = 0
 
     @StateObject var likedCore:LikedCore
-    // @State var correctAnswer = 0
     @State private var rotateCheckMark = 30
     @State private var checkMarkValue = -60
     
@@ -107,17 +101,12 @@ struct EditView: View {
                     TextField("Enter a word", text: $card.word)
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding(.top, 1)
-                    //                        .padding(.leading, 40)
-                    //                        .padding(.trailing, 40)
                         .frame(width: 250, height: 145, alignment: .center)
-                        //.textFieldStyle(.roundedBorder)
                         .modifier(TextFieldClearButton(text: $card.word))
                 } else {
                     TextField("Enter a definition", text: $card.definition)
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding(.top, 1)
-                    //                        .padding(.leading, 40)
-                    //                        .padding(.trailing, 40)
                         .frame(width: 250, height: 145, alignment: .center)
                         .modifier(TextFieldClearButton(text: $card.definition))
                         .onAppear {
@@ -189,9 +178,6 @@ struct EditView: View {
                             else {
                             ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
                                 if flip == false {
-                                    //                                if rightArrowTapped == true {
-                                    //                                    Text("")
-                                    //                                } else {
                                     Text(deckCore.cardsArray[index].unwrappedWord)
                                         .font(.custom("Chalkduster", size: 40))
                                         .foregroundColor(.white)
@@ -209,8 +195,6 @@ struct EditView: View {
 
                                         )
 
-
-                                    //}
                                 } else {
                                
                                     Text(deckCore.cardsArray[index].unwrappedDefinition)
@@ -229,12 +213,7 @@ struct EditView: View {
                                             .offset(x: -130, y: -183)
 
                                         )
-                                    //}
                                 }
-
-
-
-
                             }
                         }
                         
@@ -402,7 +381,6 @@ struct TextFieldClearButton: ViewModifier {
                     action: { self.text = "" },
                     label: {
                     Image(systemName: "delete.left")
-                        //.foregroundColor(NSColor(NSColor.opaqueSeparator))
                 }
                 )
             }
@@ -438,12 +416,3 @@ struct FlipEffect: GeometryEffect {
         return ProjectionTransform(transform3d).concatenating(affineTransform)
     }
 }
-
-
-
-
-//struct EditView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditView()
-//    }
-//}
