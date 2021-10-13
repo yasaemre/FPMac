@@ -155,7 +155,12 @@ struct LikedCardView: View {
                     
                   
                     Button {
-                            deleteCard(at: IndexSet.init(integer: index))
+                        if scrolled+1 == likedArrPersistent.count  {
+                            deleteCard(index:scrolled)
+                            scrolled = likedArrPersistent.count
+                        } else {
+                            deleteCard(index:scrolled)
+                        }
                     } label: {
                         Image(systemName: "trash")
                             .font(.title)
@@ -187,16 +192,11 @@ struct LikedCardView: View {
        
     }
     //Use with tap gesture or delete button
-    private func deleteCard(at offsets: IndexSet) {
+    private func deleteCard(index: Int) {
         withAnimation {
-//            offsets.map {decksArrPersistent[$0]}.forEach(viewContext.delete)
-            for index in offsets {
                 let deck = likedArrPersistent[index]
-                
                 viewContext.delete(deck)
                 PersistenceController.shared.saveContext()
-                //indexCard = 0
-            }
         }
     }
     func calculateWidth() -> CGFloat {
