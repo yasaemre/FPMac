@@ -99,14 +99,16 @@ struct CardView: View {
                         
                         ZStack {
                             Text(deckCore.cardsArray[indexCard].unwrappedWord)
-                                .font(.custom("Chalkduster", size: 40))
                                 .foregroundColor(.white)
+                                .font(.custom("Chalkduster", size: 25))
+                                .frame(width: 185, height: 340, alignment: .center)
                         }
                     } else {
                         ZStack {
                 
                             Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
-                                .font(.custom("Chalkduster", size: 40))
+                                .font(.custom("Chalkduster", size: 25))
+                                .frame(width: 185, height: 340, alignment: .center)
                                 .foregroundColor(.white)
                         }
                     }

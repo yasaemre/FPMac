@@ -82,20 +82,25 @@ struct LikedCardView: View {
                             if flip == false {
                                     ZStack {
                                         Text(likedArrPersistent[index].unwrappedWord)
-                                            .font(.custom("Chalkduster", size: 40))
+                                            .font(.custom("Chalkduster", size: 30))
                                             .foregroundColor(.white)
+                                            .frame(width:220, height: 370)
+
                                     }
                                 } else {
                                     ZStack {
                                         
                                         Text(likedArrPersistent[index].unwrappedDefinition)
-                                            .font(.custom("Chalkduster", size: 40))
+                                            .font(.custom("Chalkduster", size: 30))
                                             .foregroundColor(.white)
+                                            .frame(width:220, height: 370)
+
                                     }
                                 }
                         }
                         .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
                         .padding()
+
                     }
                     .onAppear(perform: {
                         scrolled = 0

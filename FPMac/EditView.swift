@@ -122,7 +122,8 @@ struct EditView: View {
                                     Text("")
                                 } else {
                                     Text(deckCore.cardsArray[indexCard].unwrappedWord)
-                                        .font(.custom("Chalkduster", size: 40))
+                                        .font(.custom("Chalkduster", size: 25))
+                                        .frame(width: 175, height: 330, alignment: .center)
                                         .foregroundColor(.white)
                                         .overlay(
                                             
@@ -142,7 +143,8 @@ struct EditView: View {
                             } else {
                           
                                 Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
-                                    .font(.custom("Chalkduster", size: 40))
+                                    .font(.custom("Chalkduster", size: 25))
+                                    .frame(width: 175, height: 330, alignment: .center)
                                     .foregroundColor(.white)
                                     .overlay(
                                         
@@ -162,7 +164,8 @@ struct EditView: View {
                             ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
                                 if flip == false {
                                     Text(deckCore.cardsArray[index].unwrappedWord)
-                                        .font(.custom("Chalkduster", size: 40))
+                                        .font(.custom("Chalkduster", size: 25))
+                                        .frame(width: 175, height: 330, alignment: .center)
                                         .foregroundColor(.white)
                                         .overlay(
 
@@ -180,7 +183,8 @@ struct EditView: View {
                                 } else {
                                
                                     Text(deckCore.cardsArray[index].unwrappedDefinition)
-                                        .font(.custom("Chalkduster", size: 40))
+                                        .font(.custom("Chalkduster", size: 25))
+                                        .frame(width: 175, height: 330, alignment: .center)
                                         .foregroundColor(.white)
                                         .overlay(
 
