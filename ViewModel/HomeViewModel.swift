@@ -10,10 +10,6 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     @Published var selectedTab = "Home"
     
-    @Published var msgs:[RecentMessage] = recentMsgs
-    
-    @Published var selectedRecentMsg: String? = recentMsgs.first?.id
-    
     @Published var search = ""
     
     @Published var message = ""

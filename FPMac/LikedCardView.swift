@@ -50,7 +50,6 @@ struct LikedCardView: View {
                 Button {
                     withAnimation {
                         flip = true
-                        //saveContext()
                     }
                 } label: {
                     Text("Meaning")
@@ -84,7 +83,6 @@ struct LikedCardView: View {
                                     ZStack {
                                         Text(likedArrPersistent[index].unwrappedWord)
                                             .font(.custom("Chalkduster", size: 40))
-
                                             .foregroundColor(.white)
                                     }
                                 } else {
@@ -92,7 +90,6 @@ struct LikedCardView: View {
                                         
                                         Text(likedArrPersistent[index].unwrappedDefinition)
                                             .font(.custom("Chalkduster", size: 40))
-
                                             .foregroundColor(.white)
                                     }
                                 }

@@ -36,9 +36,7 @@ struct EditView: View {
     var body: some View {
         ZStack {
             VStack{
-                
                 HStack {
-                    
                     Text("Edit")
                         .font(.title)
                         .padding()
@@ -47,7 +45,6 @@ struct EditView: View {
                     Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
                         Text("Study")
                             .font(.largeTitle)
-                            //.foregroundColor(Color.init(hex: "B74278"))
                             .frame(width: 90, height: 40)
                             .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "B74278"), Color.init(hex: "B74278")]),  center: .center, startRadius: 5, endRadius: 120))
                             .clipShape(Capsule())
@@ -109,11 +106,6 @@ struct EditView: View {
                         .padding(.top, 1)
                         .frame(width: 250, height: 145, alignment: .center)
                         .modifier(TextFieldClearButton(text: $card.definition))
-                        .onAppear {
-                            print("indexCard in editView before roundedRect shows up: \(indexCard)")
-                            print("deckCore.cardsArray.count before roundedRect shows up: \(deckCore.cardsArray.count)")
-                        
-                        }
                 }
                 
                 Image("bbS")
@@ -131,12 +123,10 @@ struct EditView: View {
                                 } else {
                                     Text(deckCore.cardsArray[indexCard].unwrappedWord)
                                         .font(.custom("Chalkduster", size: 40))
-
                                         .foregroundColor(.white)
                                         .overlay(
                                             
                                         Button {
-                                            print("indexCard in editView \(indexCard)")
                                             deleteCard(at: IndexSet.init(integer: indexCard))
                                         } label: {
                                             Image(systemName: "trash")
@@ -146,9 +136,7 @@ struct EditView: View {
                                             .offset(x: -130, y: -183)
                                         
                                         )
-                                        .onAppear {
-                                            print("")
-                                        }
+                                        
                                     
                                 }
                             } else {
@@ -156,14 +144,9 @@ struct EditView: View {
                                 Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
                                     .font(.custom("Chalkduster", size: 40))
                                     .foregroundColor(.white)
-                                    .onAppear(perform: {
-                                        print("idx card in editView on meaning editView \(indexCard)")
-
-                                    })
                                     .overlay(
                                         
                                     Button {
-                                        print("idx card in editView before deletecard \(indexCard)")
                                         deleteCard(at: IndexSet.init(integer: indexCard))
                                     } label: {
                                         Image(systemName: "trash")
@@ -184,7 +167,6 @@ struct EditView: View {
                                         .overlay(
 
                                         Button {
-                                            print("idx card; \(indexCard)")
                                             deleteCard(at: IndexSet.init(integer: index))
                                         } label: {
                                             Image(systemName: "trash")
@@ -203,7 +185,6 @@ struct EditView: View {
                                         .overlay(
 
                                         Button {
-                                            print("idx card; \(indexCard)")
                                             deleteCard(at: IndexSet.init(integer: index))
                                         } label: {
                                             Image(systemName: "trash")
@@ -265,8 +246,6 @@ struct EditView: View {
                     
                     
                     Button {
-                        //
-                        print("index card in right arrow \(indexCard)")
                         if indexCard
                             != deckCore.cardsArray.count-1, !deckCore.cardsArray.isEmpty {
                             indexCard += 1

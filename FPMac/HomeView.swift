@@ -47,7 +47,6 @@ struct HomeView: View {
        private var likedArrPersistent: FetchedResults<LikedCore>
 
   @State private var indexOfCard = UserDefaults.standard.integer(forKey: "indexOfCard")
-   // var editScreenView = EditScreenView()
     @StateObject var deckCore = DeckCore()
     @State private var calendarWiggles = false
     @State var imageHasChanged = false

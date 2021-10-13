@@ -178,7 +178,6 @@ struct ProfileView: View {
                     rotateCheckMark = 0
                     checkMarkValue = 0
                     
-                    
                 } label: {
                     Text("Save")
                         .font(.title)
@@ -206,9 +205,6 @@ struct ProfileView: View {
                     .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.5))
                     .transition(.asymmetric(insertion: .opacity, removal: .scale))
 
-                    
-                    
-                    
                     VStack {
                         Image(systemName: "checkmark")
                             .foregroundColor(Color.init(hex: "067238"))
@@ -225,10 +221,7 @@ struct ProfileView: View {
                             .transition(.asymmetric(insertion: .opacity, removal: .scale))
                     }
                     
-                  
-                    
                 }
-                
                 .onAppear(perform: setDismissTimer)
             }
     }

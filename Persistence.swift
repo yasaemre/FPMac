@@ -22,11 +22,6 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-    
-//        // Companies
-//        let deckCore = DeckCore(context: viewContext)
-//        deckCore.deckName = "Apple"
-
         shared.saveContext()
         
         return result
@@ -37,12 +32,7 @@ struct PersistenceController {
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         } 
-        
-      
 
-        
-//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-//        print(urls[urls.count-1] as URL)
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -63,10 +53,7 @@ struct PersistenceController {
         try? container.viewContext.setQueryGenerationFrom(.current)
         
     }
-    
-    
-    
-    // Better save
+
      func saveContext() {
         let context = container.viewContext
         

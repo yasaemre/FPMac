@@ -9,13 +9,11 @@
 import SwiftUI
 
 struct HeartView: View {
-    //@Binding var isTapped:Bool
     @State var startAnimation = false
     @State var bgAnimaton = false
     @Binding var resetBg:Bool
     @State var fireworkAnimation = false
     @State var animationEnded = false
-    
 
     //To avoid Taps during animation..
     @State var tapCompleted = false

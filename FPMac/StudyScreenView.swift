@@ -11,17 +11,10 @@ import SwiftUI
 import Foundation
 
 struct StudyScreenView: View {
-    
-
-    
-   // @State var card: Card
-        // MARK: - Drawing Constant
+    // MARK: - Drawing Constant
     @StateObject var deckCore:DeckCore
     @State var card:Card
-   // @State var indexCard = 0
-    //
-   // @State var indexCard = UserDefaults.standard.integer(forKey: "indexCard")
-    //@State var indexCard = 0
+
     @Binding var indexCard:Int
     @State var flipped = false
     @State var flip = false
@@ -47,10 +40,6 @@ struct StudyScreenView: View {
         .onDisappear{
             if prevCorrectA != correctA {
             deckCore.correctRate = (correctA / Double(deckCore.cardsArray.count)) * 100.0
-            print("correctA \(correctA)")
-            print("deckCore.cardsArray.count \(deckCore.cardsArray.count)")
-            print("deckCore.correctRate \(deckCore.correctRate)")
-                
             }
             prevCorrectA = correctA
         }

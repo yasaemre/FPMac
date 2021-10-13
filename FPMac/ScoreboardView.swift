@@ -60,7 +60,6 @@ struct ScoreboardView: View {
                 if (decksArrPersistent.count > 0) {
                 Text("The Highest Correct Rate \nfor \(selectedDeck.unwrappedDeckName):")
                     .font(.title)
-                    //.foregroundColor(.white)
                 }
                 Text("% \(String(round(selectedDeck.correctRate)))")
                     .fontWeight(.semibold)
