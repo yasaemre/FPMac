@@ -1,0 +1,772 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C66932C026FE0D87004F226A /* FlashPadAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932BF26FE0D87004F226A /* FlashPadAppApp.swift */; };
+		C66932C226FE0D87004F226A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932C126FE0D87004F226A /* ContentView.swift */; };
+		C66932C726FE0D89004F226A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66932C626FE0D89004F226A /* Preview Assets.xcassets */; };
+		C66932D226FE0D89004F226A /* FPMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932D126FE0D89004F226A /* FPMacTests.swift */; };
+		C66932DC26FE0D89004F226A /* FPMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932DB26FE0D89004F226A /* FPMacUITests.swift */; };
+		C66932DE26FE0D89004F226A /* FPMacUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */; };
+		C66932F126FE0E81004F226A /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932F026FE0E81004F226A /* BlurView.swift */; };
+		C66932FB26FE0E93004F226A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932FA26FE0E93004F226A /* Home.swift */; };
+		C66932FF26FE0EAD004F226A /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932FE26FE0EAD004F226A /* TabButton.swift */; };
+		C669330126FE0EB0004F226A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330026FE0EB0004F226A /* HomeView.swift */; };
+		C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330626FE0EDF004F226A /* HomeViewModel.swift */; };
+		C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C669330C26FE1231004F226A /* FPMac.xcdatamodeld */; };
+		C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */; };
+		C669331826FE144E004F226A /* LikedCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331026FE144E004F226A /* LikedCore+CoreDataProperties.swift */; };
+		C669331926FE144E004F226A /* ProfileCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331126FE144E004F226A /* ProfileCore+CoreDataClass.swift */; };
+		C669331A26FE144E004F226A /* ProfileCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331226FE144E004F226A /* ProfileCore+CoreDataProperties.swift */; };
+		C669331B26FE144E004F226A /* CardCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331326FE144E004F226A /* CardCore+CoreDataClass.swift */; };
+		C669331C26FE144E004F226A /* CardCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331426FE144E004F226A /* CardCore+CoreDataProperties.swift */; };
+		C669331D26FE144E004F226A /* DeckCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331526FE144E004F226A /* DeckCore+CoreDataClass.swift */; };
+		C669331E26FE144E004F226A /* DeckCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331626FE144E004F226A /* DeckCore+CoreDataProperties.swift */; };
+		C669332026FE149C004F226A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331F26FE149C004F226A /* Persistence.swift */; };
+		C669332326FE1504004F226A /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332226FE1504004F226A /* ColorExtention.swift */; };
+		C669332526FE159E004F226A /* EditScrnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332426FE159E004F226A /* EditScrnView.swift */; };
+		C669332726FE15B6004F226A /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332626FE15B6004F226A /* EditView.swift */; };
+		C669332926FE15EA004F226A /* StudyScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332826FE15EA004F226A /* StudyScreenView.swift */; };
+		C669332B26FE15FC004F226A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332A26FE15FC004F226A /* CardView.swift */; };
+		C669332D26FE1618004F226A /* HeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332C26FE1618004F226A /* HeartView.swift */; };
+		C669332F26FE163B004F226A /* LikedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669332E26FE163B004F226A /* LikedCardView.swift */; };
+		C669333126FE1660004F226A /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333026FE1660004F226A /* InstructionsView.swift */; };
+		C669333326FE167A004F226A /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333226FE167A004F226A /* ScoreboardView.swift */; };
+		C669333926FE16FB004F226A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333826FE16FB004F226A /* Card.swift */; };
+		C669333B26FE170F004F226A /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333A26FE170F004F226A /* Deck.swift */; };
+		C669333E26FE34AC004F226A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C669333D26FE34AC004F226A /* CloudKit.framework */; };
+		C669334026FE7607004F226A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333F26FE7607004F226A /* ProfileView.swift */; };
+		C66C0B112717605D00FE8965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66932C326FE0D89004F226A /* Assets.xcassets */; };
+		C695C553270789F4004B8D84 /* DeckListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C695C552270789F4004B8D84 /* DeckListRow.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C66932CE26FE0D89004F226A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C66932B426FE0D87004F226A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C66932BB26FE0D87004F226A;
+			remoteInfo = FPMac;
+		};
+		C66932D826FE0D89004F226A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C66932B426FE0D87004F226A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C66932BB26FE0D87004F226A;
+			remoteInfo = FPMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C66932BC26FE0D87004F226A /* FlashPadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashPadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66932BF26FE0D87004F226A /* FlashPadAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPadAppApp.swift; sourceTree = "<group>"; };
+		C66932C126FE0D87004F226A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C66932C326FE0D89004F226A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FPMac/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		C66932C626FE0D89004F226A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C66932C826FE0D89004F226A /* FPMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FPMac.entitlements; sourceTree = "<group>"; };
+		C66932CD26FE0D89004F226A /* FlashPadAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashPadAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66932D126FE0D89004F226A /* FPMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacTests.swift; sourceTree = "<group>"; };
+		C66932D726FE0D89004F226A /* FlashPadAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashPadAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66932DB26FE0D89004F226A /* FPMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacUITests.swift; sourceTree = "<group>"; };
+		C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C66932F026FE0E81004F226A /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		C66932FA26FE0E93004F226A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		C66932FE26FE0EAD004F226A /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		C669330026FE0EB0004F226A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C669330626FE0EDF004F226A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C669330D26FE1231004F226A /* FPMac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FPMac.xcdatamodel; sourceTree = "<group>"; };
+		C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C669331026FE144E004F226A /* LikedCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LikedCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C669331126FE144E004F226A /* ProfileCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C669331226FE144E004F226A /* ProfileCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C669331326FE144E004F226A /* CardCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C669331426FE144E004F226A /* CardCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CardCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C669331526FE144E004F226A /* DeckCore+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckCore+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C669331626FE144E004F226A /* DeckCore+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeckCore+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C669331F26FE149C004F226A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C669332226FE1504004F226A /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
+		C669332426FE159E004F226A /* EditScrnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScrnView.swift; sourceTree = "<group>"; };
+		C669332626FE15B6004F226A /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
+		C669332826FE15EA004F226A /* StudyScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyScreenView.swift; sourceTree = "<group>"; };
+		C669332A26FE15FC004F226A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		C669332C26FE1618004F226A /* HeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartView.swift; sourceTree = "<group>"; };
+		C669332E26FE163B004F226A /* LikedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedCardView.swift; sourceTree = "<group>"; };
+		C669333026FE1660004F226A /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		C669333226FE167A004F226A /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		C669333826FE16FB004F226A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		C669333A26FE170F004F226A /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		C669333D26FE34AC004F226A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C669333F26FE7607004F226A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C695C552270789F4004B8D84 /* DeckListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListRow.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C66932B926FE0D87004F226A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C669333E26FE34AC004F226A /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932CA26FE0D89004F226A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932D426FE0D89004F226A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C66932B326FE0D87004F226A = {
+			isa = PBXGroup;
+			children = (
+				C669333726FE16E6004F226A /* Model */,
+				C669333426FE168F004F226A /* ViewModel */,
+				C669332126FE14F2004F226A /* Extention */,
+				C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */,
+				C669331026FE144E004F226A /* LikedCore+CoreDataProperties.swift */,
+				C669331126FE144E004F226A /* ProfileCore+CoreDataClass.swift */,
+				C669331226FE144E004F226A /* ProfileCore+CoreDataProperties.swift */,
+				C669331326FE144E004F226A /* CardCore+CoreDataClass.swift */,
+				C669331426FE144E004F226A /* CardCore+CoreDataProperties.swift */,
+				C669331526FE144E004F226A /* DeckCore+CoreDataClass.swift */,
+				C669331626FE144E004F226A /* DeckCore+CoreDataProperties.swift */,
+				C669331F26FE149C004F226A /* Persistence.swift */,
+				C669330C26FE1231004F226A /* FPMac.xcdatamodeld */,
+				C66932BE26FE0D87004F226A /* FPMac */,
+				C66932D026FE0D89004F226A /* FPMacTests */,
+				C66932DA26FE0D89004F226A /* FPMacUITests */,
+				C66932BD26FE0D87004F226A /* Products */,
+				C669333C26FE34AC004F226A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C66932BD26FE0D87004F226A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C66932BC26FE0D87004F226A /* FlashPadApp.app */,
+				C66932CD26FE0D89004F226A /* FlashPadAppTests.xctest */,
+				C66932D726FE0D89004F226A /* FlashPadAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C66932BE26FE0D87004F226A /* FPMac */ = {
+			isa = PBXGroup;
+			children = (
+				C66932BF26FE0D87004F226A /* FlashPadAppApp.swift */,
+				C66932C126FE0D87004F226A /* ContentView.swift */,
+				C66932FA26FE0E93004F226A /* Home.swift */,
+				C669330026FE0EB0004F226A /* HomeView.swift */,
+				C66932F026FE0E81004F226A /* BlurView.swift */,
+				C669332426FE159E004F226A /* EditScrnView.swift */,
+				C669332626FE15B6004F226A /* EditView.swift */,
+				C695C552270789F4004B8D84 /* DeckListRow.swift */,
+				C669332826FE15EA004F226A /* StudyScreenView.swift */,
+				C66932FE26FE0EAD004F226A /* TabButton.swift */,
+				C669332A26FE15FC004F226A /* CardView.swift */,
+				C669332C26FE1618004F226A /* HeartView.swift */,
+				C669332E26FE163B004F226A /* LikedCardView.swift */,
+				C669333026FE1660004F226A /* InstructionsView.swift */,
+				C669333226FE167A004F226A /* ScoreboardView.swift */,
+				C669333F26FE7607004F226A /* ProfileView.swift */,
+				C66932C326FE0D89004F226A /* Assets.xcassets */,
+				C66932C826FE0D89004F226A /* FPMac.entitlements */,
+				C66932C526FE0D89004F226A /* Preview Content */,
+			);
+			path = FPMac;
+			sourceTree = "<group>";
+		};
+		C66932C526FE0D89004F226A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C66932C626FE0D89004F226A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C66932D026FE0D89004F226A /* FPMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				C66932D126FE0D89004F226A /* FPMacTests.swift */,
+			);
+			path = FPMacTests;
+			sourceTree = "<group>";
+		};
+		C66932DA26FE0D89004F226A /* FPMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C66932DB26FE0D89004F226A /* FPMacUITests.swift */,
+				C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */,
+			);
+			path = FPMacUITests;
+			sourceTree = "<group>";
+		};
+		C669332126FE14F2004F226A /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				C669332226FE1504004F226A /* ColorExtention.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		C669333426FE168F004F226A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C669330626FE0EDF004F226A /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C669333726FE16E6004F226A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C669333826FE16FB004F226A /* Card.swift */,
+				C669333A26FE170F004F226A /* Deck.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C669333C26FE34AC004F226A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C669333D26FE34AC004F226A /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C66932BB26FE0D87004F226A /* FlashPadApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66932E126FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadApp" */;
+			buildPhases = (
+				C66932B826FE0D87004F226A /* Sources */,
+				C66932B926FE0D87004F226A /* Frameworks */,
+				C66932BA26FE0D87004F226A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlashPadApp;
+			productName = FPMac;
+			productReference = C66932BC26FE0D87004F226A /* FlashPadApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C66932CC26FE0D89004F226A /* FlashPadAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66932E426FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadAppTests" */;
+			buildPhases = (
+				C66932C926FE0D89004F226A /* Sources */,
+				C66932CA26FE0D89004F226A /* Frameworks */,
+				C66932CB26FE0D89004F226A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C66932CF26FE0D89004F226A /* PBXTargetDependency */,
+			);
+			name = FlashPadAppTests;
+			productName = FPMacTests;
+			productReference = C66932CD26FE0D89004F226A /* FlashPadAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C66932D626FE0D89004F226A /* FlashPadAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C66932E726FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadAppUITests" */;
+			buildPhases = (
+				C66932D326FE0D89004F226A /* Sources */,
+				C66932D426FE0D89004F226A /* Frameworks */,
+				C66932D526FE0D89004F226A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C66932D926FE0D89004F226A /* PBXTargetDependency */,
+			);
+			name = FlashPadAppUITests;
+			productName = FPMacUITests;
+			productReference = C66932D726FE0D89004F226A /* FlashPadAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C66932B426FE0D87004F226A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					C66932BB26FE0D87004F226A = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					C66932CC26FE0D89004F226A = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = C66932BB26FE0D87004F226A;
+					};
+					C66932D626FE0D89004F226A = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = C66932BB26FE0D87004F226A;
+					};
+				};
+			};
+			buildConfigurationList = C66932B726FE0D87004F226A /* Build configuration list for PBXProject "FlashPadApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C66932B326FE0D87004F226A;
+			productRefGroup = C66932BD26FE0D87004F226A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C66932BB26FE0D87004F226A /* FlashPadApp */,
+				C66932CC26FE0D89004F226A /* FlashPadAppTests */,
+				C66932D626FE0D89004F226A /* FlashPadAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C66932BA26FE0D87004F226A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66C0B112717605D00FE8965 /* Assets.xcassets in Resources */,
+				C66932C726FE0D89004F226A /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932CB26FE0D89004F226A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932D526FE0D89004F226A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C66932B826FE0D87004F226A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66932C226FE0D87004F226A /* ContentView.swift in Sources */,
+				C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */,
+				C669332726FE15B6004F226A /* EditView.swift in Sources */,
+				C695C553270789F4004B8D84 /* DeckListRow.swift in Sources */,
+				C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */,
+				C669333326FE167A004F226A /* ScoreboardView.swift in Sources */,
+				C669332026FE149C004F226A /* Persistence.swift in Sources */,
+				C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */,
+				C669331A26FE144E004F226A /* ProfileCore+CoreDataProperties.swift in Sources */,
+				C669333926FE16FB004F226A /* Card.swift in Sources */,
+				C669331826FE144E004F226A /* LikedCore+CoreDataProperties.swift in Sources */,
+				C669332F26FE163B004F226A /* LikedCardView.swift in Sources */,
+				C669331B26FE144E004F226A /* CardCore+CoreDataClass.swift in Sources */,
+				C66932FF26FE0EAD004F226A /* TabButton.swift in Sources */,
+				C669332926FE15EA004F226A /* StudyScreenView.swift in Sources */,
+				C669332526FE159E004F226A /* EditScrnView.swift in Sources */,
+				C669331E26FE144E004F226A /* DeckCore+CoreDataProperties.swift in Sources */,
+				C669330126FE0EB0004F226A /* HomeView.swift in Sources */,
+				C669331C26FE144E004F226A /* CardCore+CoreDataProperties.swift in Sources */,
+				C669332D26FE1618004F226A /* HeartView.swift in Sources */,
+				C669331926FE144E004F226A /* ProfileCore+CoreDataClass.swift in Sources */,
+				C66932C026FE0D87004F226A /* FlashPadAppApp.swift in Sources */,
+				C669332B26FE15FC004F226A /* CardView.swift in Sources */,
+				C669331D26FE144E004F226A /* DeckCore+CoreDataClass.swift in Sources */,
+				C669333126FE1660004F226A /* InstructionsView.swift in Sources */,
+				C669333B26FE170F004F226A /* Deck.swift in Sources */,
+				C66932FB26FE0E93004F226A /* Home.swift in Sources */,
+				C669332326FE1504004F226A /* ColorExtention.swift in Sources */,
+				C669334026FE7607004F226A /* ProfileView.swift in Sources */,
+				C66932F126FE0E81004F226A /* BlurView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932C926FE0D89004F226A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66932D226FE0D89004F226A /* FPMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C66932D326FE0D89004F226A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C66932DE26FE0D89004F226A /* FPMacUITestsLaunchTests.swift in Sources */,
+				C66932DC26FE0D89004F226A /* FPMacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C66932CF26FE0D89004F226A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C66932BB26FE0D87004F226A /* FlashPadApp */;
+			targetProxy = C66932CE26FE0D89004F226A /* PBXContainerItemProxy */;
+		};
+		C66932D926FE0D89004F226A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C66932BB26FE0D87004F226A /* FlashPadApp */;
+			targetProxy = C66932D826FE0D89004F226A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C66932DF26FE0D89004F226A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C66932E026FE0D89004F226A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C66932E226FE0D89004F226A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FPMac/FPMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FPMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C66932E326FE0D89004F226A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FPMac/FPMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FPMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C66932E526FE0D89004F226A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashPadApp.app/Contents/MacOS/FlashPadApp";
+			};
+			name = Debug;
+		};
+		C66932E626FE0D89004F226A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashPadApp.app/Contents/MacOS/FlashPadApp";
+			};
+			name = Release;
+		};
+		C66932E826FE0D89004F226A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FPMac;
+			};
+			name = Debug;
+		};
+		C66932E926FE0D89004F226A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = emre.FPMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = FPMac;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C66932B726FE0D87004F226A /* Build configuration list for PBXProject "FlashPadApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66932DF26FE0D89004F226A /* Debug */,
+				C66932E026FE0D89004F226A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66932E126FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66932E226FE0D89004F226A /* Debug */,
+				C66932E326FE0D89004F226A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66932E426FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66932E526FE0D89004F226A /* Debug */,
+				C66932E626FE0D89004F226A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C66932E726FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C66932E826FE0D89004F226A /* Debug */,
+				C66932E926FE0D89004F226A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C669330C26FE1231004F226A /* FPMac.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C669330D26FE1231004F226A /* FPMac.xcdatamodel */,
+			);
+			currentVersion = C669330D26FE1231004F226A /* FPMac.xcdatamodel */;
+			path = FPMac.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C66932B426FE0D87004F226A /* Project object */;
+}

@@ -11,34 +11,35 @@ import SwiftUI
 
 struct IntsructionsView: View {
     var body: some View {
-        ZStack(alignment: .top){
-            Color.init(hex:"81329b")
-                .ignoresSafeArea(.all, edges: .all)
-            Image("worldMap")
-                .resizable()
-                .scaledToFit()
-                .padding(.top, 1)
-            
-            VStack {
-
-                Spacer()
+        GeometryReader { geo in
+            ZStack(alignment: .top){
+                Color.init(hex:"81329b")
+                    .ignoresSafeArea(.all, edges: .all)
+                Image("worldMap")
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.top, 1)
                 
+                VStack {
+                    
+                    Spacer()
+                    
                     RoundedRectangle(cornerRadius: 10)
                         .fill(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "F7F2F2"), Color.init(hex: "c8d4f5")]), startPoint: .topLeading, endPoint: .bottomTrailing))
-                        .frame(width: 300, height:700)
+                        .frame(width: geo.size.width * 0.8, height:geo.size.height * 0.7)
                         .shadow(color: Color(NSColor(.black)), radius: 10, x: 5, y: 5)
                         .overlay(
                             
                             ScrollView{
                                 Group {
                                     VStack {
-                                        Text("How to use Flashpad")
+                                        Text("How to use Flashpads")
                                             .bold()
                                             .font(.system(size: 28))
                                             .padding()
                                             .lineLimit(2)
                                         
-
+                                        
                                         
                                         Text("Create Deck")
                                             .bold()
@@ -57,24 +58,24 @@ struct IntsructionsView: View {
                                             .font(.system(size: 24))
                                         Text("While studying a deck, pick the card you like by clicking heart button. The card you liked on each deck will show up on liked screen all togather. Liked screen is the one having heart icon on tab bar on home screen.")
                                     }
-                                  
+                                    
                                 }
-                                .frame(width: 200)
+                                .frame(width: geo.size.width * 0.7, height:geo.size.height * 0.66)
                                 .foregroundColor(.black)
-                                                        
-                        }
+                                
+                            }
                             
                         )
                         .opacity(0.8)
                         .padding(.top, 20)
-               
-                
-                
-                Spacer()
+                    
+                    
+                    
+                    Spacer()
+                }
+                .padding(.top, 20)
             }
-            .padding(.top, 20)
         }
-      
         
     }
 }

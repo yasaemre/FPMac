@@ -44,7 +44,6 @@ struct Home: View {
                 TabButton(image: "person.crop.circle", title: "Profile", selectedTab: $homeData.selectedTab)
                 Spacer()
                 
-                //TabButton(image: "gear", title: "Settings", selectedTab: $homeData.selectedTab)
             }
             .padding()
             .padding(.top, 35)
@@ -68,7 +67,7 @@ struct Home: View {
         }
 
         .ignoresSafeArea(.all, edges: .all)
-        .frame(width: screen.width / 1.6, height: screen.height-150)
+        .frame(width: screen.width / 1.4, height: screen.height-150)
         .environmentObject(homeData)
     }
 }

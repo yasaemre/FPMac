@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct FPMacApp: App {
+struct FlashPadAppApp: App {
 
     let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase
@@ -20,9 +20,6 @@ struct FPMacApp: App {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(deckList)
-
-                
-
         }
         .windowStyle(HiddenTitleBarWindowStyle())
         .onChange(of: scenePhase) { _ in

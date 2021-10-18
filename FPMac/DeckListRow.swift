@@ -12,32 +12,38 @@ struct DeckListRow: View {
     @State var deckList = DeckList()
     
     var body: some View {
-        HStack(spacing: 10) {
-            Image("blackboardM")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 40, height: 60)
-                .clipShape(Rectangle())
-                .cornerRadius(10)
-            
-            VStack(spacing: 3) {
+        ZStack(alignment: .leading){
+            HStack(spacing: 10) {
+                Image("blackboardM")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 40, height: 60)
+                    .clipShape(Rectangle())
+                    .cornerRadius(10)
+
+                VStack(spacing: 3) {
+                    
+                    Text(deck.unwrappedDeckName)
+                        .font(.title).bold()
+                        .foregroundColor(.primary)
+                        .frame(width: 300)
+
+                    Text("\(deck.numberOfCardsInDeck) cards")
+                        .font(.title2)
+                        .foregroundColor(.gray)
+                        .frame(width: 100)
                 
-                Text(deck.unwrappedDeckName)
-                    .font(.title).bold()
-                    .foregroundColor(.primary)
-                
-                Text("\(deck.numberOfCardsInDeck) cards")
-                    .font(.title2)
-                    .foregroundColor(.gray)
-            
-                Text("created on \(deck.deckCreatedAt ?? "")")
-                    .font(.system(size: 12.0))
-                    .foregroundColor(.gray)
-                Spacer()
+                    Text("created on \(deck.deckCreatedAt ?? "")")
+                        .font(.system(size: 12.0))
+                        .foregroundColor(.gray)
+                        .frame(width: 200)
+                    //Spacer()
+                }
+            }
+            .onAppear {
+                deck.numberOfCardsInDeck = Int16(deck.cardsArray.count)
             }
         }
-        .onAppear {
-            deck.numberOfCardsInDeck = Int16(deck.cardsArray.count)
-        }
+
     }
 }

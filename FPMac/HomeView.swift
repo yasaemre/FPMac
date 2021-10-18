@@ -68,95 +68,101 @@ struct HomeView: View {
     @State private var dialogResultForSelection = ""
     
     var body: some View {
-        ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-                    VStack(spacing: 30) {
-        
-                        HStack {
-        
-                            Spacer()
-        
-        
-                            Button {
-                                sheetIsShowing.toggle()
-                                addButtonClicked.toggle()
-                            } label: {
-                                Image(systemName: "plus")
-                                    .font(.title)
-                            }
-                            .buttonStyle(PlainButtonStyle())
+        GeometryReader { geo in
+            ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
+                VStack() {
+                    
+                    HStack {
+                        
+                        Spacer()
+                        
+                        
+                        Button {
+                            sheetIsShowing.toggle()
+                            addButtonClicked.toggle()
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.title)
                         }
-                        .padding(.horizontal)
-                        .onAppear {
-                                for deck in self.decksArrPersistent {
-                                    self.deckList.decks.append(deck)
-                                }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                    .padding(.horizontal)
+                    .onAppear {
+                        for deck in self.decksArrPersistent {
+                            self.deckList.decks.append(deck)
                         }
-        
-                        if addButtonClicked {
-                            List(0..<decksArrPersistent.count, id: \.self) { index in
-            
-                                NavigationLink(destination: EditScrnView(card: card, deckCore: decksArrPersistent[index], likedCore: likedCore), tag: decksArrPersistent[index], selection: $selectedDeck){
-                                    
-                                    DeckListRow(deck: decksArrPersistent[index])
-                                    Spacer()
-                                    Button {
-                                        if let selectedDeckName = selectedDeck?.unwrappedDeckName{
-                                            deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeckName)
-                                            showAlertForNotSelectedDeck = false
-                                        } else  {
-                                            showAlertForNotSelectedDeck = true
-                                        }
-                                       
-                                    } label: {
-                                        Image(systemName: "trash")
-                                            .font(.title)
-                                    }
-                                    .buttonStyle(PlainButtonStyle())
-                                }
+                    }
+                    
+                    if addButtonClicked {
+                        List(0..<decksArrPersistent.count, id: \.self) { index in
+                            
+                            NavigationLink(destination: EditScrnView(card: card, deckCore: decksArrPersistent[index], likedCore: likedCore), tag: decksArrPersistent[index], selection: $selectedDeck){
+                                
+                                DeckListRow(deck: decksArrPersistent[index])
 
+                                Spacer()
+                                Button {
+                                    if let selectedDeckName = selectedDeck?.unwrappedDeckName{
+                                        deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeckName)
+                                        showAlertForNotSelectedDeck = false
+                                    } else  {
+                                        showAlertForNotSelectedDeck = true
+                                    }
+                                    
+                                } label: {
+                                    Image(systemName: "trash")
+                                        .font(.title)
+                                }
+                                .buttonStyle(PlainButtonStyle())
+                            }
+                            
+                        }
+                        .listStyle(SidebarListStyle())
+                        .frame(width: (NSScreen.main?.frame.width)! * 0.28)
+
+                    } else {
+                        List(0..<deckList.decks.count, id: \.self) { index in
+                            
+                            NavigationLink(destination: EditScrnView(card: card, deckCore: deckList.decks[index], likedCore: likedCore), tag: deckList.decks[index], selection: $selectedDeck){
+                                
+                                DeckListRow(deck: deckList.decks[index])
+
+                                Spacer()
+                                
+                                Button {
+                                    if let selectedDeckName = selectedDeck?.unwrappedDeckName{
+                                        deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeckName)
+                                        showAlertForNotSelectedDeck = false
+                                    } else  {
+                                        showAlertForNotSelectedDeck = true
+                                    }
+                                    
+                                } label: {
+                                    Image(systemName: "trash")
+                                        .font(.title)
+                                }
+                                .buttonStyle(PlainButtonStyle())
                                 
                             }
-                            .listStyle(SidebarListStyle())
-                        } else {
-                            List(0..<deckList.decks.count, id: \.self) { index in
-            
-                                NavigationLink(destination: EditScrnView(card: card, deckCore: deckList.decks[index], likedCore: likedCore), tag: deckList.decks[index], selection: $selectedDeck){
-                                    
-                                    DeckListRow(deck: deckList.decks[index])
-                                    Spacer()
-
-                                    Button {
-                                        if let selectedDeckName = selectedDeck?.unwrappedDeckName{
-                                            deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeckName)
-                                            showAlertForNotSelectedDeck = false
-                                        } else  {
-                                            showAlertForNotSelectedDeck = true
-                                        }
-                                       
-                                    } label: {
-                                        Image(systemName: "trash")
-                                            .font(.title)
-                                    }
-                                    .buttonStyle(PlainButtonStyle())
-                                }
-
-                            }
-                            .listStyle(SidebarListStyle())
                         }
-                        
-                        
-                    }
+                        .listStyle(SidebarListStyle())
+                        .frame(width: (NSScreen.main?.frame.width)! * 0.28)
 
-                    .sheet(isPresented: $sheetIsShowing) {
-                        SheetView(isVisible: self.$sheetIsShowing, enteredText: self.$dialogResult, addButtonClicked: $addButtonClicked)
                     }
-                    .alert(isPresented: $showAlertForNotSelectedDeck) {
-                        notSelectedRowAlert()
-                    }
-                    .onDisappear {
-                        deckList.decks = []
-                    }
-            
+                    
+                    
+                }
+                .sheet(isPresented: $sheetIsShowing) {
+                    SheetView(isVisible: self.$sheetIsShowing, enteredText: self.$dialogResult, addButtonClicked: $addButtonClicked)
+                }
+                .alert(isPresented: $showAlertForNotSelectedDeck) {
+                    notSelectedRowAlert()
+                }
+                .onDisappear {
+                    deckList.decks = []
+                }
+                
+            }
         }
 
     }

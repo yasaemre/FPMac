@@ -34,270 +34,272 @@ struct EditView: View {
 
     
     var body: some View {
-        ZStack {
-            VStack{
-                HStack {
-                    Text("Edit")
-                        .font(.title)
-                        .padding()
-                    Spacer()
-
-                    Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
-                        Text("Study")
-                            .font(.largeTitle)
-                            .frame(width: 90, height: 40)
-                            .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "B74278"), Color.init(hex: "B74278")]),  center: .center, startRadius: 5, endRadius: 120))
-                            .clipShape(Capsule())
-                            .foregroundColor(.white)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-
-                }
-                .padding(.trailing, 20)
-                
-                
-                HStack(spacing: 15) {
-                    
-                    Button {
-                        withAnimation {
-                            flip = false
-                            print("Index in Editiew: \(indexCard)")
-                        }
-                    } label: {
-                        Text("Word")
-                            .font(.custom("Chalkduster", size: 24))
-                            .frame(width: 130, height: 40)
-                            .background(!flip ? Color.init(hex: "164430") : .gray)
-                            .clipShape(Capsule())
-                            .foregroundColor(.white)
+        GeometryReader { geo in
+            ZStack {
+                VStack{
+                    HStack {
+                        Text("Edit")
+                            .font(.title)
+                            .padding()
+                            .frame(width:  geo.size.width * 0.35, height: geo.size.height * 0.07)
+                        Spacer()
                         
+                        Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
+                            Text("Study")
+                                .font(.largeTitle)
+                                .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
+                                .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "B74278"), Color.init(hex: "B74278")]),  center: .center, startRadius: 5, endRadius: 120))
+                                .clipShape(Capsule())
+                                .foregroundColor(.white)
+                        }
+                        .buttonStyle(PlainButtonStyle())
                         
                     }
-                    .buttonStyle(PlainButtonStyle())
-
+                    .padding(.trailing, 20)
                     
-                    Button {
-                        withAnimation {
-                            flip = true
+                    
+                    HStack(spacing: 15) {
+                        
+                        Button {
+                            withAnimation {
+                                flip = false
+                                print("Index in Editiew: \(indexCard)")
+                            }
+                        } label: {
+                            Text("Word")
+                                .font(.custom("Chalkduster", size: 24))
+                                .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
+                                .background(!flip ? Color.init(hex: "164430") : .gray)
+                                .clipShape(Capsule())
+                                .foregroundColor(.white)
+                            
+                            
                         }
-                    } label: {
-                        Text("Meaning")
-                            .font(.custom("Chalkduster", size: 24))
-                            .frame(width: 130, height: 40)
-                            .background(flip ? Color.init(hex: "164430") : .gray)
-                            .clipShape(Capsule())
-                            .foregroundColor(.white)
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        
+                        Button {
+                            withAnimation {
+                                flip = true
+                            }
+                        } label: {
+                            Text("Meaning")
+                                .font(.custom("Chalkduster", size: 24))
+                                .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
+                                .background(flip ? Color.init(hex: "164430") : .gray)
+                                .clipShape(Capsule())
+                                .foregroundColor(.white)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
                     }
-                    .buttonStyle(PlainButtonStyle())
-
-                }
-                .padding(.top, 20)
-                
-                if flipped == true {
+                    .padding(.top, 20)
                     
-                    TextField("Enter a word", text: $card.word)
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .padding(.top, 1)
-                        .frame(width: 250, height: 145, alignment: .center)
-                        .modifier(TextFieldClearButton(text: $card.word))
-                } else {
-                    TextField("Enter a definition", text: $card.definition)
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .padding(.top, 1)
-                        .frame(width: 250, height: 145, alignment: .center)
-                        .modifier(TextFieldClearButton(text: $card.definition))
-                }
-                
-                Image("bbS")
-                    .resizable()
-                    .clipped()
-                    .cornerRadius(12)
-                    .frame(width: 250, height: 350)
-                    .shadow(color: Color(NSColor(.black)), radius: 10, x: 5, y: 5)
-                    .overlay(
-                        VStack( spacing: 5) {
-                        if deckCore.cardsArray.count > 0 {
-                            if flip == false {
-                                if rightArrowTapped == true {
-                                    Text("")
-                                } else {
-                                    Text(deckCore.cardsArray[indexCard].unwrappedWord)
-                                        .font(.custom("Chalkduster", size: 25))
-                                        .frame(width: 175, height: 330, alignment: .center)
-                                        .foregroundColor(.white)
-                                        .overlay(
+                    if flipped == true {
+                        
+                        TextField("Enter a word", text: $card.word)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding(.top, 1)
+                            .frame(width: 250, height: 145, alignment: .center)
+                            .modifier(TextFieldClearButton(text: $card.word))
+                    } else {
+                        TextField("Enter a definition", text: $card.definition)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding(.top, 1)
+                            .frame(width: 250, height: 145, alignment: .center)
+                            .modifier(TextFieldClearButton(text: $card.definition))
+                    }
+                    
+                    Image("bbS")
+                        .resizable()
+                        .clipped()
+                        .cornerRadius(12)
+                        .frame(width: geo.size.width * 0.55, height: geo.size.height * 0.5)
+                        .shadow(color: Color(NSColor(.black)), radius: 10, x: 5, y: 5)
+                        .overlay(
+                            VStack( spacing: 5) {
+                                if deckCore.cardsArray.count > 0 {
+                                    if flip == false {
+                                        if rightArrowTapped == true {
+                                            Text("")
+                                        } else {
+                                            Text(deckCore.cardsArray[indexCard].unwrappedWord)
+                                                .font(.custom("Chalkduster", size: 25))
+                                                .frame(width: 175, height: 330, alignment: .center)
+                                                .foregroundColor(.white)
+                                                .overlay(
+                                                    
+                                                    Button {
+                                                        deleteCard(at: IndexSet.init(integer: indexCard))
+                                                    } label: {
+                                                        Image(systemName: "trash")
+                                                            .font(.title)
+                                                    }
+                                                        .buttonStyle(PlainButtonStyle())
+                                                        .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.25)
+
+                                                )
                                             
-                                        Button {
-                                            deleteCard(at: IndexSet.init(integer: indexCard))
-                                        } label: {
-                                            Image(systemName: "trash")
-                                                .font(.title)
+                                            
                                         }
-                                            .buttonStyle(PlainButtonStyle())
-                                            .offset(x: -130, y: -183)
+                                    } else {
                                         
-                                        )
-                                        
-                                    
-                                }
-                            } else {
-                          
-                                Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
-                                    .font(.custom("Chalkduster", size: 25))
-                                    .frame(width: 175, height: 330, alignment: .center)
-                                    .foregroundColor(.white)
-                                    .overlay(
-                                        
-                                    Button {
-                                        deleteCard(at: IndexSet.init(integer: indexCard))
-                                    } label: {
-                                        Image(systemName: "trash")
-                                            .font(.title)
+                                        Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
+                                            .font(.custom("Chalkduster", size: 25))
+                                            .frame(width: 175, height: 330, alignment: .center)
+                                            .foregroundColor(.white)
+                                            .overlay(
+                                                
+                                                Button {
+                                                    deleteCard(at: IndexSet.init(integer: indexCard))
+                                                } label: {
+                                                    Image(systemName: "trash")
+                                                        .font(.title)
+                                                }
+                                                    .buttonStyle(PlainButtonStyle())
+                                                    .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.25)
+
+                                            )
                                     }
-                                        .buttonStyle(PlainButtonStyle())
-                                        .offset(x: -130, y: -183)
-
-                                    )
-                            }
-                        }
-                            else {
-                            ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
-                                if flip == false {
-                                    Text(deckCore.cardsArray[index].unwrappedWord)
-                                        .font(.custom("Chalkduster", size: 25))
-                                        .frame(width: 175, height: 330, alignment: .center)
-                                        .foregroundColor(.white)
-                                        .overlay(
-
-                                        Button {
-                                            deleteCard(at: IndexSet.init(integer: index))
-                                        } label: {
-                                            Image(systemName: "trash")
-                                                .font(.title)
-                                        }
-                                            .buttonStyle(PlainButtonStyle())
-                                            .offset(x: -130, y: -183)
-
-                                        )
-
-                                } else {
-                               
-                                    Text(deckCore.cardsArray[index].unwrappedDefinition)
-                                        .font(.custom("Chalkduster", size: 25))
-                                        .frame(width: 175, height: 330, alignment: .center)
-                                        .foregroundColor(.white)
-                                        .overlay(
-
-                                        Button {
-                                            deleteCard(at: IndexSet.init(integer: index))
-                                        } label: {
-                                            Image(systemName: "trash")
-                                                .font(.title)
-                                        }
-                                            .buttonStyle(PlainButtonStyle())
-                                            .offset(x: -130, y: -183)
-
-                                        )
                                 }
+                                else {
+                                    ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
+                                        if flip == false {
+                                            Text(deckCore.cardsArray[index].unwrappedWord)
+                                                .font(.custom("Chalkduster", size: 25))
+                                                .frame(width: 175, height: 330, alignment: .center)
+                                                .foregroundColor(.white)
+                                                .overlay(
+                                                    
+                                                    Button {
+                                                        deleteCard(at: IndexSet.init(integer: index))
+                                                    } label: {
+                                                        Image(systemName: "trash")
+                                                            .font(.title)
+                                                    }
+                                                        .buttonStyle(PlainButtonStyle())
+                                                        .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.25)
+
+                                                )
+                                            
+                                        } else {
+                                            
+                                            Text(deckCore.cardsArray[index].unwrappedDefinition)
+                                                .font(.custom("Chalkduster", size: 25))
+                                                .frame(width: 175, height: 330, alignment: .center)
+                                                .foregroundColor(.white)
+                                                .overlay(
+                                                    
+                                                    Button {
+                                                        deleteCard(at: IndexSet.init(integer: index))
+                                                    } label: {
+                                                        Image(systemName: "trash")
+                                                            .font(.title)
+                                                    }
+                                                        .buttonStyle(PlainButtonStyle())
+                                                        .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.25)
+
+                                                )
+                                        }
+                                    }
+                                }
+                                
+                                
                             }
+                            
+                        )
+                        .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
+                        .padding(.top, 5)
+                    
+                    
+                    
+                    Text("\(indexCard+1) of \(deckCore.cardsArray.count)")
+                        .font(.title2)
+                        .padding(.top, 10)
+                    
+                    HStack(spacing: 30){
+                        Button {
+                            if  indexCard >= 1 {
+                                indexCard -= 1
+                            }
+                        } label: {
+                            Image(systemName: "arrowshape.turn.up.left")
+                                .font(.custom("Chalkduster", size: geo.size.height * 0.05))
+                                .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
                         }
+                        .buttonStyle(PlainButtonStyle())
                         
+                        
+                        Button {
+                            
+                            withAnimation{
+                                isShowingCheckMark.toggle()
+                            }
+                            
+                            addCard()
+                            
+                        } label: {
+                            Text("Add Card")
+                                .font(.custom("Chalkduster", size: 24))
+                                .frame(width:  geo.size.width * 0.35, height: geo.size.height * 0.05)
+                                .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "164430")]),  center: .center, startRadius: 5, endRadius: 120))
+                                .clipShape(Capsule())
+                                .foregroundColor(.white)
+                                .overlay(Capsule().stroke(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "B74278")]), startPoint: .leading, endPoint: .trailing), lineWidth: 5))
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        
+                        
+                        
+                        Button {
+                            if indexCard
+                                != deckCore.cardsArray.count-1, !deckCore.cardsArray.isEmpty {
+                                indexCard += 1
+                            }
+                        } label: {
+                            Image(systemName: "arrowshape.turn.up.right")
+                                .font(.custom("Chalkduster", size: geo.size.height * 0.05))
+                                .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
+                        }
+                        .buttonStyle(PlainButtonStyle())
                         
                     }
-                        
-                    )
-                    .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
-                    .padding(.top, 5)
-                    
+                    .padding(.top, 20)
+                }
                 
-                
-                Text("\(indexCard+1) of \(deckCore.cardsArray.count)")
-                    .font(.title2)
-                    .padding(.top, 10)
-                
-                HStack(spacing: 30){
-                    Button {
-                        if  indexCard >= 1 {
-                            indexCard -= 1
-                        }
-                    } label: {
-                        Image(systemName: "arrowshape.turn.up.left")
-                            .font(.custom("Chalkduster", size: 40))
-                            .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
-                    }
-                    .buttonStyle(PlainButtonStyle())
-
-                    
-                    Button {
-                        
-                        withAnimation{
-                            isShowingCheckMark.toggle()
-                        }
-                        
-                        addCard()
-                        
-                    } label: {
-                        Text("Add Card")
-                            .font(.custom("Chalkduster", size: 24))
-                            .frame(width: 150, height: 60)
-                            .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "164430")]),  center: .center, startRadius: 5, endRadius: 120))
-                            .clipShape(Capsule())
+                if isShowingCheckMark {
+                    ZStack {
+                        Circle()
+                            .frame(width: 110, height: 110, alignment: .center)
                             .foregroundColor(.white)
-                            .overlay(Capsule().stroke(LinearGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "B74278")]), startPoint: .leading, endPoint: .trailing), lineWidth: 5))
+                            .opacity(0.5)
+                            .scaleEffect(CGFloat(showCircle))
+                            .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.5))
+                            .transition(.asymmetric(insertion: .opacity, removal: .scale))
+                        
+                        
+                        
+                        
+                        Image(systemName: "checkmark")
+                            .foregroundColor(Color.init(hex: "067238"))
+                            .font(.system(size: 60))
+                            .rotationEffect(.degrees(Double(rotateCheckMark)))
+                            .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
+                            .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
+                            .transition(.asymmetric(insertion: .opacity, removal: .scale))
                     }
-                    .buttonStyle(PlainButtonStyle())
-
-                    
-                    
-                    Button {
-                        if indexCard
-                            != deckCore.cardsArray.count-1, !deckCore.cardsArray.isEmpty {
-                            indexCard += 1
-                        }
-                    } label: {
-                        Image(systemName: "arrowshape.turn.up.right")
-                            .font(.custom("Chalkduster", size: 40))
-                            .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
-                    }
-                    .buttonStyle(PlainButtonStyle())
-
+                    .onAppear(perform: setDismissTimer)
                 }
-                .padding(.top, 20)
+                
+                
+                StudyScreenView(deckCore: deckCore, card: card, indexCard: $indexCard)
+                    .background(BlurView())
+                    .frame(width: homeData.isExpanded ? nil : 0)
+                    .opacity(homeData.isExpanded ? 1 : 0)
+                
+                
             }
-            
-            if isShowingCheckMark {
-                ZStack {
-                Circle()
-                    .frame(width: 110, height: 110, alignment: .center)
-                    .foregroundColor(.white)
-                    .opacity(0.5)
-                    .scaleEffect(CGFloat(showCircle))
-                    .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.5))
-                    .transition(.asymmetric(insertion: .opacity, removal: .scale))
-
-                    
-
-                    
-                Image(systemName: "checkmark")
-                        .foregroundColor(Color.init(hex: "067238"))
-                    .font(.system(size: 60))
-                    .rotationEffect(.degrees(Double(rotateCheckMark)))
-                    .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
-                    .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
-                    .transition(.asymmetric(insertion: .opacity, removal: .scale))
-                }
-                .onAppear(perform: setDismissTimer)
-            }
-
-            
-            StudyScreenView(deckCore: deckCore, card: card, indexCard: $indexCard)
-                .background(BlurView())
-                .frame(width: homeData.isExpanded ? nil : 0)
-                .opacity(homeData.isExpanded ? 1 : 0)
-
-            
         }
-       
         
     }
     
