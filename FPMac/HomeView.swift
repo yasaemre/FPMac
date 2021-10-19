@@ -66,17 +66,13 @@ struct HomeView: View {
     
     @State private var showAlertForNotSelectedDeck = false
     @State private var dialogResultForSelection = ""
-    
+    var screen = NSScreen.main!.visibleFrame
+
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-                VStack() {
-                    
-                    HStack {
-                        
-                        Spacer()
-                        
-                        
+                VStack(alignment:.leading) {
+
                         Button {
                             sheetIsShowing.toggle()
                             addButtonClicked.toggle()
@@ -85,8 +81,10 @@ struct HomeView: View {
                                 .font(.title)
                         }
                         .buttonStyle(PlainButtonStyle())
-                    }
-                    .padding(.horizontal)
+                        .padding(.leading, 5)
+                        .padding(.bottom, geo.size.height * 0.05)
+                    
+                    
                     .onAppear {
                         for deck in self.decksArrPersistent {
                             self.deckList.decks.append(deck)
@@ -100,7 +98,7 @@ struct HomeView: View {
                                 
                                 DeckListRow(deck: decksArrPersistent[index])
 
-                                Spacer()
+                                //Spacer()
                                 Button {
                                     if let selectedDeckName = selectedDeck?.unwrappedDeckName{
                                         deleteDeck(at: IndexSet.init(integer: index), deleteDeckName: selectedDeckName)
@@ -112,12 +110,13 @@ struct HomeView: View {
                                 } label: {
                                     Image(systemName: "trash")
                                         .font(.title)
+
                                 }
                                 .buttonStyle(PlainButtonStyle())
+
                             }
-                            
                         }
-                        .listStyle(SidebarListStyle())
+                        //.listStyle(SidebarListStyle())
                         .frame(width: (NSScreen.main?.frame.width)! * 0.28)
 
                     } else {
@@ -127,7 +126,7 @@ struct HomeView: View {
                                 
                                 DeckListRow(deck: deckList.decks[index])
 
-                                Spacer()
+                                //Spacer()
                                 
                                 Button {
                                     if let selectedDeckName = selectedDeck?.unwrappedDeckName{
@@ -140,12 +139,13 @@ struct HomeView: View {
                                 } label: {
                                     Image(systemName: "trash")
                                         .font(.title)
+
                                 }
                                 .buttonStyle(PlainButtonStyle())
-                                
+
                             }
                         }
-                        .listStyle(SidebarListStyle())
+                        //.listStyle(SidebarListStyle())
                         .frame(width: (NSScreen.main?.frame.width)! * 0.28)
 
                     }
@@ -163,6 +163,9 @@ struct HomeView: View {
                 }
                 
             }
+            //.frame(width: screen.width * 0.8, height: screen.height-50)
+            //            .frame(width: screen.width * 0.4, height: screen.height * 0.2)
+
         }
 
     }

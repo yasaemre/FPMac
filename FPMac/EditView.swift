@@ -40,7 +40,6 @@ struct EditView: View {
                     HStack {
                         Text("Edit")
                             .font(.title)
-                            .padding()
                             .frame(width:  geo.size.width * 0.35, height: geo.size.height * 0.07)
                         Spacer()
                         
@@ -55,8 +54,9 @@ struct EditView: View {
                         .buttonStyle(PlainButtonStyle())
                         
                     }
-                    .padding(.trailing, 20)
-                    
+                    .padding(.trailing, geo.size.width * 0.06)
+                    .padding(.top, geo.size.height * 0.02)
+
                     
                     HStack(spacing: 15) {
                         
@@ -93,27 +93,29 @@ struct EditView: View {
                         .buttonStyle(PlainButtonStyle())
                         
                     }
-                    .padding(.top, 20)
+                    .padding(.top, geo.size.height * 0.02)
                     
                     if flipped == true {
                         
                         TextField("Enter a word", text: $card.word)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.top, 1)
-                            .frame(width: 250, height: 145, alignment: .center)
+                            .padding(.top, geo.size.height * 0.06)
+                            .frame(width:  geo.size.width * 0.55, height: geo.size.height * 0.04)
                             .modifier(TextFieldClearButton(text: $card.word))
                     } else {
                         TextField("Enter a definition", text: $card.definition)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .padding(.top, 1)
-                            .frame(width: 250, height: 145, alignment: .center)
+                            .padding(.top, geo.size.height * 0.06)
+                            .frame(width:  geo.size.width * 0.55, height: geo.size.height * 0.04)
                             .modifier(TextFieldClearButton(text: $card.definition))
                     }
+
                     
                     Image("bbS")
                         .resizable()
                         .clipped()
                         .cornerRadius(12)
+                        .padding(.top, geo.size.height * 0.06)
                         .frame(width: geo.size.width * 0.55, height: geo.size.height * 0.5)
                         .shadow(color: Color(NSColor(.black)), radius: 10, x: 5, y: 5)
                         .overlay(
@@ -125,7 +127,7 @@ struct EditView: View {
                                         } else {
                                             Text(deckCore.cardsArray[indexCard].unwrappedWord)
                                                 .font(.custom("Chalkduster", size: 25))
-                                                .frame(width: 175, height: 330, alignment: .center)
+                                                .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.33)
                                                 .foregroundColor(.white)
                                                 .overlay(
                                                     
@@ -136,7 +138,7 @@ struct EditView: View {
                                                             .font(.title)
                                                     }
                                                         .buttonStyle(PlainButtonStyle())
-                                                        .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.25)
+                                                        .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.20)
 
                                                 )
                                             
@@ -146,7 +148,7 @@ struct EditView: View {
                                         
                                         Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
                                             .font(.custom("Chalkduster", size: 25))
-                                            .frame(width: 175, height: 330, alignment: .center)
+                                            .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.33)
                                             .foregroundColor(.white)
                                             .overlay(
                                                 
@@ -157,7 +159,7 @@ struct EditView: View {
                                                         .font(.title)
                                                 }
                                                     .buttonStyle(PlainButtonStyle())
-                                                    .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.25)
+                                                    .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.20)
 
                                             )
                                     }
@@ -167,7 +169,7 @@ struct EditView: View {
                                         if flip == false {
                                             Text(deckCore.cardsArray[index].unwrappedWord)
                                                 .font(.custom("Chalkduster", size: 25))
-                                                .frame(width: 175, height: 330, alignment: .center)
+                                                .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.33)
                                                 .foregroundColor(.white)
                                                 .overlay(
                                                     
@@ -178,7 +180,7 @@ struct EditView: View {
                                                             .font(.title)
                                                     }
                                                         .buttonStyle(PlainButtonStyle())
-                                                        .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.25)
+                                                        .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.20)
 
                                                 )
                                             
@@ -186,7 +188,7 @@ struct EditView: View {
                                             
                                             Text(deckCore.cardsArray[index].unwrappedDefinition)
                                                 .font(.custom("Chalkduster", size: 25))
-                                                .frame(width: 175, height: 330, alignment: .center)
+                                                .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.33)
                                                 .foregroundColor(.white)
                                                 .overlay(
                                                     
@@ -197,7 +199,7 @@ struct EditView: View {
                                                             .font(.title)
                                                     }
                                                         .buttonStyle(PlainButtonStyle())
-                                                        .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.25)
+                                                        .offset(x: geo.size.width * -0.285, y: geo.size.height * -0.20)
 
                                                 )
                                         }
@@ -209,7 +211,7 @@ struct EditView: View {
                             
                         )
                         .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
-                        .padding(.top, 5)
+                        
                     
                     
                     
@@ -399,5 +401,17 @@ struct FlipEffect: GeometryEffect {
         
         
         return ProjectionTransform(transform3d).concatenating(affineTransform)
+    }
+}
+
+
+struct EditView_Previews: PreviewProvider {
+    @State var card: Card
+    @StateObject var deckCore:DeckCore
+    @StateObject var likedCore:LikedCore
+
+    
+    static var previews: some View {
+        EditView(card: Card(), deckCore: DeckCore(), likedCore: LikedCore(), indexCard: .constant(0))
     }
 }

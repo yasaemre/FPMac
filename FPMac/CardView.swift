@@ -38,7 +38,7 @@ struct CardView: View {
     
     var body: some View {
         GeometryReader { geo in
-            VStack(spacing:20) {
+            VStack() {
                 HStack {
                     Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
                         Image(systemName: "arrowshape.turn.up.backward")
@@ -88,7 +88,7 @@ struct CardView: View {
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
-                .padding(.top, 20)
+                .padding(.top, geo.size.height * 0.02)
                 
                 ZStack(alignment:.center) {
                     Image("bbs1")
@@ -136,7 +136,7 @@ struct CardView: View {
                     }
                     
                 }
-                .padding(.top, 10)
+                .padding(.top, geo.size.height * 0.02)
                 .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
                 .cornerRadius(8)
                 .offset(x: card.x, y: card.y)
@@ -190,7 +190,7 @@ struct CardView: View {
                 
                 Text("\(indexCard+1) of \(deckCore.cardsArray.count)")
                     .font(.title2)
-                    .padding(.top, 10)
+                    .padding(.top, geo.size.height * 0.02)
                 
                 HStack(spacing: 40){
                     
@@ -220,7 +220,7 @@ struct CardView: View {
                     HeartView(resetBg: $resetBg, deckCore:deckCore, indexCard: $indexCard)
                     
                 }
-                .padding(.top, 10)
+                .padding(.top, geo.size.height * 0.02)
                 .buttonStyle(PlainButtonStyle())
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

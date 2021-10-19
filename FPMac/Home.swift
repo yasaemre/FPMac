@@ -20,55 +20,58 @@ struct Home: View {
        private var profileArrPersistent: FetchedResults<ProfileCore>
 
     var body: some View {
-        HStack(spacing: 0) {
-            VStack{
-                //tab button
-                if let data = profileArrPersistent.last?.image {
-                    Image(nsImage: NSImage(data: data)!)
-                        .resizable()
-                        .scaledToFill()
-                        .clipShape(Circle())
-                        .frame(width: 50, height: 50)
+        GeometryReader { geo in
+            HStack(spacing: 0) {
+                VStack{
+                    //tab button
+                    if let data = profileArrPersistent.last?.image {
+                        Image(nsImage: NSImage(data: data)!)
+                            .resizable()
+                            .scaledToFill()
+                            .clipShape(Circle())
+                            .frame(width: 40, height: 40)
+                    }
+                    HStack(spacing:1) {
+                        Text(profileArrPersistent.last?.name ?? "Name")
+                            .foregroundColor(.gray)
+                        Text(profileArrPersistent.last?.lastName ?? "Last Name")
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.top, 5)
+                    TabButton(image: "house", title: "Home", selectedTab: $homeData.selectedTab).padding(.top, 30)
+                    TabButton(image: "textformat.123", title: "Scoreboard", selectedTab: $homeData.selectedTab)
+                    TabButton(image: "heart.circle", title: "Liked Cards", selectedTab: $homeData.selectedTab)
+                    TabButton(image: "doc.text.magnifyingglass", title: "Instructions", selectedTab: $homeData.selectedTab)
+                    TabButton(image: "person.crop.circle", title: "Profile", selectedTab: $homeData.selectedTab)
+                    Spacer()
+                    
                 }
-                HStack(spacing:1) {
-                    Text(profileArrPersistent.last?.name ?? "Anonymous")
-                        .foregroundColor(.gray)
-                    Text(profileArrPersistent.last?.lastName ?? "Anonymous")
-                        .foregroundColor(.gray)
+                
+                .padding()
+                .padding(.top, 35)
+                .background(BlurView())
+                
+                
+                //Tab Content
+                
+                ZStack(alignment: .leading) {
+                    switch homeData.selectedTab {
+                    case "Home": NavigationView{ HomeView(deckCreatedAt: $deckCreatedAt, numOfCardsInDeck: $numOfCardsInDeck)}
+                    case "Scoreboard": NavigationView { ScoreboardView(moc: viewContext)}
+                    case "Liked Cards": NavigationView { LikedCardView()}
+                    case "Instructions": NavigationView {IntsructionsView()}
+                    case "Profile": NavigationView {ProfileView()}
+                    default: Text("")
+                    }
                 }
-                .padding(.top, 5)
-                TabButton(image: "house", title: "Home", selectedTab: $homeData.selectedTab).padding(.top, 30)
-                TabButton(image: "textformat.123", title: "Scoreboard", selectedTab: $homeData.selectedTab)
-                TabButton(image: "heart.circle", title: "Liked Cards", selectedTab: $homeData.selectedTab)
-                TabButton(image: "doc.text.magnifyingglass", title: "Instructions", selectedTab: $homeData.selectedTab)
-                TabButton(image: "person.crop.circle", title: "Profile", selectedTab: $homeData.selectedTab)
-                Spacer()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             }
-            .padding()
-            .padding(.top, 35)
-            .background(BlurView())
-            
-            
-            //Tab Content
-            
-            ZStack {
-                switch homeData.selectedTab {
-                case "Home": NavigationView{ HomeView(deckCreatedAt: $deckCreatedAt, numOfCardsInDeck: $numOfCardsInDeck)}
-                case "Scoreboard": NavigationView { ScoreboardView(moc: viewContext)}
-                case "Liked Cards": NavigationView { LikedCardView()}
-                case "Instructions": NavigationView {IntsructionsView()}
-                case "Profile": NavigationView {ProfileView()}
-                default: Text("")
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-         
         }
-
         .ignoresSafeArea(.all, edges: .all)
-        .frame(width: screen.width / 1.4, height: screen.height-150)
+        .frame(width: screen.width * 0.7, height: screen.height-50)
         .environmentObject(homeData)
+        
     }
 }
 

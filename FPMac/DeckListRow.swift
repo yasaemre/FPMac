@@ -26,19 +26,19 @@ struct DeckListRow: View {
                     Text(deck.unwrappedDeckName)
                         .font(.title).bold()
                         .foregroundColor(.primary)
-                        .frame(width: 300)
 
                     Text("\(deck.numberOfCardsInDeck) cards")
                         .font(.title2)
                         .foregroundColor(.gray)
-                        .frame(width: 100)
+                        .frame(width: 70)
                 
                     Text("created on \(deck.deckCreatedAt ?? "")")
                         .font(.system(size: 12.0))
                         .foregroundColor(.gray)
-                        .frame(width: 200)
-                    //Spacer()
+                        .frame(width: 120)
                 }
+                Spacer()
+
             }
             .onAppear {
                 deck.numberOfCardsInDeck = Int16(deck.cardsArray.count)
