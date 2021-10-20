@@ -36,7 +36,7 @@ struct LikedCardView: View {
                         }
                     } label: {
                         Text("Word")
-                            .font(.custom("Chalkduster", size: 22))
+                            .font(.custom("Chalkduster", size: geo.size.height * 0.02))
                             .frame(width: 130, height: 40)
                             .background(!flip ? Color.init(hex: "164430") : .gray)
                             .clipShape(Capsule())
@@ -53,7 +53,7 @@ struct LikedCardView: View {
                         }
                     } label: {
                         Text("Meaning")
-                            .font(.custom("Chalkduster", size: 22))
+                            .font(.custom("Chalkduster", size: geo.size.height * 0.02))
                             .frame(width: 130, height: 40)
                             .background(flip ? Color.init(hex: "164430") : .gray)
                         
@@ -82,7 +82,9 @@ struct LikedCardView: View {
                                 if flip == false {
                                     ZStack {
                                         Text(likedArrPersistent[index].unwrappedWord)
-                                            .font(.custom("Chalkduster", size: 30))
+                                            .font(.custom("Chalkduster", size: geo.size.height * 0.02))
+                                            .padding(.top, geo.size.height * 0.03)
+                                            .multilineTextAlignment(.leading)
                                             .foregroundColor(.white)
                                             .frame(width:220, height: 370)
                                         
@@ -91,7 +93,9 @@ struct LikedCardView: View {
                                     ZStack {
                                         
                                         Text(likedArrPersistent[index].unwrappedDefinition)
-                                            .font(.custom("Chalkduster", size: 30))
+                                            .padding(.top, geo.size.height * 0.03)
+                                            .font(.custom("Chalkduster", size: geo.size.height * 0.02))
+                                            .multilineTextAlignment(.leading)
                                             .foregroundColor(.white)
                                             .frame(width:220, height: 370)
                                         

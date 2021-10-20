@@ -65,7 +65,7 @@ struct CardView: View {
                         }
                     } label: {
                         Text("Word")
-                            .font(.custom("Chalkduster", size: 24))
+                            .font(.custom("Chalkduster", size: geo.size.height * 0.03))
                             .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
                             .background(!flip ? Color.init(hex: "164430") : .gray)
                             .clipShape(Capsule())
@@ -80,7 +80,7 @@ struct CardView: View {
                         }
                     } label: {
                         Text("Meaning")
-                            .font(.custom("Chalkduster", size: 24))
+                            .font(.custom("Chalkduster", size: geo.size.height * 0.03))
                             .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
                             .background(flip ? Color.init(hex: "164430") : .gray)
                             .clipShape(Capsule())
@@ -103,15 +103,17 @@ struct CardView: View {
                             ZStack {
                                 Text(deckCore.cardsArray[indexCard].unwrappedWord)
                                     .foregroundColor(.white)
-                                    .font(.custom("Chalkduster", size: 25))
-                                    .frame(width: 185, height: 340, alignment: .center)
+                                    .multilineTextAlignment(.leading)
+                                    .font(.custom("Chalkduster", size: geo.size.height * 0.02))
+                                    .frame(width: geo.size.width * 0.45, height: geo.size.height * 0.43)
                             }
                         } else {
                             ZStack {
                                 
                                 Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
-                                    .font(.custom("Chalkduster", size: 25))
-                                    .frame(width: 185, height: 340, alignment: .center)
+                                    .font(.custom("Chalkduster", size: geo.size.height * 0.02))
+                                    .frame(width: geo.size.width * 0.45, height: geo.size.height * 0.43)
+                                    .multilineTextAlignment(.leading)
                                     .foregroundColor(.white)
                             }
                         }
@@ -195,8 +197,8 @@ struct CardView: View {
                 HStack(spacing: 40){
                     
                     Text("Correct: \(correctAnswer)")
-                        .font(.custom("Chalkduster", size: 22))
-                        .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
+                        .font(.custom("Chalkduster", size: geo.size.height * 0.03))
+                        .frame(width:  geo.size.width * 0.35, height: geo.size.height * 0.05)
                         .background(Color.init(hex: "164430"))
                         .clipShape(Capsule())
                         .foregroundColor(.white)
@@ -204,8 +206,8 @@ struct CardView: View {
                     
                     
                     Text("False: \(falseAnswer)")
-                        .font(.custom("Chalkduster", size: 22))
-                        .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
+                        .font(.custom("Chalkduster", size: geo.size.height * 0.03))
+                        .frame(width:  geo.size.width * 0.35, height: geo.size.height * 0.05)
                         .foregroundColor(Color.init(hex: "164430"))
                         .background(Color(.lightGray))
                         .clipShape(Capsule())

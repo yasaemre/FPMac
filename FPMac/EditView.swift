@@ -39,13 +39,13 @@ struct EditView: View {
                 VStack{
                     HStack {
                         Text("Edit")
-                            .font(.title)
+                            .font(.system(size: geo.size.height * 0.03))
                             .frame(width:  geo.size.width * 0.35, height: geo.size.height * 0.07)
                         Spacer()
                         
                         Button(action: {withAnimation {homeData.isExpanded.toggle()}}) {
                             Text("Study")
-                                .font(.largeTitle)
+                                .font(.system(size: geo.size.height * 0.03))
                                 .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
                                 .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "B74278"), Color.init(hex: "B74278")]),  center: .center, startRadius: 5, endRadius: 120))
                                 .clipShape(Capsule())
@@ -67,8 +67,8 @@ struct EditView: View {
                             }
                         } label: {
                             Text("Word")
-                                .font(.custom("Chalkduster", size: 24))
-                                .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
+                                .font(.custom("Chalkduster", size: geo.size.height * 0.03))
+                                .frame(width:  geo.size.width * 0.35, height: geo.size.height * 0.05)
                                 .background(!flip ? Color.init(hex: "164430") : .gray)
                                 .clipShape(Capsule())
                                 .foregroundColor(.white)
@@ -84,8 +84,8 @@ struct EditView: View {
                             }
                         } label: {
                             Text("Meaning")
-                                .font(.custom("Chalkduster", size: 24))
-                                .frame(width:  geo.size.width * 0.25, height: geo.size.height * 0.05)
+                                .font(.custom("Chalkduster", size: geo.size.height * 0.03))
+                                .frame(width:  geo.size.width * 0.35, height: geo.size.height * 0.05)
                                 .background(flip ? Color.init(hex: "164430") : .gray)
                                 .clipShape(Capsule())
                                 .foregroundColor(.white)
@@ -119,15 +119,19 @@ struct EditView: View {
                         .frame(width: geo.size.width * 0.55, height: geo.size.height * 0.5)
                         .shadow(color: Color(NSColor(.black)), radius: 10, x: 5, y: 5)
                         .overlay(
-                            VStack( spacing: 5) {
+                            VStack() {
                                 if deckCore.cardsArray.count > 0 {
                                     if flip == false {
                                         if rightArrowTapped == true {
                                             Text("")
                                         } else {
+                                            
                                             Text(deckCore.cardsArray[indexCard].unwrappedWord)
-                                                .font(.custom("Chalkduster", size: 25))
-                                                .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.33)
+                                                .font(.custom("Chalkduster", size: geo.size.height * 0.02))
+                                                .lineLimit(13)
+                                                .padding(.top, geo.size.height * 0.05)
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.43)
                                                 .foregroundColor(.white)
                                                 .overlay(
                                                     
@@ -147,9 +151,12 @@ struct EditView: View {
                                     } else {
                                         
                                         Text(deckCore.cardsArray[indexCard].unwrappedDefinition)
-                                            .font(.custom("Chalkduster", size: 25))
-                                            .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.33)
+                                            .font(.custom("Chalkduster", size: geo.size.height * 0.02))
+                                            .padding(.top, geo.size.height * 0.05)
+                                            .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.43)
+                                            .multilineTextAlignment(.leading)
                                             .foregroundColor(.white)
+                                            .lineLimit(13)
                                             .overlay(
                                                 
                                                 Button {
@@ -168,8 +175,11 @@ struct EditView: View {
                                     ForEach(0..<deckCore.cardsArray.count, id:\.self) { index in
                                         if flip == false {
                                             Text(deckCore.cardsArray[index].unwrappedWord)
-                                                .font(.custom("Chalkduster", size: 25))
-                                                .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.33)
+                                                .padding(.top, geo.size.height * 0.05)
+                                                .lineLimit(13)
+                                                .font(.custom("Chalkduster", size: geo.size.height * 0.02))
+                                                .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.43)
+                                                .multilineTextAlignment(.leading)
                                                 .foregroundColor(.white)
                                                 .overlay(
                                                     
@@ -187,8 +197,11 @@ struct EditView: View {
                                         } else {
                                             
                                             Text(deckCore.cardsArray[index].unwrappedDefinition)
-                                                .font(.custom("Chalkduster", size: 25))
-                                                .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.33)
+                                                .lineLimit(13)
+                                                .padding(.top, geo.size.height * 0.05)
+                                                .font(.custom("Chalkduster", size: geo.size.height * 0.02))
+                                                .multilineTextAlignment(.leading)
+                                                .frame(width: geo.size.width * 0.35, height: geo.size.height * 0.43)
                                                 .foregroundColor(.white)
                                                 .overlay(
                                                     
@@ -226,7 +239,7 @@ struct EditView: View {
                             }
                         } label: {
                             Image(systemName: "arrowshape.turn.up.left")
-                                .font(.custom("Chalkduster", size: geo.size.height * 0.05))
+                                .font(.custom("Chalkduster", size: geo.size.height * 0.04))
                                 .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
                         }
                         .buttonStyle(PlainButtonStyle())
@@ -242,7 +255,7 @@ struct EditView: View {
                             
                         } label: {
                             Text("Add Card")
-                                .font(.custom("Chalkduster", size: 24))
+                                .font(.custom("Chalkduster", size: geo.size.height * 0.03))
                                 .frame(width:  geo.size.width * 0.35, height: geo.size.height * 0.05)
                                 .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "164430")]),  center: .center, startRadius: 5, endRadius: 120))
                                 .clipShape(Capsule())
@@ -260,7 +273,7 @@ struct EditView: View {
                             }
                         } label: {
                             Image(systemName: "arrowshape.turn.up.right")
-                                .font(.custom("Chalkduster", size: geo.size.height * 0.05))
+                                .font(.custom("Chalkduster", size: geo.size.height * 0.04))
                                 .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
                         }
                         .buttonStyle(PlainButtonStyle())
