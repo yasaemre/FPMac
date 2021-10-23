@@ -22,6 +22,11 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+        
+        // Companies
+        let deckCore = DeckCore(context: viewContext)
+        deckCore.deckName = "Apple"
+        
         shared.saveContext()
         
         return result

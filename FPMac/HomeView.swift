@@ -118,6 +118,9 @@ struct HomeView: View {
                         }
                         .listStyle(SidebarListStyle())
                         .frame(width: (NSScreen.main?.frame.width)! * 0.28)
+                        .onAppear {
+                            print("List deckList.deck  AddbutClick:\(deckList.decks.count)")
+                        }
 
                     } else {
                         List(0..<deckList.decks.count, id: \.self) { index in
@@ -147,7 +150,7 @@ struct HomeView: View {
                         }
                         .listStyle(SidebarListStyle())
                         .frame(width: (NSScreen.main?.frame.width)! * 0.28)
-
+                       
                     }
                     
                     
@@ -159,9 +162,11 @@ struct HomeView: View {
                     notSelectedRowAlert()
                 }
                 .onDisappear {
+
                     print("DeckLis.deck.count B: \(deckList.decks.count)")
                     deckList.decks = []
                     print("DeckLis.deck.count A: \(deckList.decks.count)")
+
                 }
                 .frame(width: screen.width * 0.3, height: screen.height * 0.9)
 

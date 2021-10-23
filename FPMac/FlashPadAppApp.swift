@@ -13,7 +13,6 @@ struct FlashPadAppApp: App {
     let persistenceController = PersistenceController.shared
     @Environment(\.scenePhase) var scenePhase
     @StateObject var deckList = DeckList()
-
     
     var body: some Scene {
         WindowGroup {

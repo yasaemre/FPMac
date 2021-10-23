@@ -11,7 +11,6 @@ struct ContentView: View {
     var body: some View {
 
         Home()
-            //.frame(maxWidth: .infinity)
             .toolbar {
             ToolbarItem(placement: .primaryAction) {
                 Button(action: toggleSidebar, label: { // 1

@@ -60,9 +60,7 @@ struct Home: View {
                     case "Scoreboard":  ScoreboardView(moc: viewContext)
                     case "Liked Cards":  LikedCardView()
                     case "Instructions": IntsructionsView()
-                        //NavigationView {IntsructionsView()}
                     case "Profile": ProfileView()
-                        //NavigationView {ProfileView()}
                     default: Text("")
                     }
                 }
@@ -72,7 +70,7 @@ struct Home: View {
         //}
         }
         .ignoresSafeArea(.all, edges: .all)
-        .frame(width: screen.width * 0.7, height: screen.height-50)
+        .frame(width: screen.width * 0.8, height: screen.height-50)
         .environmentObject(homeData)
         
     }
