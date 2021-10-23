@@ -35,197 +35,217 @@ struct ProfileView: View {
 
 
     var body: some View {
-        ZStack {
-        VStack(spacing: 30) {
-            Spacer()
-            Group {
-                Text("Profile")
-                    .font(.title)
-                HStack(spacing:10) {
-                    Text("Name: ")
-                        .font(.title)
-                    VStack {
-                        if let name =  profileArrPersistent.last?.name {
-                        TextField(" \(name)", text: $name)
-                            .font(Font.system(size: 25, design: .default))
-                        } else {
-                            TextField("Name", text: $name)
-                                .font(Font.system(size: 25, design: .default))
-                        }
-                    }
-                }
+        GeometryReader { geo in
+            ZStack {
+                VStack(spacing: 30) {
+                    Spacer()
+                    Group {
+                        Text("Profile")
+                            .font(.title)
+                        HStack(spacing:geo.size.width * 0.06) {
+                            Text("Name: ")
+                                .font(.title)
+                            VStack {
+                                if let name =  profileArrPersistent.last?.name {
+                                    TextField(" \(name)", text: $name)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .frame(width: geo.size.width * 0.4)
+                                } else {
+                                    TextField("Name", text: $name)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .frame(width: geo.size.width * 0.4)
 
-                HStack(spacing:10) {
-                    Text("Last Name: ")
-                        .font(.title)
-                    VStack {
-                        if let lname =  profileArrPersistent.last?.lastName {
-                        TextField("\(lname)", text: $lastName)
-                            .font(Font.system(size: 25, design: .default))
-                        } else {
-                            TextField("Last Name", text: $lastName)
-                                .font(Font.system(size: 25, design: .default))
+                                }
+                            }
                         }
-                    }
-                }
-                
-                HStack(spacing:10){
-                    Text("Age: ")
-                        .font(.title)
-                    VStack {
-                        if let age =  profileArrPersistent.last?.age {
-                        TextField("\(age)", text: $age)
-                            .font(Font.system(size: 25, design: .default))
-                            .textContentType(.oneTimeCode)
+                        
+                        HStack(spacing:geo.size.width * 0.01) {
+                            Text("Last Name: ")
+                                .font(.title)
+                            VStack {
+                                if let lname =  profileArrPersistent.last?.lastName {
+                                    TextField("\(lname)", text: $lastName)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .frame(width: geo.size.width * 0.4)
+
+                                } else {
+                                    TextField("Last Name", text: $lastName)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .frame(width: geo.size.width * 0.4)
+
+                                }
+                            }
+                        }
+                        
+                        HStack(spacing:geo.size.width * 0.08){
+                            Text("Age: ")
+                                .font(.title)
+                            VStack {
+                                if let age =  profileArrPersistent.last?.age {
+                                    TextField("\(age)", text: $age)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .textContentType(.oneTimeCode)
+                                        .frame(width: geo.size.width * 0.4)
+
+                                    
+                                } else {
+                                    TextField("Age", text: $age)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .textContentType(.oneTimeCode)
+                                        .frame(width: geo.size.width * 0.4)
+
+                                }
+                            }
                             
-                        } else {
-                            TextField("Age", text: $age)
-                                .font(Font.system(size: 25, design: .default))
-                                .textContentType(.oneTimeCode)
+                        }
+                        
+                        
+                        HStack(spacing:geo.size.width * 0.08) {
+                            Text("Sex: ")
+                                .font(.title)
+                            VStack {
+                                if let sex =  profileArrPersistent.last?.sex {
+                                    TextField("\(sex)", text: $sex)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .frame(width: geo.size.width * 0.4)
+
+                                } else {
+                                    TextField("Sex", text: $sex)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .frame(width: geo.size.width * 0.4)
+
+                                }
+                            }
+                        }
+                        HStack(spacing:geo.size.width * 0.04) {
+                            Text("Location: ")
+                                .font(.title)
+                            
+                            VStack {
+                                if let loc =  profileArrPersistent.last?.location {
+                                    TextField("\(loc)", text: $location)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .frame(width: geo.size.width * 0.4)
+
+                                } else {
+                                    TextField("Location", text: $location)
+                                        .font(Font.system(size: 25, design: .default))
+                                        .frame(width: geo.size.width * 0.4)
+
+                                }
+                            }
                         }
                     }
-
-                }
-                
-
-                HStack(spacing:10) {
-                    Text("Sex: ")
-                        .font(.title)
-                    VStack {
-                        if let sex =  profileArrPersistent.last?.sex {
-                        TextField("\(sex)", text: $sex)
-                            .font(Font.system(size: 25, design: .default))
-                        } else {
-                            TextField("Sex", text: $sex)
-                                .font(Font.system(size: 25, design: .default))
-                        }
-                    }
-                }
-                HStack(spacing:10) {
-                    Text("Location: ")
-                        .font(.title)
-
-                    VStack {
-                        if let loc =  profileArrPersistent.last?.location {
-                        TextField("\(loc)", text: $location)
-                            .font(Font.system(size: 25, design: .default))
-                        } else {
-                            TextField("Location", text: $location)
-                                .font(Font.system(size: 25, design: .default))
-                        }
-                    }
-                }
-            }
-            .padding(.leading, 30)
-            .padding(.trailing, 30)
-            
-            HStack {
-                Spacer()
-                
-                Button {
+                    .padding(.leading, 30)
+                    .padding(.trailing, 30)
                     
-                    withAnimation{
-                        isShowingCheckMark.toggle()
+                    HStack {
+                        Spacer()
+                        
+                        Button {
+                            
+                            withAnimation{
+                                isShowingCheckMark.toggle()
+                            }
+                            let profileCore = ProfileCore(context:viewContext)
+                            
+                            if image.isEmpty {
+                                if let img = profileArrPersistent.last?.image {
+                                    profileCore.image = img
+                                }
+                            } else {
+                                profileCore.image = image
+                                
+                            }
+                            if name.isEmpty {
+                                if let name = profileArrPersistent.last?.name {
+                                    profileCore.name = name
+                                }
+                            } else {
+                                profileCore.name = name
+                            }
+                            if lastName.isEmpty {
+                                if let lastName = profileArrPersistent.last?.lastName {
+                                    profileCore.lastName = lastName
+                                }
+                            } else {
+                                profileCore.lastName = lastName
+                            }
+                            if age.isEmpty {
+                                if let age = profileArrPersistent.last?.age {
+                                    profileCore.age = age
+                                }
+                            } else {
+                                profileCore.age = age
+                            }
+                            if sex.isEmpty {
+                                if let sex = profileArrPersistent.last?.sex {
+                                    profileCore.sex = sex
+                                }
+                            } else {
+                                profileCore.sex = sex
+                            }
+                            if location.isEmpty {
+                                if let loc = profileArrPersistent.last?.location {
+                                    profileCore.location = loc
+                                }
+                            } else {
+                                profileCore.location = location
+                            }
+                            PersistenceController.shared.saveContext()
+                            
+                            showCircle = 1
+                            rotateCheckMark = 0
+                            checkMarkValue = 0
+                            
+                        } label: {
+                            Text("Save")
+                                .font(.title)
+                                .frame(width: 130, height: 50)
+                                .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "164430")]),  center: .center, startRadius: 5, endRadius: 120))
+                                .clipShape(Capsule())
+                                .foregroundColor(.white)
+                                .overlay(Capsule().stroke(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing), lineWidth: 5))
+                        }
+                        .padding(.trailing, 20)
+                        .buttonStyle(PlainButtonStyle())
+                        
                     }
-                    let profileCore = ProfileCore(context:viewContext)
                     
-                    if image.isEmpty {
-                        if let img = profileArrPersistent.last?.image {
-                            profileCore.image = img
-                        }
-                    } else {
-                        profileCore.image = image
-
-                    }
-                    if name.isEmpty {
-                        if let name = profileArrPersistent.last?.name {
-                            profileCore.name = name
-                        }
-                    } else {
-                        profileCore.name = name
-                    }
-                    if lastName.isEmpty {
-                        if let lastName = profileArrPersistent.last?.lastName {
-                            profileCore.lastName = lastName
-                        }
-                    } else {
-                        profileCore.lastName = lastName
-                    }
-                    if age.isEmpty {
-                        if let age = profileArrPersistent.last?.age {
-                            profileCore.age = age
-                        }
-                    } else {
-                        profileCore.age = age
-                    }
-                    if sex.isEmpty {
-                        if let sex = profileArrPersistent.last?.sex {
-                            profileCore.sex = sex
-                        }
-                    } else {
-                        profileCore.sex = sex
-                    }
-                    if location.isEmpty {
-                        if let loc = profileArrPersistent.last?.location {
-                            profileCore.location = loc
-                        }
-                    } else {
-                        profileCore.location = location
-                    }
-                    PersistenceController.shared.saveContext()
+                    Spacer()
                     
-                    showCircle = 1
-                    rotateCheckMark = 0
-                    checkMarkValue = 0
-                    
-                } label: {
-                    Text("Save")
-                        .font(.title)
-                        .frame(width: 130, height: 50)
-                        .background(RadialGradient(gradient: Gradient(colors: [Color.init(hex: "164430"), Color.init(hex: "164430")]),  center: .center, startRadius: 5, endRadius: 120))
-                        .clipShape(Capsule())
-                        .foregroundColor(.white)
-                        .overlay(Capsule().stroke(LinearGradient(gradient: Gradient(colors: [Color.gray, Color.white]), startPoint: .leading, endPoint: .trailing), lineWidth: 5))
                 }
-                .padding(.trailing, 20)
-                .buttonStyle(PlainButtonStyle())
-
-            }
-            
-            Spacer()
-        
-        }
-            if isShowingCheckMark {
-                ZStack {
-                Circle()
-                    .frame(width: 110, height: 110, alignment: .center)
-                    .foregroundColor(.white)
-                    .opacity(0.5)
-                    .scaleEffect(CGFloat(showCircle))
-                    .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.5))
-                    .transition(.asymmetric(insertion: .opacity, removal: .scale))
-
-                    VStack {
-                        Image(systemName: "checkmark")
-                            .foregroundColor(Color.init(hex: "067238"))
-                            .font(.system(size: 60))
-                            .rotationEffect(.degrees(Double(rotateCheckMark)))
-                            .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
-                            .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
+                if isShowingCheckMark {
+                    ZStack {
+                        Circle()
+                            .frame(width: 110, height: 110, alignment: .center)
+                            .foregroundColor(.white)
+                            .opacity(0.5)
+                            .scaleEffect(CGFloat(showCircle))
+                            .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.5))
                             .transition(.asymmetric(insertion: .opacity, removal: .scale))
                         
-                        Text("Saved")
-                            .font(.title2)
-                            .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
-                            .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
-                            .transition(.asymmetric(insertion: .opacity, removal: .scale))
+                        VStack {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(Color.init(hex: "067238"))
+                                .font(.system(size: 60))
+                                .rotationEffect(.degrees(Double(rotateCheckMark)))
+                                .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
+                                .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
+                                .transition(.asymmetric(insertion: .opacity, removal: .scale))
+                            
+                            Text("Saved")
+                                .font(.title2)
+                                .clipShape(Rectangle().offset(x: CGFloat(checkMarkValue)))
+                                .animation(Animation.interpolatingSpring(stiffness: 170, damping: 15).delay(0.75))
+                                .transition(.asymmetric(insertion: .opacity, removal: .scale))
+                        }
+                        
                     }
-                    
+                    .onAppear(perform: setDismissTimer)
                 }
-                .onAppear(perform: setDismissTimer)
             }
-    }
-        
+        }
     }
     
     func setDismissTimer() {

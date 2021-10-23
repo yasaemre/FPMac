@@ -238,7 +238,7 @@ struct EditView: View {
                                 indexCard -= 1
                             }
                         } label: {
-                            Image(systemName: "arrowshape.turn.up.left")
+                            Image(systemName: "hand.point.left")
                                 .font(.custom("Chalkduster", size: geo.size.height * 0.04))
                                 .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
                         }
@@ -272,7 +272,7 @@ struct EditView: View {
                                 indexCard += 1
                             }
                         } label: {
-                            Image(systemName: "arrowshape.turn.up.right")
+                            Image(systemName: "hand.point.right")
                                 .font(.custom("Chalkduster", size: geo.size.height * 0.04))
                                 .foregroundColor(colorScheme == .dark ? Color(.systemGreen) : Color.init(hex: "164430"))
                         }
@@ -281,7 +281,7 @@ struct EditView: View {
                     }
                     .padding(.top, 20)
                 }
-                
+
                 if isShowingCheckMark {
                     ZStack {
                         Circle()
@@ -314,8 +314,8 @@ struct EditView: View {
                 
                 
             }
+
         }
-        
     }
     
     //Use with tap gesture or delete button

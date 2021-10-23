@@ -29,7 +29,7 @@ struct LikedCardView: View {
                 Spacer()
                 
                 HStack(spacing: 15) {
-                    
+                    Spacer()
                     Button {
                         withAnimation {
                             flip = false
@@ -61,7 +61,7 @@ struct LikedCardView: View {
                             .foregroundColor(.white)
                     }
                     .buttonStyle(PlainButtonStyle())
-                    
+                    Spacer()
                 }
                 .padding(.bottom, 20)
                 .padding(.top, 5)
@@ -71,6 +71,7 @@ struct LikedCardView: View {
                     ForEach((0..<likedArrPersistent.count).reversed(), id: \.self) { index in
                         
                         HStack {
+                            Spacer()
                             ZStack (alignment: .center){
                                 Image("bbs1")
                                     .resizable()
@@ -104,7 +105,8 @@ struct LikedCardView: View {
                             }
                             .modifier(FlipEffect(flipped: $flipped, angle: flip ? 0 : 180))
                             .padding()
-                            
+                            Spacer()
+
                         }
                         .onAppear(perform: {
                             scrolled = 0
@@ -129,7 +131,7 @@ struct LikedCardView: View {
                                 if value.translation.width < 0 {
                                     if -value.translation.width > 180 && index+1 != likedArrPersistent.count {
                                         //moving away..
-                                        likedArrPersistent[index].offset = Float(-(calculateWidth() + 60))
+                                        likedArrPersistent[index].offset = Float(-(calculateWidth() + geo.size.width * 0.8))
                                         scrolled += 1
                                     } else {
                                         likedArrPersistent[index].offset = 0.0

@@ -21,6 +21,7 @@ struct Home: View {
 
     var body: some View {
         GeometryReader { geo in
+            //NavigationView {
             HStack(spacing: 0) {
                 VStack{
                     //tab button
@@ -46,7 +47,6 @@ struct Home: View {
                     Spacer()
                     
                 }
-                
                 .padding()
                 .padding(.top, 35)
                 .background(BlurView())
@@ -57,16 +57,19 @@ struct Home: View {
                 ZStack(alignment: .leading) {
                     switch homeData.selectedTab {
                     case "Home": NavigationView{ HomeView(deckCreatedAt: $deckCreatedAt, numOfCardsInDeck: $numOfCardsInDeck)}
-                    case "Scoreboard": NavigationView { ScoreboardView(moc: viewContext)}
-                    case "Liked Cards": NavigationView { LikedCardView()}
-                    case "Instructions": NavigationView {IntsructionsView()}
-                    case "Profile": NavigationView {ProfileView()}
+                    case "Scoreboard":  ScoreboardView(moc: viewContext)
+                    case "Liked Cards":  LikedCardView()
+                    case "Instructions": IntsructionsView()
+                        //NavigationView {IntsructionsView()}
+                    case "Profile": ProfileView()
+                        //NavigationView {ProfileView()}
                     default: Text("")
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
             }
+        //}
         }
         .ignoresSafeArea(.all, edges: .all)
         .frame(width: screen.width * 0.7, height: screen.height-50)

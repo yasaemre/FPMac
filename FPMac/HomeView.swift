@@ -116,7 +116,7 @@ struct HomeView: View {
 
                             }
                         }
-                        //.listStyle(SidebarListStyle())
+                        .listStyle(SidebarListStyle())
                         .frame(width: (NSScreen.main?.frame.width)! * 0.28)
 
                     } else {
@@ -145,7 +145,7 @@ struct HomeView: View {
 
                             }
                         }
-                        //.listStyle(SidebarListStyle())
+                        .listStyle(SidebarListStyle())
                         .frame(width: (NSScreen.main?.frame.width)! * 0.28)
 
                     }
@@ -159,12 +159,15 @@ struct HomeView: View {
                     notSelectedRowAlert()
                 }
                 .onDisappear {
+                    print("DeckLis.deck.count B: \(deckList.decks.count)")
                     deckList.decks = []
+                    print("DeckLis.deck.count A: \(deckList.decks.count)")
                 }
-                
+                .frame(width: screen.width * 0.3, height: screen.height * 0.9)
+
             }
-            //.frame(width: screen.width * 0.8, height: screen.height-50)
-            //            .frame(width: screen.width * 0.4, height: screen.height * 0.2)
+//            .frame(width: screen.width * 0.8, height: screen.height-50)
+//                        .frame(width: screen.width * 0.4, height: screen.height * 0.2)
 
         }
 

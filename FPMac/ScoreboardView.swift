@@ -54,6 +54,7 @@ struct ScoreboardView: View {
                         Text(deck.unwrappedDeckName)
                     }
                 }
+                .frame(width: 300)
 
             }
             Group {
