@@ -66,7 +66,7 @@ struct HomeView: View {
     
     @State private var showAlertForNotSelectedDeck = false
     @State private var dialogResultForSelection = ""
-    var screen = NSScreen.main!.visibleFrame
+    //var screen = NSScreen.main!.visibleFrame
 
     var body: some View {
         GeometryReader { geo in
@@ -117,17 +117,18 @@ struct HomeView: View {
                             }
                         }
                         .listStyle(SidebarListStyle())
-                        .frame(width: (NSScreen.main?.frame.width)! * 0.28)
+                        //.frame(width: (NSScreen.main?.frame.width)! * 0.28)
                         .onAppear {
                             print("List deckList.deck  AddbutClick:\(deckList.decks.count)")
+
                         }
 
                     } else {
-                        List(0..<deckList.decks.count, id: \.self) { index in
+                        List(0..<decksArrPersistent.count, id: \.self) { index in
                             
-                            NavigationLink(destination: EditScrnView(card: card, deckCore: deckList.decks[index], likedCore: likedCore), tag: deckList.decks[index], selection: $selectedDeck){
+                            NavigationLink(destination: EditScrnView(card: card, deckCore: decksArrPersistent[index], likedCore: likedCore), tag: decksArrPersistent[index], selection: $selectedDeck){
                                 
-                                DeckListRow(deck: deckList.decks[index])
+                                DeckListRow(deck: decksArrPersistent[index])
 
                                 //Spacer()
                                 
@@ -149,7 +150,7 @@ struct HomeView: View {
                             }
                         }
                         .listStyle(SidebarListStyle())
-                        .frame(width: (NSScreen.main?.frame.width)! * 0.28)
+                        //.frame(width: (NSScreen.main?.frame.width)! * 0.28)
                        
                     }
                     
@@ -161,14 +162,19 @@ struct HomeView: View {
                 .alert(isPresented: $showAlertForNotSelectedDeck) {
                     notSelectedRowAlert()
                 }
+                .onAppear(perform: {
+                    print("DeckLis.deck.count on appear: \(deckList.decks.count)")
+                    print("List deckList.deck  decksArrPersistent.count:\(decksArrPersistent.count)")
+
+
+                })
                 .onDisappear {
 
                     print("DeckLis.deck.count B: \(deckList.decks.count)")
                     deckList.decks = []
-                    print("DeckLis.deck.count A: \(deckList.decks.count)")
 
                 }
-                .frame(width: screen.width * 0.3, height: screen.height * 0.9)
+                //.frame(width: screen.width * 0.3, height: screen.height * 0.9)
 
             }
 //            .frame(width: screen.width * 0.8, height: screen.height-50)

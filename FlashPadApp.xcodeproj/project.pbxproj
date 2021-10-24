@@ -18,7 +18,7 @@
 		C66932FF26FE0EAD004F226A /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66932FE26FE0EAD004F226A /* TabButton.swift */; };
 		C669330126FE0EB0004F226A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330026FE0EB0004F226A /* HomeView.swift */; };
 		C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330626FE0EDF004F226A /* HomeViewModel.swift */; };
-		C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C669330C26FE1231004F226A /* FPMac.xcdatamodeld */; };
+		C669330E26FE1231004F226A /* FlashPadApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C669330C26FE1231004F226A /* FlashPadApp.xcdatamodeld */; };
 		C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669330F26FE144E004F226A /* LikedCore+CoreDataClass.swift */; };
 		C669331826FE144E004F226A /* LikedCore+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331026FE144E004F226A /* LikedCore+CoreDataProperties.swift */; };
 		C669331926FE144E004F226A /* ProfileCore+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669331126FE144E004F226A /* ProfileCore+CoreDataClass.swift */; };
@@ -41,8 +41,8 @@
 		C669333B26FE170F004F226A /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333A26FE170F004F226A /* Deck.swift */; };
 		C669333E26FE34AC004F226A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C669333D26FE34AC004F226A /* CloudKit.framework */; };
 		C669334026FE7607004F226A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C669333F26FE7607004F226A /* ProfileView.swift */; };
-		C66C0B112717605D00FE8965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66932C326FE0D89004F226A /* Assets.xcassets */; };
 		C695C553270789F4004B8D84 /* DeckListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C695C552270789F4004B8D84 /* DeckListRow.swift */; };
+		C6E6B3242726179500B8F764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E6B3232726179500B8F764 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +66,8 @@
 		C66932BC26FE0D87004F226A /* FlashPadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashPadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66932BF26FE0D87004F226A /* FlashPadAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPadAppApp.swift; sourceTree = "<group>"; };
 		C66932C126FE0D87004F226A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C66932C326FE0D89004F226A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = FPMac/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		C66932C626FE0D89004F226A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C66932C826FE0D89004F226A /* FPMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FPMac.entitlements; sourceTree = "<group>"; };
+		C66932C826FE0D89004F226A /* FlashPadApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlashPadApp.entitlements; sourceTree = "<group>"; };
 		C66932CD26FE0D89004F226A /* FlashPadAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashPadAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66932D126FE0D89004F226A /* FPMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacTests.swift; sourceTree = "<group>"; };
 		C66932D726FE0D89004F226A /* FlashPadAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashPadAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +102,7 @@
 		C669333D26FE34AC004F226A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C669333F26FE7607004F226A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C695C552270789F4004B8D84 /* DeckListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckListRow.swift; sourceTree = "<group>"; };
+		C6E6B3232726179500B8F764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +146,8 @@
 				C669331526FE144E004F226A /* DeckCore+CoreDataClass.swift */,
 				C669331626FE144E004F226A /* DeckCore+CoreDataProperties.swift */,
 				C669331F26FE149C004F226A /* Persistence.swift */,
-				C669330C26FE1231004F226A /* FPMac.xcdatamodeld */,
-				C66932BE26FE0D87004F226A /* FPMac */,
+				C669330C26FE1231004F226A /* FlashPadApp.xcdatamodeld */,
+				C66932BE26FE0D87004F226A /* FlashPadApp */,
 				C66932D026FE0D89004F226A /* FPMacTests */,
 				C66932DA26FE0D89004F226A /* FPMacUITests */,
 				C66932BD26FE0D87004F226A /* Products */,
@@ -165,7 +165,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C66932BE26FE0D87004F226A /* FPMac */ = {
+		C66932BE26FE0D87004F226A /* FlashPadApp */ = {
 			isa = PBXGroup;
 			children = (
 				C66932BF26FE0D87004F226A /* FlashPadAppApp.swift */,
@@ -184,11 +184,11 @@
 				C669333026FE1660004F226A /* InstructionsView.swift */,
 				C669333226FE167A004F226A /* ScoreboardView.swift */,
 				C669333F26FE7607004F226A /* ProfileView.swift */,
-				C66932C326FE0D89004F226A /* Assets.xcassets */,
-				C66932C826FE0D89004F226A /* FPMac.entitlements */,
+				C66932C826FE0D89004F226A /* FlashPadApp.entitlements */,
+				C6E6B3232726179500B8F764 /* Assets.xcassets */,
 				C66932C526FE0D89004F226A /* Preview Content */,
 			);
-			path = FPMac;
+			path = FlashPadApp;
 			sourceTree = "<group>";
 		};
 		C66932C526FE0D89004F226A /* Preview Content */ = {
@@ -353,7 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C66C0B112717605D00FE8965 /* Assets.xcassets in Resources */,
+				C6E6B3242726179500B8F764 /* Assets.xcassets in Resources */,
 				C66932C726FE0D89004F226A /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,7 +383,7 @@
 				C669331726FE144E004F226A /* LikedCore+CoreDataClass.swift in Sources */,
 				C669332726FE15B6004F226A /* EditView.swift in Sources */,
 				C695C553270789F4004B8D84 /* DeckListRow.swift in Sources */,
-				C669330E26FE1231004F226A /* FPMac.xcdatamodeld in Sources */,
+				C669330E26FE1231004F226A /* FlashPadApp.xcdatamodeld in Sources */,
 				C669333326FE167A004F226A /* ScoreboardView.swift in Sources */,
 				C669332026FE149C004F226A /* Persistence.swift in Sources */,
 				C669330726FE0EDF004F226A /* HomeViewModel.swift in Sources */,
@@ -565,11 +565,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FPMac/FPMac.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FlashPadApp/FlashPadApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FPMac/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FlashPadApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -581,9 +582,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emre.FlashPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -594,11 +596,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = FPMac/FPMac.entitlements;
+				CODE_SIGN_ENTITLEMENTS = FlashPadApp/FlashPadApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"FPMac/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"FlashPadApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 5DG8S4P5ZL;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -610,9 +613,10 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emre.FlashPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -687,7 +691,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = FPMac;
+				TEST_TARGET_NAME = FlashPadApp;
 			};
 			name = Debug;
 		};
@@ -710,7 +714,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = FPMac;
+				TEST_TARGET_NAME = FlashPadApp;
 			};
 			name = Release;
 		};
@@ -756,13 +760,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		C669330C26FE1231004F226A /* FPMac.xcdatamodeld */ = {
+		C669330C26FE1231004F226A /* FlashPadApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				C669330D26FE1231004F226A /* FPMac.xcdatamodel */,
 			);
 			currentVersion = C669330D26FE1231004F226A /* FPMac.xcdatamodel */;
-			path = FPMac.xcdatamodeld;
+			path = FlashPadApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

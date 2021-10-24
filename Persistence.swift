@@ -33,7 +33,7 @@ struct PersistenceController {
     }()
 
     init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "FPMac") // else UnsafeRawBufferPointer with negative count
+        container = NSPersistentCloudKitContainer(name: "FlashPadApp") // else UnsafeRawBufferPointer with negative count
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         } 

@@ -42,7 +42,7 @@ struct ProfileView: View {
                     Group {
                         Text("Profile")
                             .font(.title)
-                        HStack(spacing:geo.size.width * 0.06) {
+                        HStack(spacing:geo.size.width * 0.07) {
                             Text("Name: ")
                                 .font(.title)
                             VStack {
@@ -59,7 +59,7 @@ struct ProfileView: View {
                             }
                         }
                         
-                        HStack(spacing:geo.size.width * 0.01) {
+                        HStack(spacing:geo.size.width * 0.03) {
                             Text("Last Name: ")
                                 .font(.title)
                             VStack {

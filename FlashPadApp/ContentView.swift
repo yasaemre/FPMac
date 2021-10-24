@@ -10,9 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
 
-        Home()
-            .toolbar {
-            ToolbarItem(placement: .primaryAction) {
+        Home().toolbar {
+            ToolbarItem(placement: .navigation) {
                 Button(action: toggleSidebar, label: { // 1
                     Image(systemName: "sidebar.leading")
                 })
