@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C66932BB26FE0D87004F226A"
-               BuildableName = "FlashPadApp.app"
-               BlueprintName = "FlashPadApp"
-               ReferencedContainer = "container:FlashPadApp.xcodeproj">
+               BuildableName = "FlashPads.app"
+               BlueprintName = "FlashPads"
+               ReferencedContainer = "container:FlashPads.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,26 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C66932CC26FE0D89004F226A"
-               BuildableName = "FlashPadAppTests.xctest"
-               BlueprintName = "FlashPadAppTests"
-               ReferencedContainer = "container:FlashPadApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C66932D626FE0D89004F226A"
-               BuildableName = "FlashPadAppUITests.xctest"
-               BlueprintName = "FlashPadAppUITests"
-               ReferencedContainer = "container:FlashPadApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -65,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C66932BB26FE0D87004F226A"
-            BuildableName = "FlashPadApp.app"
-            BlueprintName = "FlashPadApp"
-            ReferencedContainer = "container:FlashPadApp.xcodeproj">
+            BuildableName = "FlashPads.app"
+            BlueprintName = "FlashPads"
+            ReferencedContainer = "container:FlashPads.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C66932BB26FE0D87004F226A"
-            BuildableName = "FlashPadApp.app"
-            BlueprintName = "FlashPadApp"
-            ReferencedContainer = "container:FlashPadApp.xcodeproj">
+            BuildableName = "FlashPads.app"
+            BlueprintName = "FlashPads"
+            ReferencedContainer = "container:FlashPads.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

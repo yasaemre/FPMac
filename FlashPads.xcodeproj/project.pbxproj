@@ -63,14 +63,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C66932BC26FE0D87004F226A /* FlashPadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashPadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66932BC26FE0D87004F226A /* FlashPads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashPads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66932BF26FE0D87004F226A /* FlashPadAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashPadAppApp.swift; sourceTree = "<group>"; };
 		C66932C126FE0D87004F226A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C66932C626FE0D89004F226A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C66932C826FE0D89004F226A /* FlashPadApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlashPadApp.entitlements; sourceTree = "<group>"; };
-		C66932CD26FE0D89004F226A /* FlashPadAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashPadAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66932CD26FE0D89004F226A /* FlashPadsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashPadsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66932D126FE0D89004F226A /* FPMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacTests.swift; sourceTree = "<group>"; };
-		C66932D726FE0D89004F226A /* FlashPadAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashPadAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C66932D726FE0D89004F226A /* FlashPadsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashPadsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66932DB26FE0D89004F226A /* FPMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacUITests.swift; sourceTree = "<group>"; };
 		C66932DD26FE0D89004F226A /* FPMacUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPMacUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C66932F026FE0E81004F226A /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -158,9 +158,9 @@
 		C66932BD26FE0D87004F226A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C66932BC26FE0D87004F226A /* FlashPadApp.app */,
-				C66932CD26FE0D89004F226A /* FlashPadAppTests.xctest */,
-				C66932D726FE0D89004F226A /* FlashPadAppUITests.xctest */,
+				C66932BC26FE0D87004F226A /* FlashPads.app */,
+				C66932CD26FE0D89004F226A /* FlashPadsTests.xctest */,
+				C66932D726FE0D89004F226A /* FlashPadsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,9 +252,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C66932BB26FE0D87004F226A /* FlashPadApp */ = {
+		C66932BB26FE0D87004F226A /* FlashPads */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C66932E126FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadApp" */;
+			buildConfigurationList = C66932E126FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPads" */;
 			buildPhases = (
 				C66932B826FE0D87004F226A /* Sources */,
 				C66932B926FE0D87004F226A /* Frameworks */,
@@ -264,14 +264,14 @@
 			);
 			dependencies = (
 			);
-			name = FlashPadApp;
+			name = FlashPads;
 			productName = FPMac;
-			productReference = C66932BC26FE0D87004F226A /* FlashPadApp.app */;
+			productReference = C66932BC26FE0D87004F226A /* FlashPads.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C66932CC26FE0D89004F226A /* FlashPadAppTests */ = {
+		C66932CC26FE0D89004F226A /* FlashPadsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C66932E426FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadAppTests" */;
+			buildConfigurationList = C66932E426FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadsTests" */;
 			buildPhases = (
 				C66932C926FE0D89004F226A /* Sources */,
 				C66932CA26FE0D89004F226A /* Frameworks */,
@@ -282,14 +282,14 @@
 			dependencies = (
 				C66932CF26FE0D89004F226A /* PBXTargetDependency */,
 			);
-			name = FlashPadAppTests;
+			name = FlashPadsTests;
 			productName = FPMacTests;
-			productReference = C66932CD26FE0D89004F226A /* FlashPadAppTests.xctest */;
+			productReference = C66932CD26FE0D89004F226A /* FlashPadsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C66932D626FE0D89004F226A /* FlashPadAppUITests */ = {
+		C66932D626FE0D89004F226A /* FlashPadsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C66932E726FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadAppUITests" */;
+			buildConfigurationList = C66932E726FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadsUITests" */;
 			buildPhases = (
 				C66932D326FE0D89004F226A /* Sources */,
 				C66932D426FE0D89004F226A /* Frameworks */,
@@ -300,9 +300,9 @@
 			dependencies = (
 				C66932D926FE0D89004F226A /* PBXTargetDependency */,
 			);
-			name = FlashPadAppUITests;
+			name = FlashPadsUITests;
 			productName = FPMacUITests;
-			productReference = C66932D726FE0D89004F226A /* FlashPadAppUITests.xctest */;
+			productReference = C66932D726FE0D89004F226A /* FlashPadsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -328,7 +328,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C66932B726FE0D87004F226A /* Build configuration list for PBXProject "FlashPadApp" */;
+			buildConfigurationList = C66932B726FE0D87004F226A /* Build configuration list for PBXProject "FlashPads" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -341,9 +341,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C66932BB26FE0D87004F226A /* FlashPadApp */,
-				C66932CC26FE0D89004F226A /* FlashPadAppTests */,
-				C66932D626FE0D89004F226A /* FlashPadAppUITests */,
+				C66932BB26FE0D87004F226A /* FlashPads */,
+				C66932CC26FE0D89004F226A /* FlashPadsTests */,
+				C66932D626FE0D89004F226A /* FlashPadsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -434,12 +434,12 @@
 /* Begin PBXTargetDependency section */
 		C66932CF26FE0D89004F226A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C66932BB26FE0D87004F226A /* FlashPadApp */;
+			target = C66932BB26FE0D87004F226A /* FlashPads */;
 			targetProxy = C66932CE26FE0D89004F226A /* PBXContainerItemProxy */;
 		};
 		C66932D926FE0D89004F226A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C66932BB26FE0D87004F226A /* FlashPadApp */;
+			target = C66932BB26FE0D87004F226A /* FlashPads */;
 			targetProxy = C66932D826FE0D89004F226A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -565,6 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FlashPadApp/FlashPadApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -582,7 +583,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emre.FlashPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -596,6 +597,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = FlashPadApp/FlashPadApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -613,7 +615,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emre.FlashPad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -643,7 +645,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashPadApp.app/Contents/MacOS/FlashPadApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashPads.app/Contents/MacOS/FlashPads";
 			};
 			name = Debug;
 		};
@@ -668,7 +670,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashPadApp.app/Contents/MacOS/FlashPadApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlashPads.app/Contents/MacOS/FlashPads";
 			};
 			name = Release;
 		};
@@ -721,7 +723,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C66932B726FE0D87004F226A /* Build configuration list for PBXProject "FlashPadApp" */ = {
+		C66932B726FE0D87004F226A /* Build configuration list for PBXProject "FlashPads" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C66932DF26FE0D89004F226A /* Debug */,
@@ -730,7 +732,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C66932E126FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadApp" */ = {
+		C66932E126FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPads" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C66932E226FE0D89004F226A /* Debug */,
@@ -739,7 +741,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C66932E426FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadAppTests" */ = {
+		C66932E426FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C66932E526FE0D89004F226A /* Debug */,
@@ -748,7 +750,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C66932E726FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadAppUITests" */ = {
+		C66932E726FE0D89004F226A /* Build configuration list for PBXNativeTarget "FlashPadsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C66932E826FE0D89004F226A /* Debug */,
