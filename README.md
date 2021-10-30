@@ -19,10 +19,10 @@ FlashPads is fun way of learning new words, languages, formulas, anything you wa
 
 ##  Here is the some screenshots 
 <p align="row">
-<img src= "https://user-images.githubusercontent.com/31274880/139514531-36bff125-8235-490e-963c-8d51b1b87bbf.png" width="450" >
-<img src= "https://user-images.githubusercontent.com/31274880/139514527-aeb65432-194f-4996-bf2a-a23cd3f45e92.png" width="450" >
- <img src= "https://user-images.githubusercontent.com/31274880/139514529-b93d1fd5-9207-4f5c-a476-8c02a848ff81.png" width="450" >
-<img src= "https://user-images.githubusercontent.com/31274880/139514530-e9d72c51-209f-430f-acb8-822c9041a67f.png" width="450" >
+<img src= "https://user-images.githubusercontent.com/31274880/139514531-36bff125-8235-490e-963c-8d51b1b87bbf.png" width="400" >
+<img src= "https://user-images.githubusercontent.com/31274880/139514527-aeb65432-194f-4996-bf2a-a23cd3f45e92.png" width="400" >
+ <img src= "https://user-images.githubusercontent.com/31274880/139514529-b93d1fd5-9207-4f5c-a476-8c02a848ff81.png" width="400" >
+<img src= "https://user-images.githubusercontent.com/31274880/139514530-e9d72c51-209f-430f-acb8-822c9041a67f.png" width="400" >
 </p>
 
 
