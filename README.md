@@ -4,7 +4,8 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
 
-
+  <p>
+FlashPads is fun way of learning new words, languages, formulas, anything you want to memorize.  </p>
 # FlashPads MacOS
 <br />
 <p>
