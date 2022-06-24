@@ -37,7 +37,7 @@ https://user-images.githubusercontent.com/31274880/139507060-e6066c16-ddf2-4947-
 ## Features
 
 - [x] SwiftUI
-- [x] Corada
+- [x] Coradata
 - [x] CloudKit
 
 
